@@ -12,5 +12,20 @@ namespace HandWork.Com.Service.Dealer
 
 
         }
+        public static void Get()
+        {
+
+
+        }
+        public static void SendMsg()
+        {
+
+
+        }
+        public static void DelMsg()
+        {
+
+
+        }
     }
 }
