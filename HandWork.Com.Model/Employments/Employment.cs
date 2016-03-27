@@ -5,10 +5,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace HandWork.Com.Model.Dealers
+namespace HandWork.Com.Model.Employment
 {
-    [Table("dealer_info")]
-    public class Dealer
+        [Table("employment_info")]
+    public class Employment
     {
         /// <summary>
         /// 设置主键ID
@@ -18,22 +18,28 @@ namespace HandWork.Com.Model.Dealers
         public long Id { get; set; }
 
         /// <summary>
-        /// 设置Id的级别
+        /// 设置对象的地址
         /// </summary>
-        [Column("id_class", TypeName = "INT")]
-        public int IdClass { get; set; }
+        [Column("location", TypeName = "NVARCHAR")]
+        public int Location { get; set; }
 
         /// <summary>
         /// 设置登录密码
         /// </summary>
-        [Column("password", TypeName = "NVARCHAR")]
-        public string  Password { get; set; }
+        [Column("name", TypeName = "DOUBLE")]
+        public string Name { get; set; }
 
         /// <summary>
         /// 当前对象联系电话
         /// </summary>
         [Column("phone_num", TypeName = "NVARCHAR")]
         public string PhoneNum { get; set; }
+
+        /// <summary>
+        /// 当前招工分类
+        /// </summary>
+        [Column("classify", TypeName = "NVARCHAR")]
+        public string Classify { get; set; }
 
         /// <summary>
         /// 当前对象联系微信
@@ -48,16 +54,10 @@ namespace HandWork.Com.Model.Dealers
         public int SfzAccount { get; set; }
 
         /// <summary>
-        /// 当前对象的简介
+        /// 当前招工的简介
         /// </summary>
         [Column("note", TypeName = "NVARCHAR")]
         public string Note { get; set; }
-
-        /// <summary>
-        /// 当前对象的评价
-        /// </summary>
-        [Column("comment", TypeName = "NVARCHAR")]
-        public string Comment { get; set; }
 
         /// <summary>
         /// 当前对象性别 0女1男
@@ -66,12 +66,15 @@ namespace HandWork.Com.Model.Dealers
         public Boolean Sex { get; set; }
 
         /// <summary>
-        /// 当前对象星级
+        /// 设置当前薪金
         /// </summary>
-        [Column("star", TypeName = "INT")]
-        public int Star { get; set; }
+        [Column("money", TypeName = "NVARCHAR")]
+        public string money { get; set; }
 
-        
-
+        /// <summary>
+        /// 当前是否人工确认
+        /// </summary>
+        [Column("confirm", TypeName = "INT")]
+        public int Confirm { get; set; }
     }
 }
