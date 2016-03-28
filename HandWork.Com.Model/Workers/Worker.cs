@@ -27,6 +27,8 @@ namespace HandWork.Com.Model.Workers
         /// 设置登录密码
         /// </summary>
         [Column("password", TypeName = "NVARCHAR")]
+        [Required]
+
         public string Password { get; set; }
 
         /// <summary>
@@ -39,12 +41,14 @@ namespace HandWork.Com.Model.Workers
         /// 当前对象联系微信
         /// </summary>
         [Column("weixin_num", TypeName = "NVARCHAR")]
+        [Required]
         public string WeixinNum { get; set; }
 
         /// <summary>
         /// 当前对象身份证号码
         /// </summary>
         [Column("sfz_account", TypeName = "NVARCHAR")]
+
         public int SfzAccount { get; set; }
 
         /// <summary>
@@ -75,6 +79,7 @@ namespace HandWork.Com.Model.Workers
         /// 当前对象是否人工确认
         /// </summary>
         [Column("confirm", TypeName = "INT")]
+        [Required]
         public int Confirm { get; set; }
 
 

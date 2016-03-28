@@ -27,7 +27,7 @@ namespace HandWork.Com.Model.Employment
         /// 设置登录密码
         /// </summary>
         [Column("name", TypeName = "DOUBLE")]
-        public string Name { get; set; }
+        public string Name { get; set; }   
 
         /// <summary>
         /// 当前对象联系电话

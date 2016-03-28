@@ -61,7 +61,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dealers\Dealer.cs" />
+    <Compile Include="Employments\Employment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recruits\Recruit.cs" />
+    <Compile Include="Relation\relation.cs" />
     <Compile Include="Workers\Worker.cs" />
   </ItemGroup>
   <ItemGroup>

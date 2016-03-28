@@ -45,6 +45,7 @@ namespace HandWork.Com.Model.Recruits
         /// 当前对象联系微信
         /// </summary>
         [Column("weixin_num", TypeName = "NVARCHAR")]
+        [Required]
         public string WeixinNum { get; set; }
 
         /// <summary>
@@ -69,12 +70,14 @@ namespace HandWork.Com.Model.Recruits
         /// 设置当前薪金
         /// </summary>
         [Column("money", TypeName = "NVARCHAR")]
+        [Required]
         public string money { get; set; }
 
         /// <summary>
         /// 当前是否人工确认
         /// </summary>
         [Column("confirm", TypeName = "INT")]
+        [Required]
         public int Confirm { get; set; }
     }
 }
