@@ -72,9 +72,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HandWork.Com.Model\HandWork.Com.Model.csproj">
+    <ProjectReference Include="..\HandWork.Com.Model\HandWork.Com.Models.csproj">
       <Project>{6b928959-9d64-4d3e-a21a-13fe1d60e879}</Project>
-      <Name>HandWork.Com.Model</Name>
+      <Name>HandWork.Com.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

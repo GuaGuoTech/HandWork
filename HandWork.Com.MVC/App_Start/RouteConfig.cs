@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace HandWork.Com.WebApp
+namespace HandWork.Com.MVC
 {
     public class RouteConfig
     {
@@ -14,9 +14,9 @@ namespace HandWork.Com.WebApp
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "index",
+                name: "Default",
                 url: "{modules}/{controller}/{action}/{id}",
-                defaults: new {modules="Homes", controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { modules = "Homes", controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

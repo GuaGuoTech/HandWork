@@ -221,6 +221,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -229,6 +230,27 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HandWork.Com.Model\HandWork.Com.Models.csproj">
+      <Project>{6b928959-9d64-4d3e-a21a-13fe1d60e879}</Project>
+      <Name>HandWork.Com.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HandWork.Com.MVC\HandWork.Com.MVC.csproj">
+      <Project>{f8a2c208-f0f6-4714-b4f1-4c4da93df5e5}</Project>
+      <Name>HandWork.Com.MVC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HandWork.Com.Provider\HandWork.Com.Provider.csproj">
+      <Project>{13267240-5397-4352-9358-6736ded4938d}</Project>
+      <Name>HandWork.Com.Provider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HandWork.Com.Service\HandWork.Com.Service.csproj">
+      <Project>{a0b588d3-e5cf-4971-994a-3de6cfcaf39d}</Project>
+      <Name>HandWork.Com.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
