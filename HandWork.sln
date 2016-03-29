@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandWork.Com.WebApp", "Hand
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandWork.Com.MVC", "HandWork.Com.MVC\HandWork.Com.MVC.csproj", "{F8A2C208-F0F6-4714-B4F1-4C4DA93DF5E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuaguoHtmlHelper", "GuaguoHtmlHelper\GuaguoHtmlHelper.csproj", "{7BDB0E9A-A5DF-4382-A12F-CD7C37CD2FAF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F8A2C208-F0F6-4714-B4F1-4C4DA93DF5E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8A2C208-F0F6-4714-B4F1-4C4DA93DF5E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8A2C208-F0F6-4714-B4F1-4C4DA93DF5E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BDB0E9A-A5DF-4382-A12F-CD7C37CD2FAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BDB0E9A-A5DF-4382-A12F-CD7C37CD2FAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BDB0E9A-A5DF-4382-A12F-CD7C37CD2FAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BDB0E9A-A5DF-4382-A12F-CD7C37CD2FAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
