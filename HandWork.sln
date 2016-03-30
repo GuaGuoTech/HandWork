@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandWork.Com.Provider", "Ha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandWork.Com.Models", "HandWork.Com.Model\HandWork.Com.Models.csproj", "{6B928959-9D64-4D3E-A21A-13FE1D60E879}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandWork.Com.WebApp", "HandWork.Com.WebApp\HandWork.Com.WebApp.csproj", "{4BC1761A-619D-4483-A441-A486D82B3F97}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandWork.Com.WebAppMobile", "HandWork.Com.WebApp\HandWork.Com.WebAppMobile.csproj", "{4BC1761A-619D-4483-A441-A486D82B3F97}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandWork.Com.MVC", "HandWork.Com.MVC\HandWork.Com.MVC.csproj", "{F8A2C208-F0F6-4714-B4F1-4C4DA93DF5E5}"
 EndProject
