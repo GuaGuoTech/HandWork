@@ -8,7 +8,7 @@ namespace System.Web.Mvc
 {
     public static class Guaguo_TextBox
     {
-        public static HtmlString GuaGuo_TextBox(this HtmlHelper helper, string id, string text)
+        public static HtmlString GuaGuo_Button(this HtmlHelper helper, string id, string text)
         {
             //创意某一个Tag的TagBuilder
             var builder = new TagBuilder("input");
@@ -17,7 +17,7 @@ namespace System.Web.Mvc
             builder.IdAttributeDotReplacement = "-";
             builder.GenerateId(id);
 
-            builder.MergeAttribute("name", "id");
+            builder.MergeAttribute("name", id);
             //添加样式
             builder.MergeAttribute("class", "btn btn-primary");
             builder.MergeAttribute("type", "button");
@@ -32,5 +32,7 @@ namespace System.Web.Mvc
             return new HtmlString(builder.ToString());
 
         }
+
+      
     }
 }
