@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -62,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Dealers\DealerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Weixins\WeixinService.cs" />
     <Compile Include="Workers\WorkerServices.cs" />
   </ItemGroup>
   <ItemGroup>
