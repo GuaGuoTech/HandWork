@@ -12,7 +12,7 @@ namespace HandWork.Com.Provider.Repositorys
         private readonly DbContext _dbContext;
 
         /// <summary>
-        ///构造函数 初始化DbsSet  和_dbContext 
+        ///构造函数 初始化DbsSet  和  _dbContext 
         /// </summary>
         /// <param name="dbContext"></param>
         public Repository(DbContext dbContext)
