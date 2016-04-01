@@ -14,7 +14,7 @@ namespace HandWork.Com.Model.Recruits
         /// 设置主键ID
         /// </summary>
         [Key]
-        [Column("id", TypeName = "BIGINT")]
+        [Column("id", TypeName = "INT")]
         public long Id { get; set; }
 
         /// <summary>
@@ -26,33 +26,33 @@ namespace HandWork.Com.Model.Recruits
         /// <summary>
         /// 设置佣金比例  
         /// </summary>
-        [Column("percent", TypeName = "VARCHAR")]
+        [Column("percent", TypeName = "DOUBLE")]
         public string Percent { get; set; }
 
         /// <summary>
         /// 当前对象联系电话
         /// </summary>
-        [Column("phone_num", TypeName = "VARCHAR")]
+        [Column("phone_num", TypeName = "NVARCHAR")]
         public string PhoneNum { get; set; }
 
         /// <summary>
         /// 当前招工分类
         /// </summary>
-        [Column("classify", TypeName = "VARCHAR")]
+        [Column("classify", TypeName = "NVARCHAR")]
         public string Classify { get; set; }
 
         /// <summary>
         /// 当前对象联系微信
         /// </summary>
-        [Column("weixin_num", TypeName = "VARCHAR")]
+        [Column("weixin_num", TypeName = "NVARCHAR")]
         [Required]
         public string WeixinNum { get; set; }
 
         /// <summary>
         /// 当前对象身份证号码
         /// </summary>
-        [Column("sfz_account", TypeName = "VARCHAR")]
-        public string SfzAccount { get; set; }
+        [Column("sfz_account", TypeName = "NVARCHAR")]
+        public int SfzAccount { get; set; }
 
         /// <summary>
         /// 当前招工的简介
@@ -64,20 +64,14 @@ namespace HandWork.Com.Model.Recruits
         /// 当前对象性别 0女1男
         /// </summary>
         [Column("sex", TypeName = "INT")]
-        public int Sex { get; set; }
+        public Boolean Sex { get; set; }
 
         /// <summary>
         /// 设置当前薪金
         /// </summary>
-        [Column("money", TypeName = "VARCHAR")]
+        [Column("money", TypeName = "NVARCHAR")]
         [Required]
         public string money { get; set; }
-
-        /// <summary>
-        /// 设置生成时间
-        /// </summary>
-        [Column("first_time", TypeName = "DATETIME")]
-        public DateTime FirstTime { get; set; }
 
         /// <summary>
         /// 当前是否人工确认
