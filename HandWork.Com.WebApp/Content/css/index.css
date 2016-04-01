@@ -7,3 +7,7 @@ border-radius:50px;
 float:right;
 position:relative;
 }
+.dropdown-menu{
+    left:-60px;
+    min-width:0px;
+}
