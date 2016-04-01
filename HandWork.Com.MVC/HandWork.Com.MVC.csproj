@@ -16,7 +16,14 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort />    <ProjectReference Include="..\HandWork.Com.Model\HandWork.Com.Models.csproj">
+      <Project>{6b928959-9d64-4d3e-a21a-13fe1d60e879}</Project>
+      <Name>HandWork.Com.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HandWork.Com.Service\HandWork.Com.Service.csproj">
+      <Project>{a0b588d3-e5cf-4971-994a-3de6cfcaf39d}</Project>
+      <Name>HandWork.Com.Service</Name>
+    </ProjectReference>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -109,6 +116,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Dealers\DealerController.cs" />
     <Compile Include="Controllers\Homes\HomeController.cs" />
     <Compile Include="Controllers\Weixins\WeixinController.cs" />
     <Compile Include="Global.asax.cs">
@@ -136,6 +144,15 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HandWork.Com.Model\HandWork.Com.Models.csproj">
+      <Project>{6b928959-9d64-4d3e-a21a-13fe1d60e879}</Project>
+      <Name>HandWork.Com.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HandWork.Com.Service\HandWork.Com.Service.csproj">
+      <Project>{a0b588d3-e5cf-4971-994a-3de6cfcaf39d}</Project>
+      <Name>HandWork.Com.Service</Name>
+    </ProjectReference>
+    </ProjectReference>
     <ProjectReference Include="..\HandWork.Com.Service\HandWork.Com.Service.csproj">
       <Project>{a0b588d3-e5cf-4971-994a-3de6cfcaf39d}</Project>
       <Name>HandWork.Com.Service</Name>

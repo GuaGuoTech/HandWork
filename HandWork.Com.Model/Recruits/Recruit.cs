@@ -5,11 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace HandWork.Com.Model.Workers
-{
-    [Table("worker_info")]
-    public class Worker
-    {
+namespace HandWork.Com.Model.Recruits
+{ 
+        [Table("recruit_info")]
+    public class Recruit
+    {   
         /// <summary>
         /// 设置主键ID
         /// </summary>
@@ -18,23 +18,28 @@ namespace HandWork.Com.Model.Workers
         public long Id { get; set; }
 
         /// <summary>
-        /// 设置Id的级别
+        /// 设置对象的地址
         /// </summary>
-        [Column("id_class", TypeName = "INT")]
-        public int IdClass { get; set; }
+        [Column("location", TypeName = "NVARCHAR")]
+        public int Location { get; set; }
 
         /// <summary>
-        /// 设置登录密码
+        /// 设置佣金比例  
         /// </summary>
-        [Column("password", TypeName = "VARCHAR")]
-        [Required]
-        public string Password { get; set; }
+        [Column("percent", TypeName = "VARCHAR")]
+        public string Percent { get; set; }
 
         /// <summary>
         /// 当前对象联系电话
         /// </summary>
         [Column("phone_num", TypeName = "VARCHAR")]
         public string PhoneNum { get; set; }
+
+        /// <summary>
+        /// 当前招工分类
+        /// </summary>
+        [Column("classify", TypeName = "VARCHAR")]
+        public string Classify { get; set; }
 
         /// <summary>
         /// 当前对象联系微信
@@ -47,21 +52,14 @@ namespace HandWork.Com.Model.Workers
         /// 当前对象身份证号码
         /// </summary>
         [Column("sfz_account", TypeName = "VARCHAR")]
-
         public string SfzAccount { get; set; }
 
         /// <summary>
-        /// 当前对象的简介
+        /// 当前招工的简介
         /// </summary>
         [Column("note", TypeName = "NVARCHAR")]
         public string Note { get; set; }
-
-        /// <summary>
-        /// 当前对象的评价
-        /// </summary>
-        [Column("comment", TypeName = "NVARCHAR")]
-        public string Comment { get; set; }
-
+        
         /// <summary>
         /// 当前对象性别 0女1男
         /// </summary>
@@ -69,20 +67,23 @@ namespace HandWork.Com.Model.Workers
         public int Sex { get; set; }
 
         /// <summary>
-        /// 当前对象星级
+        /// 设置当前薪金
         /// </summary>
-        [Column("star", TypeName = "INT")]
-        public int Star { get; set; }
+        [Column("money", TypeName = "VARCHAR")]
+        [Required]
+        public string money { get; set; }
 
         /// <summary>
-        /// 当前对象是否人工确认
+        /// 设置生成时间
+        /// </summary>
+        [Column("first_time", TypeName = "DATETIME")]
+        public DateTime FirstTime { get; set; }
+
+        /// <summary>
+        /// 当前是否人工确认
         /// </summary>
         [Column("confirm", TypeName = "INT")]
         [Required]
         public int Confirm { get; set; }
-
-
-        
-
     }
 }
