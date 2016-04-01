@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HandWork.Com.Provider.Contexts;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace HandWork.Com.Provider.Repositorys
         ///构造函数 初始化DbsSet  和  _dbContext 
         /// </summary>
         /// <param name="dbContext"></param>
-        public Repository(DbContext dbContext)
+        public Repository(EntityContext dbContext)
         {
             _dbContext = dbContext;
             Dbset = dbContext.Set<TEntity>();

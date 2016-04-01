@@ -14,7 +14,7 @@ namespace HandWork.Com.Model.Workers
         /// 设置主键ID
         /// </summary>
         [Key]
-        [Column("id", TypeName = "INT")]
+        [Column("id", TypeName = "BIGINT")]
         public long Id { get; set; }
 
         /// <summary>
@@ -26,30 +26,29 @@ namespace HandWork.Com.Model.Workers
         /// <summary>
         /// 设置登录密码
         /// </summary>
-        [Column("password", TypeName = "NVARCHAR")]
+        [Column("password", TypeName = "VARCHAR")]
         [Required]
-
         public string Password { get; set; }
 
         /// <summary>
         /// 当前对象联系电话
         /// </summary>
-        [Column("phone_num", TypeName = "NVARCHAR")]
+        [Column("phone_num", TypeName = "VARCHAR")]
         public string PhoneNum { get; set; }
 
         /// <summary>
         /// 当前对象联系微信
         /// </summary>
-        [Column("weixin_num", TypeName = "NVARCHAR")]
+        [Column("weixin_num", TypeName = "VARCHAR")]
         [Required]
         public string WeixinNum { get; set; }
 
         /// <summary>
         /// 当前对象身份证号码
         /// </summary>
-        [Column("sfz_account", TypeName = "NVARCHAR")]
+        [Column("sfz_account", TypeName = "VARCHAR")]
 
-        public int SfzAccount { get; set; }
+        public string SfzAccount { get; set; }
 
         /// <summary>
         /// 当前对象的简介
@@ -67,7 +66,7 @@ namespace HandWork.Com.Model.Workers
         /// 当前对象性别 0女1男
         /// </summary>
         [Column("sex", TypeName = "INT")]
-        public Boolean Sex { get; set; }
+        public int Sex { get; set; }
 
         /// <summary>
         /// 当前对象星级

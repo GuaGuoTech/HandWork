@@ -21,28 +21,28 @@ namespace HandWork.Com.Model.Relation
         /// <summary>
         /// 设置dealer
         /// </summary>
-        [Column("dealer", TypeName = "NVARCHAR")]
+        [Column("dealer", TypeName = "VARCHAR")]
         [Required]
         public string Dealer { get; set; }
 
         /// <summary>
         /// 设置生成时间
         /// </summary>
-        [Column("first_time", TypeName = "NVARCHAR")]
+        [Column("first_time", TypeName = "DATETIME")]
         [Required]
         public DateTime FirstTime { get; set; }
 
         /// <summary>
         /// 设置完成时间
         /// </summary>
-        [Column("second_time", TypeName = "NVARCHAR")]
+        [Column("second_time", TypeName = "DATETIME")]
         [Required]
         public DateTime SecondTime { get; set; }
 
         /// <summary>
         /// 设置worker
         /// </summary>
-        [Column("worker", TypeName = "NVARCHAR")]
+        [Column("worker", TypeName = "VARCHAR")]
         [Required]
         public string Worker { get; set; }
         
@@ -51,7 +51,7 @@ namespace HandWork.Com.Model.Relation
         /// </summary>
         [Column("finish", TypeName = "INT")]
         [Required]
-        public Int32 Finish { get; set; }
+        public int  Finish { get; set; }
                 
     }
 }
