@@ -35,10 +35,27 @@ namespace HandWork.Com.MVC.Controllers.Weixins
             if (WeixinService.GetPwd(sunStr).ToLower() == signature)
             {
                 return echostr; 
-
             }
 
             return null;
+        }
+
+        public void GetWeixinUser()
+        { 
+        
+        
+        
+        }
+
+        public void GetBaseToken()
+        {
+            WeixinService.GetBaseToken(500);        
+        }
+        public void CreateWeixinMenu()
+        {
+            WeixinService.CreateWenxinMenu();
+        
+        
         }
     }
 }
