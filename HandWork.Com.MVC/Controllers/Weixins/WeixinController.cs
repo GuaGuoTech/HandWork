@@ -51,9 +51,9 @@ namespace HandWork.Com.MVC.Controllers.Weixins
         {
             WeixinService.GetBaseToken(500);        
         }
-        public void CreateWeixinMenu()
+        public string CreateWeixinMenu()
         {
-            WeixinService.CreateWenxinMenu();
+         return    WeixinService.CreateWenxinMenu();
         
         
         }
