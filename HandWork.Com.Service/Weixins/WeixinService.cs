@@ -1,4 +1,5 @@
 ﻿using HandWork.Com.Model.Weixins;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,9 @@ namespace HandWork.Com.Service.Weixins
 {
     public class WeixinService
     {
+
+      public static  readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         /// <summary>
         /// sha1加密
         /// </summary>
@@ -31,40 +35,80 @@ namespace HandWork.Com.Service.Weixins
 
 
         private static readonly string DefaultUserAgent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)";
-        private static readonly string _url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx7271e951428d81cf&secret=c71f0472145cdf05351e09059a63582f";
 
         public static Dictionary<string, object> _access_token;
-        public static void GetBaseToken(int? timeout)
+
+        /// <summary>
+        /// 拿到基础token
+        /// </summary>
+        /// <param name="url"></param>
+        public static void GetBaseToken()
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(_url);
+            ///请求token的地址
+            string url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxd21f90079ecb0969&secret=338345d734124088ce5579a6a4514318";
+            string  respText =    HttpsGet(url);
+            JavaScriptSerializer Jss = new JavaScriptSerializer();
+            Dictionary<string, object> respDic = (Dictionary<string, object>)Jss.DeserializeObject(respText);
+
+            ///将token给全局静态变量
+            _access_token = respDic;
+        }
+
+        /// <summary>
+        /// https的get请求
+        /// </summary>
+        /// <param name="url">地址</param>
+        public static string HttpsGet(string  url)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             string respText = "";
-            if (string.IsNullOrEmpty(_url))
+            if (string.IsNullOrEmpty(url))
             {
                 throw new ArgumentNullException("url");
             }
             request.Method = "GET";
             request.UserAgent = DefaultUserAgent;
 
-            if (timeout.HasValue)
-            {
-                request.Timeout = timeout.Value;
-            }
-
-
-
             using (Stream resStream = response.GetResponseStream())
             {
-                StreamReader reader = new StreamReader(resStream, Encoding.Default);
+                StreamReader reader = new StreamReader(resStream, Encoding.UTF8);
                 respText = reader.ReadToEnd();
                 resStream.Close();
             }
-            JavaScriptSerializer Jss = new JavaScriptSerializer();
-            Dictionary<string, object> respDic = (Dictionary<string, object>)Jss.DeserializeObject(respText);
+            return respText;
 
-
-            _access_token = respDic;
         }
+
+        /// <summary>
+        /// 得到codeToken
+        /// </summary>
+        /// <param name="responseText"></param>
+        public static WeixinUser GetWeixinUser(string responseText)
+        {
+            try
+            {
+                WeixinCodeToken scopeToken = JsonConvert.DeserializeObject<WeixinCodeToken>(responseText);
+
+                string url = string.Format("https://api.weixin.qq.com/sns/userinfo?access_token={0}&openid={1}&lang=zh_CN", scopeToken.access_token, scopeToken.openid);
+
+                string _responseText = HttpsGet(url);
+                logger.Info(_responseText);
+                WeixinUser weixinUser = JsonConvert.DeserializeObject<WeixinUser>(_responseText);
+                return weixinUser;
+            }
+            catch (Exception e)
+            {
+                logger.Error("出错信息:",  e);
+
+                throw;
+            }
+          
+
+        }
+
+
+
         /// <summary>
         /// /微信自定义菜单创建 目前没有传入要传进的菜单
         /// </summary>
@@ -73,9 +117,10 @@ namespace HandWork.Com.Service.Weixins
         {
             string url = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=";
 
+            ///在没有token的时候 重新获取下
             if (_access_token == null)
             {
-                GetBaseToken(200);
+                GetBaseToken();
             }
             url += _access_token["access_token"];
 
@@ -119,15 +164,20 @@ namespace HandWork.Com.Service.Weixins
                              name = "网页测试",
                              url = "http://120.27.104.135/",
                              type = "view"
-                            },                      
+                           },
+                         new SubButton()
+                           {
+                             name = "授权test5",
+                             url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd21f90079ecb0969&redirect_uri=http%3a%2f%2f120.27.104.135%2fWeixins%2fweixin%2fIndex&response_type=code&scope=snsapi_userinfo&state=guaguokeji#wechat_redirect",
+                             type = "view"
+                           },
                  }
             });
             WeixinMenu weixinMenu = new WeixinMenu() { button = menus };
             JavaScriptSerializer jss = new JavaScriptSerializer();
             string menusString = jss.Serialize(weixinMenu);
             //如果需要POST数据     
-            string buffer = menusString;
-
+            string buffer = System.Text.RegularExpressions.Regex.Unescape(menusString); 
 
             byte[] data = Encoding.UTF8.GetBytes(buffer.ToString());
             using (Stream stream = request.GetRequestStream())
@@ -199,18 +249,7 @@ namespace HandWork.Com.Service.Weixins
                 {
                     return reader.ReadToEnd();
                 }
-                /*
-                using (MemoryStream msTemp = new MemoryStream())
-                {
-                    //解压时直接使用Read方法读取内容，不能调用GZipStream实例的Length等属性，否则会出错：System.NotSupportedException: 不支持此操作；
-                    while ((length = gz.Read(buffer, 0, buffer.Length)) != 0)
-                    {
-                        msTemp.Write(buffer, 0, length);
-                    }
 
-                    return encoding.GetString(msTemp.ToArray());
-                }
-                 * */
             }
         }
 
@@ -218,6 +257,7 @@ namespace HandWork.Com.Service.Weixins
         private static bool CheckValidationResult(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors)
         {
             return true; //总是接受     
+            string url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd21f90079ecb0969&redirect_uri=%0d%0ahttp%3a%2f%2f120.27.104.135%2fWeixins%2fweixin%2fGetWeixinUser&response_type=code&scope=snsapi_userinfo&state=guaguokeji";
         }
 
     }

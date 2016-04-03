@@ -1,0 +1,7 @@
+INFO  2016-04-03 11:50:28,474   284ms WeixinController       CreateWeixinMenu   - code
+INFO  2016-04-03 14:14:24,798 18051ms WeixinController       Index              - {"errcode":40029,"errmsg":"invalid code, hints: [ req_id: Uzj6UA0074ns53 ]"}
+INFO  2016-04-03 14:15:42,042 95294ms WeixinController       Index              - {"errcode":40029,"errmsg":"invalid code, hints: [ req_id: 1fJ1ha0151ns50 ]"}
+INFO  2016-04-03 14:16:24,715   600ms WeixinController       Index              - {"errcode":40029,"errmsg":"invalid code, hints: [ req_id: I3yP8a0194ns87 ]"}
+INFO  2016-04-03 14:18:02,751   632ms WeixinController       Index              - {"errcode":40029,"errmsg":"invalid code, hints: [ req_id: HV2xva0292ns45 ]"}
+INFO  2016-04-03 14:20:47,825   626ms WeixinController       Index              - {"errcode":40029,"errmsg":"invalid code, hints: [ req_id: m.GJ70457ns84 ]"}
+INFO  2016-04-03 14:26:39,616 93624ms WeixinController       Index              - {"errcode":40029,"errmsg":"invalid code, hints: [ req_id: 8widqA0809ns83 ]"}
