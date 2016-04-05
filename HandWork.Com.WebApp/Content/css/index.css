@@ -1,13 +1,65 @@
-﻿.navbar span img{
-height:50px;
-width:50px;
+﻿body {
+
+
+}
+.navbar {
+    margin-bottom:0px;
+}
+
+.navbar span img{
+
+height:45px;
+width:45px;
 border-radius:50px;
+  padding-left :5px;
+    padding-top :5px;
+     padding-bottom :5px;
 }
 .floatRight {
+  padding-top :8px;
+  padding-right :5px;
 float:right;
 position:relative;
+
 }
 .dropdown-menu{
     left:-60px;
     min-width:0px;
+}
+.carousel {
+    height: 150px;
+    background-color :#CCFFFF;
+}
+.carousel .item{
+    height: 150px;
+    background-color :#CCFFFF;
+}
+.carousel  img{
+
+   width:100%;
+
+}
+.notView {
+
+}
+.image {
+    height:45px;
+    width:45px;
+}
+.container {
+    padding-top:20px;
+
+}
+.floatCenter {
+text-align:center;
+}
+.kindBoder {
+border-top:6px solid #cccccc;
+border-bottom:1px solid #cccccc;
+}
+.image2{
+    width:100%;
+    height :100px;
+    border-radius:10px;
+
 }
