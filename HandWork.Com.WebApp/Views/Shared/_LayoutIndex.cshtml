@@ -20,28 +20,30 @@
     <script src="~/Content/js/bootstrap.min.js"> </script>
     <style>
 
-        
     </style>
 </head>
 <body>
     @*导航条*@
     <nav class="navbar  nabarcolor">
-       
-            <span><img src="~/Content/image/logo.jpg"/></span>
 
-        <div class="btn-group floatRight">
-            <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i>用户 </a>
-            <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+        <span><img src="~/Content/image/logo.jpg" /></span>
+
+        <div class="btn-group floatRight navRight">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <span class="floatRight userInfoBlock"><span>wantaotao1994</span><span class="caret"></span></span>
+            </a>
+            @*<a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i>用户 </a>
+                <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>*@
             <ul class="dropdown-menu">
                 <li><a href="#"><i class="icon-pencil"></i> 个人中心</a></li>
                 <li class="divider"></li>
                 <li><a href="#"><i class="icon-trash"></i> 消息</a></li>
             </ul>
-        </div>           
-   
-       
+        </div>
+
+
     </nav>
     @RenderBody()
-   
+
 </body>
 </html>
