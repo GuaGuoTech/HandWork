@@ -1,29 +1,29 @@
-﻿body {
-
-
-}
+﻿
 .navbar {
     margin-bottom:0px;
 }
 
 .navbar span img{
 
-height:45px;
-width:45px;
-border-radius:50px;
-  padding-left :5px;
+    height:45px;
+    width:45px;
+    border-radius:50px;
+    padding-left :5px;
     padding-top :5px;
-     padding-bottom :5px;
+    padding-bottom :5px;
+}
+.nabarcolor {
+    background-color :#336699;
 }
 .floatRight {
-  padding-top :8px;
-  padding-right :5px;
-float:right;
-position:relative;
+  
+    padding-right :5px;
+    float:right;
+    position:relative;
 
 }
 .dropdown-menu{
-    left:-60px;
+    left:-18px;
     min-width:0px;
 }
 .carousel {
@@ -36,7 +36,7 @@ position:relative;
 }
 .carousel  img{
 
-   width:100%;
+    width:100%;
 
 }
 .notView {
@@ -47,15 +47,25 @@ position:relative;
     width:45px;
 }
 .container {
-    padding-top:20px;
+    padding:5px;
+    
 
 }
 .floatCenter {
-text-align:center;
+    text-align:center;
 }
 .kindBoder {
-border-top:6px solid #cccccc;
-border-bottom:1px solid #cccccc;
+    padding-top:4px ;
+    border-bottom:1px solid #cccccc;
+      border-top:4px solid #cccccc;
+    display:table;
+        width:100%;
+
+}
+.kindsborderDiv {
+    border-bottom:1px solid #cccccc;
+    display:table;
+    width:100%;
 }
 .image2{
     width:100%;

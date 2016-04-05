@@ -25,21 +25,19 @@
 </head>
 <body>
     @*导航条*@
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar  nabarcolor">
        
             <span><img src="~/Content/image/logo.jpg"/></span>
-      
-            <!-- Single button -->
-            <div class="btn-group floatRight">
-                <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="glyphicon glyphicon-collapse-down" aria-hidden="true"></span>
-                    </button>
-               
-                    <ul class="dropdown-menu ">
-                        <li><a href="#">个人中心</a></li>
-                        <li><a href="#">消息</a></li>
-                    </ul>
-              </div>
+
+        <div class="btn-group floatRight">
+            <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i>用户 </a>
+            <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#"><i class="icon-pencil"></i> 个人中心</a></li>
+                <li class="divider"></li>
+                <li><a href="#"><i class="icon-trash"></i> 消息</a></li>
+            </ul>
+        </div>           
    
        
     </nav>
