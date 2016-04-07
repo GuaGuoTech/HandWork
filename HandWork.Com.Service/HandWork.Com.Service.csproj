@@ -79,10 +79,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dealers\DealerService.cs" />
+    <Compile Include="WantedJobs\WantedJobService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recruits\RecruitService.cs" />
+    <Compile Include="Relations\RelationService.cs" />
+    <Compile Include="Users\UserService.cs" />
     <Compile Include="Weixins\WeixinService.cs" />
-    <Compile Include="Workers\WorkerServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

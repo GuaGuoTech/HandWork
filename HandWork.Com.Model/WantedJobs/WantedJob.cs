@@ -5,14 +5,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace HandWork.Com.Model.Recruits
+namespace HandWork.Com.Model.WantedJobs
 {
+        [Table("wantedjob_info")]
     /// <summary>
-    /// 招聘信息表
+    /// 求职
     /// </summary>
-        [Table("recruit_info")]
-    public class Recruit
-    {   
+    public class WantedJob
+    {
         /// <summary>
         /// 设置主键ID
         /// </summary>
@@ -27,10 +27,23 @@ namespace HandWork.Com.Model.Recruits
         public string Location { get; set; }
 
         /// <summary>
-        /// 设置佣金比例  
+        /// 设置生成时间
         /// </summary>
-        [Column("percent", TypeName = "DOUBLE")]
-        public double Percent { get; set; }
+        [Column("first_time", TypeName = "DATETIME")]
+       
+        public DateTime FirstTime { get; set; }
+
+        /// <summary>
+        /// 设置完成时间
+        /// </summary>
+        [Column("finish_time", TypeName = "DATETIME")]
+        public DateTime FinishTime { get; set; }
+
+         /// <summary>
+        /// 设置登录密码
+        /// </summary>
+        [Column("name", TypeName = "VARCHAR")]
+        public string Name { get; set; }   
 
         /// <summary>
         /// 当前对象联系电话
@@ -48,7 +61,6 @@ namespace HandWork.Com.Model.Recruits
         /// 当前对象联系微信
         /// </summary>
         [Column("weixin_num", TypeName = "VARCHAR")]
-        [Required]
         public string WeixinNum { get; set; }
 
         /// <summary>
@@ -62,7 +74,7 @@ namespace HandWork.Com.Model.Recruits
         /// </summary>
         [Column("note", TypeName = "NVARCHAR")]
         public string Note { get; set; }
-        
+
         /// <summary>
         /// 当前对象性别 0女1男
         /// </summary>
@@ -73,20 +85,12 @@ namespace HandWork.Com.Model.Recruits
         /// 设置当前薪金
         /// </summary>
         [Column("money", TypeName = "VARCHAR")]
-        [Required]
         public string money { get; set; }
-
-        /// <summary>
-        /// 设置生成时间
-        /// </summary>
-        [Column("first_time", TypeName = "DATETIME")]
-        public DateTime FirstTime { get; set; }
 
         /// <summary>
         /// 当前是否人工确认
         /// </summary>
         [Column("confirm", TypeName = "INT")]
-        [Required]
         public int Confirm { get; set; }
     }
 }
