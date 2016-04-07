@@ -70,6 +70,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recruits\Recruit.cs" />
     <Compile Include="Relations\Relation.cs" />
+    <Compile Include="Users\User.cs" />
     <Compile Include="Weixins\WeixinCodeToken.cs" />
     <Compile Include="Weixins\WeixinMenus.cs" />
     <Compile Include="Weixins\WeixinUser.cs" />

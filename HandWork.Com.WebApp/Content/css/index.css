@@ -1,13 +1,88 @@
-﻿.navbar span img{
-height:50px;
-width:50px;
-border-radius:50px;
+﻿
+.navbar {
+    margin-bottom:0px;
+    border:none!important;
+    border-radius:0px!important;
+}
+
+.navbar span img{
+
+    height:45px;
+    width:45px;
+    border-radius:50px;
+    padding-left :5px;
+    padding-top :5px;
+    padding-bottom :5px;
+}
+.nabarcolor {
+    background-color :#336699;
 }
 .floatRight {
-float:right;
-position:relative;
+        padding-right :5px;
+    float:right;
+    position:relative;
+
 }
 .dropdown-menu{
-    left:-60px;
-    min-width:0px;
+    right:0px;
+    min-width:95px;
+    left:auto!important;
+}
+.carousel {
+    height: 150px;
+    background-color :#CCFFFF;
+}
+.carousel .item{
+    height: 150px;
+    background-color :#CCFFFF;
+}
+.carousel  img{
+
+    width:100%;
+
+}
+.notView {
+
+}
+.image {
+    height:45px;
+    width:45px;
+}
+.container {
+    padding:5px;
+    
+
+}
+.floatCenter {
+    text-align:center;
+}
+.kindBoder {
+    padding-top:4px ;
+    border-bottom:1px solid #cccccc;
+      border-top:4px solid #cccccc;
+    display:table;
+        width:100%;
+
+}
+.kindsborderDiv {
+    border-bottom:1px solid #cccccc;
+    display:table;
+    width:100%;
+}
+.image2{
+    width:100%;
+    height :100px;
+    border-radius:10px;
+
+}
+
+.userInfoBlock{
+    height:50px;
+    color:white;
+    padding:5px;
+    line-height:2.5;
+}
+.userInfoBlock:hover {
+
+
 }

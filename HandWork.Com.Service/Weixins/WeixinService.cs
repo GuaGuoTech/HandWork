@@ -162,7 +162,7 @@ namespace HandWork.Com.Service.Weixins
                          new SubButton()
                            {
                              name = "网页测试",
-                             url = "http://120.27.104.135/",
+                             url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd21f90079ecb0969&redirect_uri=http%3a%2f%2f120.27.104.135%2fHomes%2fHome%2fIndex&response_type=code&scope=snsapi_userinfo&state=guaguokeji#wechat_redirect",
                              type = "view"
                            },
                          new SubButton()
