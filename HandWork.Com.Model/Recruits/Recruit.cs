@@ -72,9 +72,16 @@ namespace HandWork.Com.Model.Recruits
         /// <summary>
         /// 设置当前薪金
         /// </summary>
-        [Column("money", TypeName = "VARCHAR")]
+        [Column("money", TypeName = "DOUBLE")]
         [Required]
-        public string money { get; set; }
+        public double  Money { get; set; }
+
+        /// <summary>
+        /// 设置当前薪金
+        /// </summary>
+        [Column("final_money", TypeName = "DOUBLE")]
+        [Required]
+        public double FinalMoney { get; set; }
 
         /// <summary>
         /// 设置生成时间

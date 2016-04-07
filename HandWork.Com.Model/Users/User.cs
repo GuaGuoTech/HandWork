@@ -62,8 +62,19 @@ namespace HandWork.Com.Model.Users
         /// <summary>
         /// 当前对象的评价
         /// </summary>
-        [Column("comment", TypeName = "NVARCHAR")]
-        public string Comment { get; set; }
+        [Column("comment1", TypeName = "NVARCHAR")]
+        public string Comment1 { get; set; }
+
+        /// <summary>
+        /// 当前对象的评价2
+        /// </summary>
+        [Column("comment1", TypeName = "NVARCHAR")]
+        public string Comment2 { get; set; }
+
+
+    
+
+
 
         /// <summary>
         /// 当前对象性别 0女1男

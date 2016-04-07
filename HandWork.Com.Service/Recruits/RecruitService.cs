@@ -29,10 +29,15 @@ namespace HandWork.Com.Service.Recruits
 
         }
 
+        /// <summary>
+        /// 发布招聘
+        /// </summary>
+        /// <param name="recruit">对象上下文</param>
 
         public static void SendMsg(Recruit recruit)
         {
             Repository<Recruit> repository = new Repository<Recruit>(new EntityContext());
+            recruit.FinalMoney = recruit.Money*recruit.Percent;
             repository.Update(recruit);
 
 
