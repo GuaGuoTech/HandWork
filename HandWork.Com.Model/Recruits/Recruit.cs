@@ -55,7 +55,7 @@ namespace HandWork.Com.Model.Recruits
         /// 当前对象身份证号码
         /// </summary>
         [Column("sfz_account", TypeName = "VARCHAR")]
-        public string SfzAccount { get; set; }
+        public string SfzAccount { get; set; }  
 
         /// <summary>
         /// 当前招工的简介
