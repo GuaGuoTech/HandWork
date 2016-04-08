@@ -15,11 +15,12 @@ namespace HandWork.Com.MVC.Controllers.WantedJobs
         private Repository<WantedJob> repository = new Repository<WantedJob>(new EntityContext());
         public ActionResult Index()
         {
+
             WantedJob wantedjob = new WantedJob();
             wantedjob.Id = 1;
+            wantedjob.Name = "allen520";
             wantedjob.Location = "西山区110";
-            wantedjob.money = "100";
-            wantedjob.Name = "allen";
+            wantedjob.money = "100";    
             wantedjob.Note = "无简介";
             wantedjob.PhoneNum = "110";
             wantedjob.Sex = 0;
