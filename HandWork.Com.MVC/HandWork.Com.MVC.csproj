@@ -40,6 +40,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
@@ -114,9 +122,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\Dealers\DealerController.cs" />
     <Compile Include="Controllers\Homes\HomeController.cs" />
     <Compile Include="Controllers\Users\UserController.cs" />
+    <Compile Include="Controllers\WantedJobs\WantedJobController.cs" />
     <Compile Include="Controllers\Weixins\WeixinController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -146,6 +154,10 @@
     <ProjectReference Include="..\HandWork.Com.Model\HandWork.Com.Models.csproj">
       <Project>{6b928959-9d64-4d3e-a21a-13fe1d60e879}</Project>
       <Name>HandWork.Com.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HandWork.Com.Provider\HandWork.Com.Provider.csproj">
+      <Project>{13267240-5397-4352-9358-6736ded4938d}</Project>
+      <Name>HandWork.Com.Provider</Name>
     </ProjectReference>
     <ProjectReference Include="..\HandWork.Com.Service\HandWork.Com.Service.csproj">
       <Project>{a0b588d3-e5cf-4971-994a-3de6cfcaf39d}</Project>

@@ -7,6 +7,10 @@ using System.Web;
 
 namespace HandWork.Com.Model.Users
 {
+    /// <summary>
+    /// 用户表
+    /// </summary>
+    [Table("user_info")]
     public class User
     {
         /// <summary>
@@ -61,6 +65,10 @@ namespace HandWork.Com.Model.Users
         [Column("comment", TypeName = "NVARCHAR")]
         public string Comment { get; set; }
 
+       
+
+
+
         /// <summary>
         /// 当前对象性别 0女1男
         /// </summary>
@@ -74,7 +82,7 @@ namespace HandWork.Com.Model.Users
         public int Star { get; set; }
 
         /// <summary>
-        /// 当前对象是否人工确认
+        /// 当前对象是否通过审核
         /// </summary>
         [Column("confirm", TypeName = "INT")]
         [Required]

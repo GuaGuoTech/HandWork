@@ -100,7 +100,7 @@ namespace HandWork.Com.Service.Weixins
             catch (Exception e)
             {
                 logger.Error("出错信息:",  e);
-
+                 
                 throw;
             }
           

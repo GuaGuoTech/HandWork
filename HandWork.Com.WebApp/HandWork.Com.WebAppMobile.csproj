@@ -150,11 +150,15 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\image\22-090423_51.jpg" />
     <Content Include="Content\image\day.png" />
+    <Content Include="Content\image\homee.png" />
     <Content Include="Content\image\logo.jpg" />
     <Content Include="Content\image\mao1.jpg" />
     <Content Include="Content\image\mao2e.jpg" />
+    <Content Include="Content\image\meng.png" />
     <Content Include="Content\image\month.png" />
     <Content Include="Content\image\other.png" />
+    <Content Include="Content\image\peoplecenter.jpg" />
+    <Content Include="Content\image\start.png" />
     <Content Include="Content\image\tu1.jpg" />
     <Content Include="Content\image\week.png" />
     <Content Include="Content\js\bootstrap.js" />
@@ -256,6 +260,7 @@
     <Content Include="Views\Weixin\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutUserInfo.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutUserInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

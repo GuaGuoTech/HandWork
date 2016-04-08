@@ -6,7 +6,9 @@ using System.Linq;
 using System.Web;
 
 namespace HandWork.Com.Model.Relation
-{  
+{   /// <summary>
+    /// 雇主员工信息表
+    /// </summary>
     [Table("relation_info")]
     public class Relation
     {
@@ -19,11 +21,11 @@ namespace HandWork.Com.Model.Relation
         public long Id { get; set; }
 
         /// <summary>
-        /// 设置dealer
+        /// 设置User
         /// </summary>
-        [Column("dealer", TypeName = "VARCHAR")]
+        [Column("User", TypeName = "VARCHAR")]
         [Required]
-        public string Dealer { get; set; }
+        public string User { get; set; }
 
         /// <summary>
         /// 设置生成时间
@@ -40,7 +42,7 @@ namespace HandWork.Com.Model.Relation
         public DateTime SecondTime { get; set; }
 
         /// <summary>
-        /// 设置worker
+        /// 设置User
         /// </summary>
         [Column("worker", TypeName = "VARCHAR")]
         [Required]

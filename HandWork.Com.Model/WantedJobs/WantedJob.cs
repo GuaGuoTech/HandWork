@@ -5,10 +5,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace HandWork.Com.Model.Employment
+namespace HandWork.Com.Model.WantedJobs
 {
-        [Table("employment_info")]
-    public class Employment
+        [Table("wantedjob_info")]
+    /// <summary>
+    /// 求职
+    /// </summary>
+    public class WantedJob
     {
         /// <summary>
         /// 设置主键ID
@@ -21,7 +24,7 @@ namespace HandWork.Com.Model.Employment
         /// 设置对象的地址
         /// </summary>
         [Column("location", TypeName = "NVARCHAR")]
-        public int Location { get; set; }
+        public string Location { get; set; }
 
         /// <summary>
         /// 设置生成时间
@@ -29,6 +32,13 @@ namespace HandWork.Com.Model.Employment
         [Column("first_time", TypeName = "DATETIME")]
        
         public DateTime FirstTime { get; set; }
+
+        /// <summary>
+        /// 设置完成时间
+        /// </summary>
+        [Column("finish_time", TypeName = "DATETIME")]
+        public DateTime FinishTime { get; set; }
+
          /// <summary>
         /// 设置登录密码
         /// </summary>

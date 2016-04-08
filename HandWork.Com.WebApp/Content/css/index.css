@@ -59,7 +59,7 @@
 .kindBoder {
     padding-top:4px ;
     border-bottom:1px solid #cccccc;
-      border-top:4px solid #cccccc;
+    border-top:4px solid #cccccc;
     display:table;
         width:100%;
 
@@ -84,5 +84,56 @@
 }
 .userInfoBlock:hover {
 
+
+}
+.PersonalCenter {
+    color:white;
+    font-family:YouYuan ;
+    font-size :large ;
+    
+}
+.Personalbackground {
+    position:relative;
+    height:150px;
+    width:100%;
+    z-index:0; 
+}
+.Overlap { 
+    position:relative;
+    z-index:1 ;
+    bottom:74px;
+  
+}
+.Hyalinize {
+    
+    background:rgba(99, 55, 11, 0.2);
+    font-family:fantasy  ;
+    font-size :20px;
+    color:#CCCCCC ;
+    text-align:center;
+    
+}
+ .a{
+    border-right :1px solid #FFFFFF;
+    }
+.personalimage {
+    height:45px;
+    width:45px;
+    border-radius:50px;
+    position:relative;
+    z-index:2; 
+    bottom:140px;
+    left :45%;
+}
+.integrity {
+    height :20px;
+    width:20px;
+    position:relative;
+    z-index:3; 
+    bottom:95px;
+    left :40%;
+}
+.divmaing {
+    height:150px;
 
 }

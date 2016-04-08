@@ -6,7 +6,10 @@ using System.Linq;
 using System.Web;
 
 namespace HandWork.Com.Model.Recruits
-{ 
+{
+    /// <summary>
+    /// 招聘信息表
+    /// </summary>
         [Table("recruit_info")]
     public class Recruit
     {   
@@ -21,13 +24,13 @@ namespace HandWork.Com.Model.Recruits
         /// 设置对象的地址
         /// </summary>
         [Column("location", TypeName = "NVARCHAR")]
-        public int Location { get; set; }
+        public string Location { get; set; }
 
         /// <summary>
         /// 设置佣金比例  
         /// </summary>
-        [Column("percent", TypeName = "VARCHAR")]
-        public string Percent { get; set; }
+        [Column("percent", TypeName = "DOUBLE")]
+        public double Percent { get; set; }
 
         /// <summary>
         /// 当前对象联系电话
@@ -52,7 +55,7 @@ namespace HandWork.Com.Model.Recruits
         /// 当前对象身份证号码
         /// </summary>
         [Column("sfz_account", TypeName = "VARCHAR")]
-        public string SfzAccount { get; set; }
+        public string SfzAccount { get; set; }  
 
         /// <summary>
         /// 当前招工的简介
@@ -69,9 +72,16 @@ namespace HandWork.Com.Model.Recruits
         /// <summary>
         /// 设置当前薪金
         /// </summary>
-        [Column("money", TypeName = "VARCHAR")]
+        [Column("money", TypeName = "DOUBLE")]
         [Required]
-        public string money { get; set; }
+        public double  Money { get; set; }
+
+        /// <summary>
+        /// 设置当前薪金
+        /// </summary>
+        [Column("final_money", TypeName = "DOUBLE")]
+        [Required]
+        public double FinalMoney { get; set; }
 
         /// <summary>
         /// 设置生成时间
