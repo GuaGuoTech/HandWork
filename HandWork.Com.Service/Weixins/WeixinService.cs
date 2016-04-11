@@ -257,7 +257,6 @@ namespace HandWork.Com.Service.Weixins
         private static bool CheckValidationResult(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors)
         {
             return true; //总是接受     
-            string url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd21f90079ecb0969&redirect_uri=%0d%0ahttp%3a%2f%2f120.27.104.135%2fWeixins%2fweixin%2fGetWeixinUser&response_type=code&scope=snsapi_userinfo&state=guaguokeji";
         }
 
     }
