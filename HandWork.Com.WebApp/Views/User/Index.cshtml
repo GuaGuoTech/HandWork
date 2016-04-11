@@ -5,50 +5,22 @@
 
 <form >
     <div class="submitlaeveanote">
-        <div class="form-group">
-            <label for="UserName">姓名</label>
-            <input type="text" class="form-control" id="UserNameText" placeholder="姓名必填">
-        </div>
-        @Html.GuaGuo_InptTextWithTitle("test", "测试", "测试")
+  
+        @Html.GuaGuo_InptTextWithTitle("Name", "姓名：", "圣上的大名")
 
+        @Html.GuaGuo_InptTextWithTitle("SfzAccount", "身份证：", "身份证号")
 
+        @Html.GuaGuo_InptTextWithTitle("PhoneNum", "电话号码：", "不要忘记填写号码了")
 
+        @Html.GuaGuo_InptTextWithTitle("Adress", "联系地址：", "家庭住址或者宿舍号哦")
 
-        <div class="form-group">
-            <label for="IDNumber">身份证号：</label>
-            <input type="text" class="form-control" id="IDNumberText" placeholder="身份证号是12位哦">
-        </div>
-        <div class="form-group">
-            <label for="tell">联系电话：</label>
-
-            <input type="tel" class="form-control" id="tellnumber" placeholder="不要忘记填写电话了">
-
-        </div>
-
-        <div class="form-group">
-            <label for="address">联系地址：</label>
-            <input type="text" class="form-control" id="adressText" placeholder="联系地址">
-        </div>
-        <div class="form-group">
-            <label for="E-mail">邮箱：</label>
-            <input type="email" class="form-control" id="emailtext" placeholder="请填写正确格式的邮箱">
-        </div>
-        <div class="from-group">
-            <label for="education">学历：</label>
-
-            <input type="text" class="form-control" id="education" placeholder="小学，初中，高中，大学">
-        </div>
-        <div class="from-group">
-            <label for="education">备注：</label>
-            <p> <textarea class="remark"></textarea></p>
-        </div>
+        @Html.GuaGuo_InptTextWithTitle("test","测试：","dsfasdf","number");
 
         <div class="checkbox">
             <label>
                 <input type="checkbox" class="notice"> 修改须知
             </label>
         </div>
-        @Html.GuaGuo_InptTextWithTitle("test","测试","测试")
         <button type="submit" class="btn btn-primary  remark">确定</button>
     </div>
 </form>
