@@ -15,6 +15,11 @@ namespace HandWork.Com.MVC.Controllers.Users
         {
             return View();
         }
+        public ActionResult Publish() 
+        {
+
+            return View();
+        }
 
     }
 }
