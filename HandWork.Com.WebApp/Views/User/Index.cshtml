@@ -23,22 +23,20 @@
         <div class="form-group">
             <label for="address">联系地址：</label>
             <input type="text" class="form-control" id="adressText" placeholder="联系地址">
-        </div>
-        <div class="form-group">
-            <label for="E-mail">邮箱：</label>
-            <input type="email" class="form-control" id="emailtext" placeholder="请填写正确格式的邮箱">
-        </div>
-        <div class="from-group">
-            <label for="education">学历：</label>
+  
+        @Html.GuaGuo_InptTextWithTitle("Name", "姓名：", "圣上的大名")
 
-            <input type="text" class="form-control" id="education" placeholder="小学，初中，高中，大学">
-        </div>
-        <div class="from-group">
-            <label for="education">备注：</label>
-            <p> <textarea class="remark"></textarea></p>
-        </div>
+        @Html.GuaGuo_InptTextWithTitle("SfzAccount", "身份证：", "身份证号")
 
-        <div class="checkbox">
+
+        @Html.GuaGuo_InptTextWithTitle("Adress", "联系地址：", "家庭住址或者宿舍号哦")
+
+
+        @Html.GuaGuo_PhoneNumberCheck()
+   
+
+
+        @Html.GuaGuo_PhoneNumberCheck()
             <label>
                 <input type="checkbox" class="notice"> 修改须知
             </label>
