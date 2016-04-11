@@ -114,7 +114,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HtmHelper\GuaGuoInput\Guaguo_Button.cs" />
-    <Compile Include="HtmHelper\GuaGuoTools\GuaGuoTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
