@@ -27,11 +27,11 @@ namespace HandWork.Com.Model.Users
         //public int IdClass { get; set; }
 
         /// <summary>
-        /// 设置登录密码
+        /// 姓名
         /// </summary>
-        [Column("password", TypeName = "VARCHAR")]
+        [Column("name", TypeName = "VARCHAR")]
         [Required]
-        public string Password { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// 当前对象联系电话
@@ -65,8 +65,11 @@ namespace HandWork.Com.Model.Users
         [Column("comment", TypeName = "NVARCHAR")]
         public string Comment { get; set; }
 
-       
-
+        /// <summary>
+        /// 地址
+        /// </summary>
+        [Column("adress", TypeName = "VARCHAR")]
+        public string Adress { get; set; }
 
 
         /// <summary>
