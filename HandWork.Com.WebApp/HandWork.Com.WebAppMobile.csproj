@@ -157,7 +157,6 @@
     <Content Include="Content\image\mao2e.jpg" />
     <Content Include="Content\image\meng.png" />
     <Content Include="Content\image\month.png" />
-    <Content Include="Content\image\o%27clock.png" />
     <Content Include="Content\image\other.png" />
     <Content Include="Content\image\peoplecenter.jpg" />
     <Content Include="Content\image\start.png" />
@@ -262,7 +261,7 @@
     <Content Include="Views\Weixin\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutUserInfo.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\User\Publish.cshtml" />
+    <Content Include="Views\User\Pulish.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
