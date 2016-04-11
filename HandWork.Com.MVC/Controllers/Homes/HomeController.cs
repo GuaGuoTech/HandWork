@@ -29,7 +29,7 @@ namespace HandWork.Com.MVC.Controllers.Home
                 return View(WeixinService.GetWeixinUser(responseText));
 
             }
-            return Json("erro",JsonRequestBehavior.AllowGet);
+            return View();
         }
 
     }
