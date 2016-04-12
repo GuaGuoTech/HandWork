@@ -1,4 +1,5 @@
 ﻿using HandWork.Com.Service.PhoneChecks;
+using HandWork.Com.Provider.Contexts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,13 @@ namespace HandWork.Com.MVC.Controllers.Users
     {
         //
         // GET: /User/
-
         public ActionResult Index()
+        {
+            //User user = new User();
+            //user.Confirm = 0;
+            return View();
+        }
+        public ActionResult Index2()
         {
             return View();
         }

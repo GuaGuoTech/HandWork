@@ -85,7 +85,7 @@ namespace HandWork.Com.Model.Users
         public int Star { get; set; }
 
         /// <summary>
-        /// 当前对象是否通过审核
+        /// 当前对象是否通过审核 0未审核 1已审核 
         /// </summary>
         [Column("confirm", TypeName = "INT")]
         [Required]
