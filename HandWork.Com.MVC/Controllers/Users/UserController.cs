@@ -1,4 +1,7 @@
-﻿using System;
+﻿using HandWork.Com.Model.Users;
+using HandWork.Com.Provider.Contexts;
+using HandWork.Com.Provider.Repositorys;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,8 +13,14 @@ namespace HandWork.Com.MVC.Controllers.Users
     {
         //
         // GET: /User/
-
+        private Repository<User> repository = new Repository<User>(new EntityContext());
         public ActionResult Index()
+        {
+            //User user = new User();
+            //user.Confirm = 0;
+            return View();
+        }
+        public ActionResult Index2()
         {
             return View();
         }
