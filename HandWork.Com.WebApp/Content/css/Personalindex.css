@@ -95,3 +95,14 @@ ul {
     position:relative;
     padding-top :8px;
 }
+.checkPhonePanel {
+
+    margin-top:10px;
+}
+.checkPhoneBtn {
+    color:white!important;
+
+}
+#phone_info {
+color:red;
+}

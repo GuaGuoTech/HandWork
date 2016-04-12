@@ -79,6 +79,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PhoneChecks\PhoneCheckService.cs" />
     <Compile Include="WantedJobs\WantedJobService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recruits\RecruitService.cs" />

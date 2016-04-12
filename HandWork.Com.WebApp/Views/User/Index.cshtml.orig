@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUserInfo.cshtml";
+}
+
+<form >
+    <div class="submitlaeveanote">
+<<<<<<< HEAD
+
+
+=======
+        <div class="form-group">
+            <label for="UserName">姓名</label>
+            <input type="text" class="form-control" id="UserNameText" placeholder="姓名必填">
+        </div>
+        <div class="form-group">
+            <label for="IDNumber">身份证号：</label>
+            <input type="text" class="form-control" id="IDNumberText" placeholder="身份证号是12位哦">
+        </div>
+        <div class="form-group">
+            <label for="tell">联系电话：</label>
+
+            <input type="tel" class="form-control" id="tellnumber" placeholder="不要忘记填写电话了">
+
+        </div>
+
+        <div class="form-group">
+            <label for="address">联系地址：</label>
+            <input type="text" class="form-control" id="adressText" placeholder="联系地址">
+>>>>>>> 62e98c438667528d1d5415fca10a9621a0a48a36
+  
+        @Html.GuaGuo_InptTextWithTitle("Name", "姓名：", "圣上的大名")
+
+        @Html.GuaGuo_InptTextWithTitle("SfzAccount", "身份证：", "身份证号")
+
+
+        @Html.GuaGuo_InptTextWithTitle("Adress", "联系地址：", "家庭住址或者宿舍号哦")
+
+
+        @Html.GuaGuo_PhoneNumberCheck()
+   
+
+
+        @Html.GuaGuo_PhoneNumberCheck()
+            <label>
+                <input type="checkbox" class="notice"> 修改须知
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary  remark">确定</button>
+    </div>
+</form>
