@@ -33,8 +33,14 @@ namespace System.Web.Mvc
         }
         public static HtmlString GuaGuo_LableWithTitle(this HtmlHelper helper, string id, string text)
         {
-            var builder = new TagBuilder();
 
+            var builder = new TagBuilder("lable");
+            builder.IdAttributeDotReplacement = "";
+            builder.GenerateId(id);
+            builder.MergeAttribute("name",id);
+            builder.MergeAttribute("valuer", text);
+            //builder.MergeAttribute("class",)
+            return new HtmlString(builder.ToString());
 
         }
 
