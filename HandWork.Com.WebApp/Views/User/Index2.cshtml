@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Index2";
+    Layout = "~/Views/Shared/_LayoutUserInfo.cshtml";
+}
+
+<form>
+    <div class="submit">
+        @Html.GuaGuo_InptTextWithTitle("Name", "姓名：", "圣上的大名")
+        @Html.GuaGuo_InptTextWithTitle("Sfz_Num", "身份证：", "专属您的身份证号")
+        @Html.GuaGuo_InptTextWithTitle("Address", "联系地址：", "家庭住址或宿舍号哦")
+        @Html.GuaGuo_InptTextWithTitle("Test", "测试", "sdaa")
+        @Html.GuaGuo_PhoneNumberCheck()
+        <div class="checkbox">
+            <label>
+            <input type="checkbox" class="notice"/>修改需知
+            </label>
+
+
+        </div>
+        <button type="submit" class="btn btn-primary remark" >确定</button>
+    </div>
+</form>

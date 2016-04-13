@@ -1,4 +1,5 @@
 ﻿using HandWork.Com.Model.Recruits;
+using HandWork.Com.Model.Users;
 using HandWork.Com.Provider.Contexts;
 using HandWork.Com.Provider.Repositorys;
 using System;
@@ -10,6 +11,19 @@ namespace HandWork.Com.Service.Recruits
 {
     public class RecruitService
     {
+        /// <summary>
+        /// 验证是否审核
+        /// </summary>
+        /// <param name="id">当前对象的ID标识</param>
+        /// <returns></returns>
+        public static int CheckConfirm(long id)
+        {
+            Repository<User> repo = new Repository<User>(new EntityContext());
+            User user = repo.GetEntity(id);
+            return user.Confirm;
+
+
+        }
         public static void Alert(Recruit recruit)
         {
             Repository<Recruit> repository = new Repository<Recruit>(new EntityContext());
