@@ -2,5 +2,16 @@
     ViewBag.Title = "Pulish";
     Layout = "~/Views/Shared/_LayoutIndex.cshtml";
 }
+<link href="~/Content/css/publish.css" rel="stylesheet" />
+<div class="adjust">
+    @Html.GuaGuo_InptTextWithTitle("Title", "标题：", "圣上题字")
+    @Html.GuaGuo_InptTextWithTitle("requirement", "工作要求：", "")
+    @Html.GuaGuo_InptTextWithTitle("workTime", "工作时间/工资：", "")
+    @Html.GuaGuo_InptTextWithTitle("PersonNumber", "所需人数：", "")
+    @Html.GuaGuo_InptTextWithTitle("linkman", "联系人：", "")
+    @Html.GuaGuo_InptTextWithTitle("Phone", "联系电话：", "")
 
-<h2>Pulish</h2>
+    <div>
+        <button type="submit" class="btn btn-primary  remarke">提交</button>
+    </div>
+</div>

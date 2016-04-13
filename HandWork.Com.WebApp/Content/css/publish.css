@@ -1,0 +1,11 @@
+﻿body {
+}
+.remarke {
+    width:100%;
+    border-color: #CCC;
+    border-radius:5px;
+}
+.adjust {
+    padding:6px;
+    padding-top:8px;
+}

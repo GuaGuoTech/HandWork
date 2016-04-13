@@ -65,7 +65,7 @@
     text-align :center ;
 }
 .divmaing {
-   background-image:url(../image/peoplecenter.jpg);
+    background-image:url(../image/peoplecenter.jpg);
     position:relative;
     height:150px;
     width:100%;
@@ -94,4 +94,13 @@ ul {
     float:right;
     position:relative;
     padding-top :8px;
+}
+.publishadjust {
+   
+    position: fixed ;
+    bottom :21px;
+    right:20px;
+    z-index:3;
+    opacity:0.8;
+
 }
