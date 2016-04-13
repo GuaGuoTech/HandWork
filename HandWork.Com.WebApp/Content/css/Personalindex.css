@@ -104,3 +104,14 @@ ul {
     opacity:0.8;
 
 }
+.checkPhonePanel {
+
+    margin-top:10px;
+}
+.checkPhoneBtn {
+    color:white!important;
+
+}
+#phone_info {
+color:red;
+}

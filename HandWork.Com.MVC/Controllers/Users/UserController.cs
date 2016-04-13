@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HandWork.Com.Service.PhoneChecks;
+using HandWork.Com.Provider.Contexts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,8 +12,13 @@ namespace HandWork.Com.MVC.Controllers.Users
     {
         //
         // GET: /User/
-
         public ActionResult Index()
+        {
+            //User user = new User();
+            //user.Confirm = 0;
+            return View();
+        }
+        public ActionResult Index2()
         {
             return View();
         }
@@ -19,6 +26,12 @@ namespace HandWork.Com.MVC.Controllers.Users
         {
 
             return View();
+        }
+        [HttpPost]
+        public ActionResult SendMssg()
+        {
+            string number = Request.Params["number"];
+          return Json( PhoneCheckService.SendCheckCode(number));
         }
 
     }

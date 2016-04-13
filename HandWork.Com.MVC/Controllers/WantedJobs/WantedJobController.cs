@@ -15,6 +15,11 @@ namespace HandWork.Com.MVC.Controllers.WantedJobs
         private Repository<WantedJob> repository = new Repository<WantedJob>(new EntityContext());
         public ActionResult Index()
         {
+            if (WantedJobService.CheckComfirm(id)==0)
+            {
+                //Response.("");
+                Redirect("~/Users/User/Index.cshtml");
+            }
 
             WantedJob wantedjob = new WantedJob();
             wantedjob.Id = 1;
@@ -30,5 +35,7 @@ namespace HandWork.Com.MVC.Controllers.WantedJobs
             return View();
 
         }
+
+        public long id { get; set; }
     }
 }

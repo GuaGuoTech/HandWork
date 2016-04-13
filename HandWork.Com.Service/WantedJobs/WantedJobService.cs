@@ -1,4 +1,5 @@
 ﻿using HandWork.Com.Model;
+using HandWork.Com.Model.Users;
 using HandWork.Com.Model.WantedJobs;
 using HandWork.Com.Provider.Contexts;
 using HandWork.Com.Provider.Repositorys;
@@ -11,7 +12,14 @@ namespace HandWork.Com.Service.WantedJobs
 {
     public class WantedJobService
     {
+        public static int CheckComfirm(long id)
+        {
+            Repository<User> repository = new Repository<User>(new EntityContext());
+            User user=repository.GetEntity(id);         
+            return user.Confirm;                           
+            
 
+        }
         public static void Insert(WantedJob wantejob)
         {
             Repository<WantedJob> repository = new Repository<WantedJob>(new EntityContext());
