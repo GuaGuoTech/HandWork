@@ -31,7 +31,7 @@ namespace HandWork.Com.MVC.Controllers.Users
         public ActionResult SendMssg()
         {
             string number = Request.Params["number"];
-            return Json(PhoneCheckService.SendCheckCode(number)) ;   
+          return Json( PhoneCheckService.SendCheckCode(number));
         }
 
     }

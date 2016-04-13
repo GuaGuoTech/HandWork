@@ -12,11 +12,14 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Web;
 using System.Web.Script.Serialization;
+using Newtonsoft.Json;
 
 namespace HandWork.Com.Service.PhoneChecks
 {
     public static class PhoneCheckService
     {
+        public static readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public static string SendCheckCode(string phoneNumber)
         {
 
@@ -62,6 +65,7 @@ namespace HandWork.Com.Service.PhoneChecks
             string menusString = jss.Serialize(phone);
             string buffer = System.Text.RegularExpressions.Regex.Unescape(menusString);
 
+
             byte[] data = Encoding.UTF8.GetBytes(buffer.ToString());
             request.ContentLength = data.Length;
             using (Stream stream = request.GetRequestStream())
@@ -69,10 +73,24 @@ namespace HandWork.Com.Service.PhoneChecks
                 stream.Write(data, 0, data.Length);
             }
             _response = request.GetResponse() as HttpWebResponse;
-            string aa = GetStream(_response, Encoding.UTF8);
+            string responseStr = GetStream(_response, Encoding.UTF8);
 
 
-            return aa;
+            Dictionary<string, object> responseObj = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseStr);
+            string statusCode = responseObj["statusCode"].ToString();
+            ///发送失败 重新发送
+            if (statusCode!="000000")
+            {
+                logger.Info(responseStr);
+
+              return  SendCheckCode(phoneNumber);
+
+            }
+            logger.Info(responseStr);
+
+                return code;
+
+            
         }
 
 
@@ -104,16 +122,25 @@ namespace HandWork.Com.Service.PhoneChecks
         /// <returns></returns>
         private static string MD5String(string textStr)
         {
-            string pwd = "";
-            MD5 md5 = MD5.Create();
-
-            byte[] s = md5.ComputeHash(Encoding.UTF8.GetBytes(textStr));
-            for (int i = 0; i < s.Length; i++)
+            try
             {
-                pwd = pwd + s[i].ToString("X");
-            }
+                string pwd = "";
+                MD5 md5 = MD5.Create();
 
-            return pwd;
+                byte[] s = md5.ComputeHash(Encoding.UTF8.GetBytes(textStr));
+                for (int i = 0; i < s.Length; i++)
+                {
+                    pwd = pwd + s[i].ToString("X");
+                }
+
+                return pwd;
+            }
+            catch (Exception e)
+            {
+                logger.Error(e);
+                throw;
+            }
+           
         }
 
 
