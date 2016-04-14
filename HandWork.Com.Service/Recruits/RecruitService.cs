@@ -24,6 +24,13 @@ namespace HandWork.Com.Service.Recruits
 
 
         }
+
+        public static string Apply(long id)
+        {
+            //Repository()
+            return "test";
+
+        }
         public static void Alert(Recruit recruit)
         {
             Repository<Recruit> repository = new Repository<Recruit>(new EntityContext());
