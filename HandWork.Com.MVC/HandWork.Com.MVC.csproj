@@ -126,6 +126,7 @@
     <Compile Include="Controllers\Recruits\RecruitController.cs" />
     <Compile Include="Controllers\Users\UserController.cs" />
     <Compile Include="Controllers\WantedJobs\WantedJobController.cs" />
+    <Compile Include="Controllers\Watchs\WatchController.cs" />
     <Compile Include="Controllers\Weixins\WeixinController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

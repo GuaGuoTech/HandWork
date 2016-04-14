@@ -132,7 +132,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -266,7 +265,6 @@
     <Content Include="Views\Shared\_LayoutUserInfo.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\Publish.cshtml" />
-    <Content Include="Views\Detail\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
