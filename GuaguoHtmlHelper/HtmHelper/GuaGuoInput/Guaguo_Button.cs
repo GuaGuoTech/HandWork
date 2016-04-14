@@ -31,6 +31,18 @@ namespace System.Web.Mvc
             return new HtmlString(builder.ToString());
 
         }
+        public static HtmlString GuaGuo_LableWithTitle(this HtmlHelper helper, string id, string text)
+        {
+
+            var builder = new TagBuilder("lable");
+            builder.IdAttributeDotReplacement = "";
+            builder.GenerateId(id);
+            builder.MergeAttribute("name",id);
+            builder.MergeAttribute("valuer", text);
+            //builder.MergeAttribute("class",)
+            return new HtmlString(builder.ToString());
+
+        }
 
         /// <summary>
         /// 带标题的input标签

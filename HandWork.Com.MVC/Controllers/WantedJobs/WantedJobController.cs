@@ -21,6 +21,7 @@ namespace HandWork.Com.MVC.Controllers.WantedJobs
                 Redirect("~/Users/User/Index.cshtml");
             }
 
+
             WantedJob wantedjob = new WantedJob();
             wantedjob.Id = 1;
             wantedjob.Name = "allen520";

@@ -145,9 +145,10 @@
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
-    <Content Include="Content\css\GuaGuoBootstrap.css" />
+ <Content Include="Content\image\publish.png" />
     <Content Include="Content\css\index.css" />
     <Content Include="Content\css\Personalindex.css" />
+    <Content Include="Content\css\publish.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\image\22-090423_51.jpg" />
     <Content Include="Content\image\day.png" />
@@ -160,6 +161,7 @@
     <Content Include="Content\image\o%27clock.png" />
     <Content Include="Content\image\other.png" />
     <Content Include="Content\image\peoplecenter.jpg" />
+    <Content Include="Content\image\publish.png" />
     <Content Include="Content\image\start.png" />
     <Content Include="Content\image\tu1.jpg" />
     <Content Include="Content\image\week.png" />
@@ -249,6 +251,7 @@
     <Content Include="Views\Shared\_LayoutUserInfo.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\Publish.cshtml" />
+    <Content Include="Views\Detail\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

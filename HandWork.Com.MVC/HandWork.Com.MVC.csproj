@@ -123,6 +123,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Homes\HomeController.cs" />
+    <Compile Include="Controllers\Details\DetailController.cs" />
+    <Compile Include="Controllers\Details\RecruitController.cs" />
     <Compile Include="Controllers\Users\UserController.cs" />
     <Compile Include="Controllers\WantedJobs\WantedJobController.cs" />
     <Compile Include="Controllers\Weixins\WeixinController.cs" />
@@ -136,7 +138,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

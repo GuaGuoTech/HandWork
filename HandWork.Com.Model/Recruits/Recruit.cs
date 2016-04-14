@@ -64,7 +64,7 @@ namespace HandWork.Com.Model.Recruits
         public string Note { get; set; }
         
         /// <summary>
-        /// 当前对象性别 0女1男
+        /// 当前对象性别 0女1男2不限
         /// </summary>
         [Column("sex", TypeName = "INT")]
         public int Sex { get; set; }
