@@ -1,0 +1,21 @@
+﻿.modal-dialog {
+
+margin:80px!important;
+margin-top:200px!important;
+
+}
+.GuaGuoAlert .modal-header {
+color:white;
+background-color:#369;
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+padding:5px!important;
+}
+
+.GuaGuoAlert .modal-footer {
+    text-align:center;
+    padding:5px!important;
+
+
+
+}
