@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Web;
 
 namespace HandWork.Com.Provider.Repositorys
@@ -20,6 +21,9 @@ namespace HandWork.Com.Provider.Repositorys
         /// <returns></returns>
         IEnumerable<TEntity> GetAllEntity();
 
+
+
+        IEnumerable<TEntity> SearchFor(Expression<Func<TEntity,bool>> lambdaPress);
 
         /// <summary>
         /// 更新实体

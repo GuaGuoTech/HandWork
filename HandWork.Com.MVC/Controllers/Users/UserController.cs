@@ -10,6 +10,8 @@ namespace HandWork.Com.MVC.Controllers.Users
 {
     public class UserController : Controller
     {
+        readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         //
         // GET: /User/
         public ActionResult Index()
@@ -31,7 +33,27 @@ namespace HandWork.Com.MVC.Controllers.Users
         public ActionResult SendMssg()
         {
             string number = Request.Params["number"];
-          return Json( PhoneCheckService.SendCheckCode(number));
+            string requstStr = PhoneCheckService.SendCheckCode(number);
+            return Json(requstStr);
+        }
+
+        /// <summary>
+        /// 检查code
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult CheckCode()
+        {
+            string _code = Request.Params["code"];
+            string code = PhoneCheckService.code;
+            logger.Info("发送过来的code："+_code+"---------后台来的code："+code);
+            if (code==_code)
+            {
+                return Json(true);
+            }
+            else
+            {
+                return Json(false);
+            }
         }
 
     }

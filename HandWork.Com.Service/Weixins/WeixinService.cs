@@ -1,4 +1,6 @@
 ﻿using HandWork.Com.Model.Weixins;
+using HandWork.Com.Provider.Contexts;
+using HandWork.Com.Provider.Repositorys;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -9,8 +11,11 @@ using System.Net;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Web;
 using System.Web.Script.Serialization;
+using System.Linq.Expressions;
+
 
 namespace HandWork.Com.Service.Weixins
 {
@@ -19,6 +24,7 @@ namespace HandWork.Com.Service.Weixins
 
       public static  readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
+   
         /// <summary>
         /// sha1加密
         /// </summary>
@@ -95,6 +101,9 @@ namespace HandWork.Com.Service.Weixins
                 string _responseText = HttpsGet(url);
                 logger.Info(_responseText);
                 WeixinUser weixinUser = JsonConvert.DeserializeObject<WeixinUser>(_responseText);
+
+                Thread t1 = new Thread(new ParameterizedThreadStart(InsertWeixinUser));
+                t1.Start((Object)weixinUser);
                 return weixinUser;
             }
             catch (Exception e)
@@ -104,6 +113,59 @@ namespace HandWork.Com.Service.Weixins
                 throw;
             }
           
+
+        }
+        /// <summary>
+        /// 添加user
+        /// </summary>
+        /// <param name="obj"></param>
+        private static void InsertWeixinUser(object obj)
+        {
+            Repository<WeixinUser> reponsitory = new Repository<WeixinUser>(new EntityContext());
+            logger.Info("线程开始工作");
+            try
+            {
+                
+                WeixinUser weixinUser = (WeixinUser)obj;
+                Expression<Func<WeixinUser, bool>> express = i => i.openid == weixinUser.openid;
+            
+              List < WeixinUser> weixinUserFromDataList = reponsitory.SearchFor(express).ToList();
+              WeixinUser weixinUserFromData = new WeixinUser();
+              if (weixinUserFromDataList.Count>0)
+              {
+                  weixinUserFromData = weixinUserFromDataList[0];
+              }
+                //如果为空 则直接添加到数据库
+                if (weixinUserFromData.id < 1)
+                {
+                    reponsitory.Insert(weixinUser);
+
+                }
+                else
+                {
+                    ///把查出来的id赋值个前台传过来的
+                    ///
+                    weixinUser.id = weixinUserFromData.id;
+
+                    string weixinUserStr = JsonConvert.SerializeObject(weixinUser);
+                    string weixinUserFromDataStr = JsonConvert.SerializeObject(weixinUserFromData);
+                    logger.Info(weixinUserStr != weixinUserFromDataStr);
+                    logger.Info("weixinUserStr:" + weixinUserStr);
+                    logger.Info("weixinUserFromDataStr:" + weixinUserFromDataStr);
+                    ///如果两者不相等 则更新
+                    if (weixinUserStr != weixinUserFromDataStr)
+                    {
+                        reponsitory.Update(weixinUser);
+                    }
+
+
+                }
+            }
+            catch (Exception e)
+            {
+                logger.Error(e);
+                throw;
+            }
 
         }
 
