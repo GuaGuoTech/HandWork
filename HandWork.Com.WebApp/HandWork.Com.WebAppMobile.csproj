@@ -165,6 +165,10 @@
     <Content Include="Content\image\start.png" />
     <Content Include="Content\image\tu1.jpg" />
     <Content Include="Content\image\week.png" />
+    <Content Include="Content\image\信息.jpg" />
+    <Content Include="Content\image\发布.jpg" />
+    <Content Include="Content\image\申请.jpg" />
+    <Content Include="Content\image\评价.jpg" />
     <Content Include="Content\js\bootstrap.js" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\jquery-2.2.2.min.js" />
