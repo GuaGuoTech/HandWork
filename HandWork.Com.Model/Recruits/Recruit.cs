@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HandWork.Com.Model.Users;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -31,6 +32,13 @@ namespace HandWork.Com.Model.Recruits
         /// </summary>
         [Column("percent", TypeName = "DOUBLE")]
         public double Percent { get; set; }
+
+        /// <summary>
+        /// 当前报名人数列表
+        /// 最佳答案: varchar??
+        /// </summary>
+        [Column("apply_num", TypeName = "VARCHAR")]
+        public List<User> ApplyNum { get; set; }
 
         /// <summary>
         /// 当前对象联系电话

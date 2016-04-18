@@ -1,6 +1,4 @@
-﻿using HandWork.Com.Model.Weixins;
-using HandWork.Com.Service.Weixins;
-using Newtonsoft.Json;
+﻿using HandWork.Com.Service.Weixins;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,34 +18,18 @@ namespace HandWork.Com.MVC.Controllers.Weixins
 
         public ActionResult Index()
         {
-            //首先查看有没有cookie 有的话直接返回信息
-
-            if (Request.Cookies["weixinUser"]!=null)
-            {
-                string cookiesValue = Request.Cookies["weixinUser"].Value;
-                WeixinUser  weixinUser = JsonConvert.DeserializeObject<WeixinUser>(cookiesValue);
-                return View(weixinUser);
-            }
-
-            ///没有cookie的情况去获取用户信息
             string code = Request.Params["code"].ToString();
             if (code != null)
             {
+
                 string url = string.Format("https://api.weixin.qq.com/sns/oauth2/access_token?appid=wxd21f90079ecb0969&secret=338345d734124088ce5579a6a4514318&code={0}&grant_type=authorization_code", code);
 
                 string responseText = WeixinService.HttpsGet(url);
                 ///日志记录
                 logger.Info(responseText);
-                WeixinUser obj = WeixinService.GetWeixinUser(responseText);
-                string userJsonStr = JsonConvert.SerializeObject(obj);
-
-                //设置Cookies
-                Response.Cookies["weixinUser"].Value = userJsonStr;
-                //设置Cookies有效期
-                Response.Cookies["weixinUser"].Expires = DateTime.MaxValue;
 
 
-                return View(obj);
+                return View(WeixinService.GetWeixinUser(responseText));
 
             }
             return Json("erro");

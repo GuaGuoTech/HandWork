@@ -40,6 +40,13 @@ namespace HandWork.Com.Service.Users
             return user;
         }
 
+        public static void SetName(long id )
+        {
+            
+
+
+        }
+
         public static void SendMsg(User user)
         {
             Repository<User> repository = new Repository<User>(new EntityContext());

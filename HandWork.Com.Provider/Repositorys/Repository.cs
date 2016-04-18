@@ -3,12 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Web;
 
 namespace HandWork.Com.Provider.Repositorys
 {
-
     public  class Repository<TEntity> : IRespository<TEntity> where TEntity : class
     {
         protected DbSet<TEntity> Dbset;
@@ -31,18 +29,6 @@ namespace HandWork.Com.Provider.Repositorys
 
 
         }
-
-        /// <summary>
-        /// 条件查找
-        /// </summary>
-        /// <param name="lambdaPress">lambda表达式</param>
-        /// <returns></returns>
-        public IEnumerable<TEntity> SearchFor(Expression<Func<TEntity, bool>> lambdaPress) 
-        {
-
-            return Dbset.Where(lambdaPress).AsNoTracking();
-        }
-
 
         public TEntity GetEntity(long id)
         {
@@ -77,6 +63,5 @@ namespace HandWork.Com.Provider.Repositorys
             _dbContext.SaveChanges();
 
         }
-
     }
 }

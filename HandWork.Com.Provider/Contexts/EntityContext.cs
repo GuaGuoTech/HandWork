@@ -8,7 +8,6 @@ using System.Web;
 using HandWork.Com.Model.WantedJobs;
 using HandWork.Com.Model.Recruits;
 using HandWork.Com.Model.Users;
-using HandWork.Com.Model.Weixins;
 
 namespace HandWork.Com.Provider.Contexts
 {
@@ -20,7 +19,6 @@ namespace HandWork.Com.Provider.Contexts
         public DbSet<WantedJob> WantedJobs { get; set; }
         public DbSet<Recruit> Recruits { get; set; }
 
-        public DbSet<WeixinUser> WeixinUsers { get; set; }
 
     }
 }

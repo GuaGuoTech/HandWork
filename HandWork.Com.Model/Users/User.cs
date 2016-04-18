@@ -60,10 +60,16 @@ namespace HandWork.Com.Model.Users
         public string Note { get; set; }
 
         /// <summary>
-        /// 当前对象的评价
+        /// 当前对象的商家评价
         /// </summary>
-        [Column("comment", TypeName = "NVARCHAR")]
-        public string Comment { get; set; }
+        [Column("shopcomment", TypeName = "NVARCHAR")]
+        public string ShopComment { get; set; }
+
+        /// <summary>
+        /// 当前对象的个人评价
+        /// </summary>
+        [Column("mancomment", TypeName = "NVARCHAR")]
+        public string ManComment { get; set; }
 
         /// <summary>
         /// 地址
@@ -79,17 +85,31 @@ namespace HandWork.Com.Model.Users
         public int Sex { get; set; }
 
         /// <summary>
-        /// 当前对象星级
+        /// 当前对象个人星级
         /// </summary>
-        [Column("star", TypeName = "INT")]
-        public int Star { get; set; }
+        [Column("manstar", TypeName = "INT")]
+        public int ManStar { get; set; }
 
         /// <summary>
-        /// 当前对象是否通过审核 0未审核 1已审核 
+        /// 当前对象星级
         /// </summary>
-        [Column("confirm", TypeName = "INT")]
+        [Column("shopstar", TypeName = "INT")]
+        public int ShopStar { get; set; }
+
+        /// <summary>
+        /// 当前对象是否通过个人审核 0未审核 1已审核 
+        /// </summary>
+        [Column("manconfirm", TypeName = "INT")]
         [Required]
-        public int Confirm { get; set; }
+        public int ManConfirm { get; set; }
+
+        /// <summary>
+        /// 当前对象是否通过商家审核 0未审核 1已审核 
+        /// </summary>
+        [Column("shopconfirm", TypeName = "INT")]
+        [Required]
+        public int ShopConfirm { get; set; }
+
 
 
     }

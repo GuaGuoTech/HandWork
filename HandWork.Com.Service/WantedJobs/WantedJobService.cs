@@ -16,7 +16,7 @@ namespace HandWork.Com.Service.WantedJobs
         {
             Repository<User> repository = new Repository<User>(new EntityContext());
             User user=repository.GetEntity(id);         
-            return user.Confirm;                           
+            return user.ManConfirm;                           
             
 
         }
