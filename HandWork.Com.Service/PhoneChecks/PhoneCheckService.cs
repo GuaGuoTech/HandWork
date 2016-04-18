@@ -19,12 +19,11 @@ namespace HandWork.Com.Service.PhoneChecks
     public static class PhoneCheckService
     {
         public static readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        static   int times = 0;
-        public static string code;
+
         public static string SendCheckCode(string phoneNumber)
         {
 
-             code = CreateCode();
+            string  code = CreateCode();
             string url = "https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/8a48b55153cb69470153cfdf164a06de/SMS/TemplateSMS?sig={SigParameter}";
 
             ///时间戳
@@ -79,31 +78,17 @@ namespace HandWork.Com.Service.PhoneChecks
 
             Dictionary<string, object> responseObj = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseStr);
             string statusCode = responseObj["statusCode"].ToString();
+            ///发送失败 重新发送
+            if (statusCode!="000000")
+            {
+                logger.Info(responseStr);
+
+              return  SendCheckCode(phoneNumber);
+
+            }
             logger.Info(responseStr);
 
-            ///回传json数据responseStr
-            return responseStr;
-            ///发送失败 重新发送
-            //if (statusCode!="000000")
-            //{
-
-            //    times++;
-            //    if (times>5)
-            //    {
-            //        logger.Info("超过限制");
-            //        return "erro";
-
-            //    }
-            //    else
-            //    {
-            //        logger.Info(responseStr);
-            //        return SendCheckCode(phoneNumber);
-            //    }
-
-
-            //}
-
-            //    return code;
+                return code;
 
             
         }
@@ -137,22 +122,24 @@ namespace HandWork.Com.Service.PhoneChecks
         /// <returns></returns>
         private static string MD5String(string textStr)
         {
-            System.Security.Cryptography.MD5 md5Hasher = System.Security.Cryptography.MD5.Create();
-
-            // Convert the input string to a byte array and compute the hash.
-            byte[] data = md5Hasher.ComputeHash(Encoding.Default.GetBytes(textStr));
-
-            // Create a new Stringbuilder to collect the bytes and create a string.
-            StringBuilder sBuilder = new StringBuilder();
-
-            // Loop through each byte of the hashed data and format each one as a hexadecimal string.
-            for (int i = 0; i < data.Length; i++)
+            try
             {
-                sBuilder.Append(data[i].ToString("X2"));
-            }
+                string pwd = "";
+                MD5 md5 = MD5.Create();
 
-            // Return the hexadecimal string.
-            return sBuilder.ToString();
+                byte[] s = md5.ComputeHash(Encoding.UTF8.GetBytes(textStr));
+                for (int i = 0; i < s.Length; i++)
+                {
+                    pwd = pwd + s[i].ToString("X");
+                }
+
+                return pwd;
+            }
+            catch (Exception e)
+            {
+                logger.Error(e);
+                throw;
+            }
            
         }
 

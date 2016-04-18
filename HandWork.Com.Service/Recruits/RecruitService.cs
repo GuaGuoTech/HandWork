@@ -20,7 +20,7 @@ namespace HandWork.Com.Service.Recruits
         {
             Repository<User> repo = new Repository<User>(new EntityContext());
             User user = repo.GetEntity(id);
-            return user.Confirm;
+            return user.ShopConfirm;
 
 
         }
