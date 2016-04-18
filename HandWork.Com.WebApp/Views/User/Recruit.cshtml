@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Recruit";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+<div class="adjust">
+    <form typeof="submit">
+        @Html.GuaGuo_InptTextWithTitle("Title", "标题：", "圣上题字")
+        @Html.GuaGuo_InptTextWithTitle("WorkHour", "工作时间：", "常用9:00-17:00哦")
+        @Html.GuaGuo_InptTextWithTitle("Money", "工作薪资：", "￥_￥")
+        @Html.GuaGuo_InptTextWithTitle("WorkerNum", "所需人数：", "10人")
+        @Html.GuaGuo_InptTextWithTitle("LinkPeople", "联系人：", "X先生/X女士")
+        @Html.GuaGuo_InptTextWithTitle("Note", "工作要求：", "准时上班，接受公司安排，有集体荣誉感~等等等~~")
+        @Html.GuaGuo_PhoneNumberCheck()
+        @Html.GuaGuo_Button("Recruit_Submit", "点我提交")
+    </form>
+
+</div>

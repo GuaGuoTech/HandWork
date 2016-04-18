@@ -20,21 +20,26 @@ namespace HandWork.Com.MVC.Controllers.Recruits
             //    //Response.("");
             //    Redirect("~/Users/User/Index.cshtml");
             //}
-            
+
 
             Recruit recruit = new Recruit();
-            recruit.Id = 007;
+            recruit.Id = 0;
             recruit.Location = "GuaGuoTech";
-            recruit.Money=100;
-            recruit.Note="天天情人节之出租男朋友 陪吃陪逛陪玩";
+            recruit.Money = 100;
+            recruit.Note = "天天情人节之出租男朋友 陪吃陪逛陪玩";
             recruit.Percent = 1.00;
             recruit.PhoneNum = "110";
-            recruit.Sex=0;
+            recruit.Sex = 0;
             recruit.SfzAccount = "3535353535";
             recruit.WeixinNum = "520582";
             RecruitService.Insert(recruit);
             return View();
 
+        }
+        public ActionResult Recruit()
+        {
+            Redirect("~/Users/User/Recruit.cshtml");
+            return View();
         }
 
         public long id { get; set; }

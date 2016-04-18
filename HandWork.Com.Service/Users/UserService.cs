@@ -27,6 +27,13 @@ namespace HandWork.Com.Service.Users
             User user = repository.GetEntity(id);
             return user;
         }
+
+        public static void SetName(long id )
+        {
+            
+
+
+        }
         //public void  SetComment(User user)
         //{
         //    Repository<User> re = new Repository<User>(new EntityContext());

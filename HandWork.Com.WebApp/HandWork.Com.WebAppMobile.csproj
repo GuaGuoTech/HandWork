@@ -264,7 +264,7 @@
     <Content Include="Views\Weixin\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutUserInfo.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\User\Publish.cshtml" />
+    <Content Include="Views\User\Recruit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
