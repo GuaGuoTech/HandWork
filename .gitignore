@@ -154,3 +154,6 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+HandWork.Com.MVC/Controllers/Homes/HomeController.cs.orig
+HandWork.Com.Service/Users/UserService.cs.orig
+.gitignore
