@@ -10,6 +10,18 @@ namespace HandWork.Com.Service.Users
 {
     public class UserService
     {
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public static User FindUser(string  ) 
+        {
+
+
+            return null;
+        }
+
         public static void Insert(User user)
         {
 
@@ -27,34 +39,6 @@ namespace HandWork.Com.Service.Users
             User user = repository.GetEntity(id);
             return user;
         }
-        //public void  SetComment(User user)
-        //{
-        //    Repository<User> re = new Repository<User>(new EntityContext());
-        //    User u = new User();
-        //    if (u.Comment1!= null)
-        //    {
-        //        for (int i = 2; i <= 4; ++i)
-        //        {
-        //            if (u.Comment2 == null)
-        //            {
-        //                //UserService.Insert(re);
-        //                re.Update(u);
-
-        //            }
-
-        //        }
-
-        //    }
-        //    else re.Update(u);
-        
-        //}
-        //public static User GetAllEntity()
-        //{
-        //    Repository<User> repository=new Repository<User>(new EntityContext());
-        //    IEnumerable<TEntity> user = repository.GetAllEntity();
-        //    return user;
-                
-        //}
 
         public static void SendMsg(User user)
         {

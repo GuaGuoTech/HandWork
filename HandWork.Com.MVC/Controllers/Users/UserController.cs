@@ -5,10 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using HandWork.Com.Service.Users;
 
 namespace HandWork.Com.MVC.Controllers.Users
 {
-    public class UserController : Controller
+    public class UserController : BaseControllers.BaseWeixinController
     {
         readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
@@ -16,9 +17,19 @@ namespace HandWork.Com.MVC.Controllers.Users
         // GET: /User/
         public ActionResult Index()
         {
+            if (hasSession)
+            {
+                UserService.Alert();
+                return null;
+            }
+            else
+            {
+                return View();
+
+            }
+            ///
             //User user = new User();
             //user.Confirm = 0;
-            return View();
         }
         public ActionResult Index2()
         {

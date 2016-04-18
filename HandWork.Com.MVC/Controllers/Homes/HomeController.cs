@@ -1,4 +1,5 @@
 ﻿using HandWork.Com.Model.Weixins;
+using HandWork.Com.MVC.Controllers.BaseControllers;
 using HandWork.Com.Service.PhoneChecks;
 using HandWork.Com.Service.Weixins;
 using Newtonsoft.Json;
@@ -11,7 +12,7 @@ using System.Web.Mvc;
 
 namespace HandWork.Com.MVC.Controllers.Home
 {
-    public class HomeController : Controller
+    public class HomeController : BaseWeixinController
     {
         //
         // GET: /Home/
@@ -20,7 +21,7 @@ namespace HandWork.Com.MVC.Controllers.Home
         [ValidateInput(false)]
         public ActionResult Index()
         {
-            if (Session["weixinUser"] != null)
+            if (hasSession)
             {
                 try
                 {
