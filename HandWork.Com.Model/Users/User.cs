@@ -42,7 +42,8 @@ namespace HandWork.Com.Model.Users
         /// <summary>
         /// 当前对象联系微信
         /// </summary>
-        [Column("weixin_num", TypeName = "VARCHAR")]
+        [Column("weixin_num", TypeName = "TEXT")]
+        [MaxLength]
         [Required]
         public string WeixinNum { get; set; }
 

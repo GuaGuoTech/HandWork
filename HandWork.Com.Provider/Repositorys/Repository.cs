@@ -39,43 +39,71 @@ namespace HandWork.Com.Provider.Repositorys
         /// <returns></returns>
         public IEnumerable<TEntity> SearchFor(Expression<Func<TEntity, bool>> lambdaPress) 
         {
-
-            return Dbset.Where(lambdaPress).AsNoTracking();
+   
+                return Dbset.Where(lambdaPress).AsNoTracking();
+            
         }
 
 
+        /// <summary>
+        /// Find  the first Entity  in database  for   lambda 
+        /// </summary>
+        /// <param name="lambdaPress"></param>
+        /// <returns></returns>
+        public TEntity FindEntity(Expression<Func<TEntity, bool>> lambdaPress)
+        {
+     
+                return Dbset.Find(lambdaPress);
+            
+        }
         public TEntity GetEntity(long id)
         {
-            return Dbset.Find(id);
+    
+                return Dbset.Find(id);
+            
         }
 
         public IEnumerable<TEntity> GetAllEntity()
         {
-            return Dbset.ToList();
-
+          
+                return Dbset.ToList();
+            
         }
 
         public void Update(TEntity entity)
         {
-            _dbContext.Entry(entity).State = EntityState.Modified;
-            _dbContext.SaveChanges();
+        
+                _dbContext.Entry(entity).State = EntityState.Modified;
+                _dbContext.SaveChanges();
+            
+
         
         }
 
         public void Insert(TEntity entity)
         {
+       
+                try
+                {
+                    Dbset.Add(entity);
+                    _dbContext.SaveChanges();
+                }
+                catch (Exception e)
+                {
 
-            Dbset.Add(entity);
-            _dbContext.SaveChanges();
+                    throw;
+                }
 
+            
         }
 
         public void Delete(TEntity entity)
         {
-            Dbset.Attach(entity);
-            Dbset.Remove(entity);
-            _dbContext.SaveChanges();
-
+        
+                Dbset.Attach(entity);
+                Dbset.Remove(entity);
+                _dbContext.SaveChanges();
+            
         }
 
     }

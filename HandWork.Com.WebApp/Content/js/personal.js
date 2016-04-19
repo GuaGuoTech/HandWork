@@ -68,19 +68,12 @@ function sendMssg(phone) {
 
                 }
                 else {
-
                     ///重新发一次
                     sendMssg(phone);
                 }                
-             
-
-
             }
             else if (statusCode == "000000") {
-                textChange();
-
-                
-   
+                textChange();   
             }
             else {
                 $(_info).text("发送失败 请检查号码或者联系网站管理员");
@@ -114,7 +107,6 @@ function textChange() {
     }, 1000);
   
 }
-
 ///表单提交的验证
 function formCheckData() {
     var _code = $("#_phoneChek").val();
@@ -134,6 +126,9 @@ function formCheckData() {
                 if (!data) {
                     $(_info).text("验证码错误");
                     return false;
+                }
+                else {
+                    $(_formSubmit).parents("form").submit();
                 }
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {

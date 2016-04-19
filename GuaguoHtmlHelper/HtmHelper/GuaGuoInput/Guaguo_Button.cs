@@ -52,7 +52,7 @@ namespace System.Web.Mvc
         /// <param name="title">标题</param>
         /// <param name="placeholder">文本提示</param>
         /// <returns></returns>
-        public static HtmlString GuaGuo_InptTextWithTitle(this HtmlHelper helper, string id, string title, string placeholder = "",string type="text")
+        public static HtmlString GuaGuo_InptTextWithTitle(this HtmlHelper helper, string id, string title, string text="",string placeholder = "", string type = "text", Object attributes = null)
         {
             var _div = new TagBuilder("div");
             _div.MergeAttribute("class", "form-group");
@@ -66,8 +66,17 @@ namespace System.Web.Mvc
             _input.MergeAttribute("type",type);
             _input.MergeAttribute("placeholder",placeholder);
             _input.MergeAttribute("name", id);
+            _input.MergeAttribute("value",text);
             _input.IdAttributeDotReplacement = "-";
             _input.GenerateId(id);
+            if (attributes!=null)
+            {
+                foreach (var attr in HtmlHelper.AnonymousObjectToHtmlAttributes(attributes))
+                {
+                    _input.MergeAttribute(attr.Value.ToString(), attr.Key.ToString(), true);
+
+                }
+            }
 
             _div.InnerHtml = _lable.ToString() + _input.ToString();
 

@@ -2,29 +2,78 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutUserInfo.cshtml";
 }
-
-<form >
-    <div class="submitlaeveanote">
+@model  HandWork.Com.Model.Users.User
 
 
-  
-        @Html.GuaGuo_InptTextWithTitle("Name", "姓名：", "圣上的大名")
+@if (Model != null)
+{
+     @Html.BeginForm("sadf","User",FormMethod.Post)
+    {
+        <div class="submitlaeveanote">
 
-        @Html.GuaGuo_InptTextWithTitle("SfzAccount", "身份证：", "身份证号")
 
 
-        @Html.GuaGuo_InptTextWithTitle("Adress", "联系地址：", "家庭住址或者宿舍号哦")
+            @Html.GuaGuo_InptTextWithTitle("Name", "姓名：", text:@Model.Name, attributes: new { disabled = "disabled" })
 
-        @Html.GuaGuo_InptTextWithTitle("test","测试：","dsfasdf","number")
+            @Html.GuaGuo_InptTextWithTitle("SfzAccount", "身份证：", text: @Model.SfzAccount, attributes: new { disabled = "disabled" })
 
-        @Html.GuaGuo_PhoneNumberCheck()
 
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" class="notice"> 修改须知
-            </label>
+            @Html.GuaGuo_InptTextWithTitle("Adress", "联系地址：", text:@Model.Adress, attributes: new { disabled = "disabled" })
+
+
+            @Html.GuaGuo_InptTextWithTitle("PhoneNum", "联系号码：", text:@Model.PhoneNum, attributes: new { disabled = "disabled" })
+
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" class="notice"> 修改须知
+                </label>
+            </div>
+            @if (Model.Confirm==0)
+            {
+             <input id="form_submit" type="submit" class="btn btn-primary  remark" value="正在审核中" />
+            }
+            else if(Model.Confirm==1)
+        	{
+             <input id="form_submit" type="submit" class="btn btn-primary  remark" value="审核通过" />
+         	}
+
         </div>
-        <input id="form_submit" type="submit" class="btn btn-primary  remark" value="确定">
-    </div>
-</form>
+    }
+
+
+}
+@*如果为空*@
+else
+{
+    @Html.BeginForm("AddUser","User",FormMethod.Post)
+    {
+        <div class="submitlaeveanote">
+
+
+
+            @Html.GuaGuo_InptTextWithTitle("Name", "姓名：", placeholder:"圣上的大名")
+
+            @Html.GuaGuo_InptTextWithTitle("SfzAccount", "身份证：", placeholder:"身份证号")
+
+
+            @Html.GuaGuo_InptTextWithTitle("Adress", "联系地址：", placeholder:"家庭住址或者宿舍号哦")
+
+
+            @Html.GuaGuo_PhoneNumberCheck()
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" class="notice"> 须知
+                </label>
+            </div>
+            <input id="form_submit" type="submit" class="btn btn-primary  remark" value="确定">
+        </div>
+    }
+
+
+
+}
+
+
 <script type="text/javascript" src="~/Content/js/personal.js"></script>

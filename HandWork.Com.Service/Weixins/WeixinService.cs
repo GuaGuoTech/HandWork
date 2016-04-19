@@ -85,6 +85,7 @@ namespace HandWork.Com.Service.Weixins
             return respText;
 
         }
+       static      Thread t1 = new Thread(new ParameterizedThreadStart(InsertWeixinUser));
 
         /// <summary>
         /// 得到codeToken
@@ -102,8 +103,8 @@ namespace HandWork.Com.Service.Weixins
                 logger.Info(_responseText);
                 WeixinUser weixinUser = JsonConvert.DeserializeObject<WeixinUser>(_responseText);
 
-                Thread t1 = new Thread(new ParameterizedThreadStart(InsertWeixinUser));
                 t1.Start((Object)weixinUser);
+                t1.Abort();
                 return weixinUser;
             }
             catch (Exception e)
@@ -160,6 +161,7 @@ namespace HandWork.Com.Service.Weixins
 
 
                 }
+                t1.Abort();
             }
             catch (Exception e)
             {

@@ -796,3 +796,17 @@ INFO  2016-04-14 20:44:05,474 1402538ms UserController         CheckCode        
 INFO  2016-04-14 20:44:06,204 1403268ms UserController         CheckCode          - 发送过来的code：1444414---------后台来的code：605119
 INFO  2016-04-14 20:44:06,799 1403863ms UserController         CheckCode          - 发送过来的code：1444414---------后台来的code：605119
 INFO  2016-04-14 20:44:07,485 1404549ms UserController         CheckCode          - 发送过来的code：1444414---------后台来的code：605119
+ERROR 2016-04-19 15:29:48,759  2328ms HomeController         Index              - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 HandWork.Com.MVC.Controllers.Home.HomeController.Index() 位置 d:\GitSource\HandWorkMobile\HandWork.Com.MVC\Controllers\Homes\HomeController.cs:行号 28
+ERROR 2016-04-19 15:33:34,936   831ms HomeController         Index              - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 HandWork.Com.MVC.Controllers.Home.HomeController.Index() 位置 d:\GitSource\HandWorkMobile\HandWork.Com.MVC\Controllers\Homes\HomeController.cs:行号 28
+INFO  2016-04-19 17:03:25,058 193843ms PhoneCheckService      SendCheckCode      - {"templateSMS":{"smsMessageSid":"e571f8ca327e4ce8a72e24d6e6ffab8e","dateCreated":"20160419170324"},"statusCode":"000000"}
+INFO  2016-04-19 17:40:21,195 36372ms UserController         CheckCode          - 发送过来的code：0000---------后台来的code：
+INFO  2016-04-19 17:41:19,743 94920ms UserController         AddUser            - HandWork.Com.Model.Users.User
+INFO  2016-04-19 17:42:43,846  4361ms UserController         AddUser            - HandWork.Com.Model.Users.User
+INFO  2016-04-19 17:43:20,042 40557ms UserController         CheckCode          - 发送过来的code：0000---------后台来的code：
+INFO  2016-04-19 17:43:25,798 46313ms UserController         AddUser            - HandWork.Com.Model.Users.User
+INFO  2016-04-19 17:56:05,340  1302ms UserController         CheckCode          - 发送过来的code：0000---------后台来的code：
+INFO  2016-04-19 17:56:11,064  7026ms UserController         AddUser            - HandWork.Com.Model.Users.User
+INFO  2016-04-19 17:56:47,947 43910ms UserController         CheckCode          - 发送过来的code：0000---------后台来的code：
+INFO  2016-04-19 17:56:48,009 43971ms UserController         AddUser            - HandWork.Com.Model.Users.User

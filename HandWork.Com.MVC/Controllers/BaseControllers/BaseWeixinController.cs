@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HandWork.Com.Model.Weixins;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,14 +12,24 @@ namespace HandWork.Com.MVC.Controllers.BaseControllers
     {
         //
         // GET: /BaseWeixin/
-        protected bool hasSession = true;
-        //暂时没有用
-        public BaseWeixinController()
-        {
+        protected bool hasSession = false;
 
-            if (Session["weixinUser"] == null)
+        protected  string  weixinUserJson = "" ;
+
+        protected WeixinUser weixinUserObj = new WeixinUser();
+        //暂时没有用
+         protected  void  CreatWeixinObj()
+          {
+
+            if (Session != null)
             {
-                hasSession = false;
+                if (Session["weixinuser"]!=null)
+                {
+                    hasSession = true;
+                    weixinUserJson = Session["weixinUser"].ToString();
+                    weixinUserObj = JsonConvert.DeserializeObject<WeixinUser>(weixinUserJson);
+                }
+   
             }
         
 
