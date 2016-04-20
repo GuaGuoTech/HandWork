@@ -17,19 +17,26 @@ namespace HandWork.Com.Service.Users
         /// </summary>
         /// <returns></returns>
         /// 
-      private  static    Repository<User> repository = new Repository<User>(new EntityContext());
+        private static Repository<User> repository = new Repository<User>(new EntityContext());
 
-        public static User FindUser(string  weixinCode) 
+        public static User FindUser(string openId)
         {
-            Expression<Func<User, bool>> expression = u => u.WeixinNum == weixinCode;
-            User   user =        repository.FindEntity(expression);
+            Expression<Func<User, bool>> expression = u => u.WeixinNum == openId;
+            List<User> user = repository.SearchFor(expression).ToList();
+            if (user.Count>0)
+            {
+                return  user[0];
+            }
+            else
+            {
+                return null;
 
-            return user;
+            }
         }
 
         public static void Insert(User user)
         {
-            
+
             repository.Insert(user);
         }
         public static void Alert(User user)
