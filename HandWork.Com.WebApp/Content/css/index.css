@@ -16,7 +16,7 @@
     padding-bottom :5px;
 }
 .nabarcolor {
-    background-color :#336699;
+    background-color :#920078;
 }
 .floatRight {
         padding-right :5px;
@@ -88,6 +88,10 @@
 
 
 }
+.checkThisBtn {
+
+background-image:linear-gradient(to bottom,#920078 0,rgba(177, 120, 86, 0.98) 100%);
+}
 .oclockimage {
     height:17px;
     width:17px;
@@ -111,3 +115,8 @@ h4 {
   text-align:left ;
 }
 
+.slide {
+
+    width:100%;
+    height:40px;
+}

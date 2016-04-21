@@ -1,7 +1,36 @@
 ﻿body {
 
     color:#000000!important;
+    font-family:microsoft yahei,arial,verdana,helvetica,sans-serif;
 }
+ul {
+    padding-left:0!important;
+    margin-bottom:0!important;
+    
+    }
+.jobInfo {
+    padding:5px 15px;
+}
+.jobInfo .title {
+    font: bold 17px/2em microsoft yahei,arial,verdana,helvetica,sans-serif;
+
+
+}
+    .jobInfo .inportantInfo {
+    color:red;
+    list-style-type:none;
+    display:table;
+    width:100%;
+    padding-left:0!important;
+    padding-bottom:0!important;
+
+    }
+        .jobInfo .inportantInfo li {
+        float:left;
+        padding-right:20px;
+        }
+
+
 .publishperson {
    border-radius:22%;
 
@@ -9,17 +38,32 @@
     width:80px;
     text-align : center ;
 }
+.getJobRight {
+text-align:center;
+height:60px;
 
+display:table;
+}
+    .getJobRight li {
+    margin-top:21px;
+    }
 .publishborder {
   
-    padding-top:8px ;
-    padding-right:1px ;
-    padding-left:1px ;
+    padding:5px 15px;
     display:table;
     width:100%;
-    border-top:3px solid #CCCCFF!important;
+    border-top:1px solid #ccc!important;
  
 }
+    .publishborder ul {
+    padding-left:0!important;
+    margin-bottom:0!important;
+    
+    }
+        .publishborder ul li{
+list-style-type:none;
+    
+    }
 .liborder {
 
     padding-left:0px;
@@ -29,59 +73,49 @@
     height:135px;
     color:#000000;
 }
-.b {
-    margin-bottom :5px;
-    border-bottom :3px solid #CCCCFF;
-     border-radius:10px;
-
-}
 .imageCenter {
    text-align :center;
    padding-top:8px;
 }
 
 .workpadding {
-      border-radius:10px;
-    padding-top :8px;
-    border-top:3px solid #CCCCFF;
-    padding-bottom:8px;
+    padding:5px 15px;
+    border-top:3px solid #CCC;
    color:#000000; 
 }
+.jobDetail {
+}
 .bottomnav {
-    text-align :center ;
+    text-align:center ;
     padding-bottom  :5px;
     padding-top :6px;
-      border-radius:10px;
 }
 .bordermoddile {
     border-right :1px solid #CCCCFF;
    
 }
 .navborder {
-    background :#336699;
-    font-size:20px;
-    color:#cccccc;
-    height:40px;
-    width:100%;
+    background :#920078;
+    right:0;
+    left:0;
+    color:white;
+    font-size:17px;
     border-bottom :1px solid  #cccccc;
     border-top:1px solid  #cccccc; 
     position: fixed ;
     bottom :0px;
-     border-radius:10px;
-     border-bottom-right-radius :0px;
-     border-bottom-left-radius :0px;
-     opacity:0.8;
-     margin-top :5px;
+    margin-top :5px;
      z-index:0;
 
 }
 .fontsize {
    text-align :left ;
 }
-h2 {
+h2{
     
-    color:#CC3300;
-    text-align:center ;
+    color:black;
+    font-weight:800;
+    text-align:center;
     margin-top :10px;
 }
 .fontcolor {
@@ -92,41 +126,14 @@ h2 {
    /*color:#3366CC;*/
 }
 
-.a {
-    border-bottom :1px solid #cccccc;
-    color:#CC6633;
-   
+.otherInfo {
+padding:5px 15px;
+border-top:1px solid #ccc;
 }
 label {
     font-weight:normal ;
 }
-.worktime {
-     border-top:2px solid #cccccc;
-  
-     padding-top :5px;
-     border-top-left-radius :10px;
-      border-top-right-radius :10px;
- color:#CC6633;
-     width:100%;
 
-}
-.worktimer {
-     border-top:1px solid #cccccc;
-    
-
-}
-.worktimertop{
-     border-top:2px solid #cccccc;
-     color:#CC6633;
-     
-}
-.size {
-    font-weight:600 ;
-}
-.worktimeend {
-       border-bottom:3px  solid  #CCCCFF;
-         border-radius:10px;
-}
 .fontcolortitle {
     font-weight:600 ;
   
