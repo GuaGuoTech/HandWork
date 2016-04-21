@@ -145,7 +145,7 @@
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
-    <Content Include="Content\image\publish.png" />
+ <Content Include="Content\image\publish.png" />
     <Content Include="Content\css\index.css" />
     <Content Include="Content\css\Personalindex.css" />
     <Content Include="Content\css\publish.css" />
@@ -256,7 +256,6 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\Publish.cshtml" />
     <Content Include="Views\Detail\Index.cshtml" />
-    <Content Include="Views\User\Recruit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
