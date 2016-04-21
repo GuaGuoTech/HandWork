@@ -10,7 +10,7 @@ var _phoneNum = $(".phoneNum");
 var _formSubmit = $("#form_submit");
 
 /// baseUrl
-var url = "http://localhost:23440/";
+var url = "http://120.27.104.135/";
 
 ///带提示框的消息框
 var $GuaGuoTech_Alert = function (content) {

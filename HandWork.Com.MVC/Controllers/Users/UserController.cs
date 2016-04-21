@@ -27,9 +27,10 @@ namespace HandWork.Com.MVC.Controllers.Users
             {
                 string weixinCode = Session["weixinuser"].ToString();
                 WeixinUser weixinUser = JsonConvert.DeserializeObject<WeixinUser>(weixinCode);
-               string  openId = weixinUser.openid;
+                string openId = weixinUser.openid;
+            //string openId = "oL62cwXqco5NPxguPwBiOfT4h6Ww";
+               logger.Info(openId);
                Model.Users.User user = UserService.FindUser(openId);
-               logger.Info(user.WeixinNum);
                 return View(user);
             }
             else
@@ -48,6 +49,7 @@ namespace HandWork.Com.MVC.Controllers.Users
                 string weixinCode = Session["weixinuser"].ToString();
                 WeixinUser weixinUser = JsonConvert.DeserializeObject<WeixinUser>(weixinCode);
                 user.WeixinNum = weixinUser.openid;
+            //user.WeixinNum = "oL62cwXqco5NPxguPwBiOfT4h6Ww";
                 logger.Info(user.WeixinNum);
                 UserService.Insert(user);
             }        

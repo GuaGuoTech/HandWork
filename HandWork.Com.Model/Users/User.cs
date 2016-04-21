@@ -30,7 +30,6 @@ namespace HandWork.Com.Model.Users
         /// 姓名
         /// </summary>
         [Column("name", TypeName = "VARCHAR")]
-        [Required]
         public string Name { get; set; }
 
         /// <summary>
@@ -42,9 +41,8 @@ namespace HandWork.Com.Model.Users
         /// <summary>
         /// 当前对象联系微信
         /// </summary>
-        [Column("weixin_num", TypeName = "TEXT")]
-        [MaxLength]
-        [Required]
+        [Column("weixin_num", TypeName = "VARCHAR")]
+        [StringLength(30)]
         public string WeixinNum { get; set; }
 
         /// <summary>
@@ -89,7 +87,6 @@ namespace HandWork.Com.Model.Users
         /// 当前对象是否通过审核 0未审核 1已审核 
         /// </summary>
         [Column("confirm", TypeName = "INT")]
-        [Required]
         public int Confirm { get; set; }
 
 

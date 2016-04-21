@@ -29,12 +29,7 @@ namespace HandWork.Com.Provider.Repositorys
         /// <returns></returns>
         IEnumerable<TEntity> SearchFor(Expression<Func<TEntity,bool>> lambdaPress);
 
-        /// <summary>
-        /// 找到一个entity
-        /// </summary>
-        /// <param name="lambdaPress"></param>
-        /// <returns></returns>
-        TEntity FindEntity(Expression<Func<TEntity, bool>> lambdaPress);
+
         /// <summary>
         /// 更新实体
         /// </summary>
