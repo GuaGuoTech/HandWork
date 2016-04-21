@@ -56,14 +56,11 @@ namespace HandWork.Com.MVC.Controllers.Users
 
             return Json("");
         }
-        public ActionResult Index2()
+      
+        public ActionResult Recruit() 
         {
             return View();
-        }
-        public ActionResult Publish() 
-        {
-
-            return View();
+            //return RedirectToAction("","");
         }
         [HttpPost]
         public ActionResult SendMssg()
