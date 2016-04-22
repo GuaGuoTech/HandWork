@@ -25,12 +25,9 @@ namespace HandWork.Com.MVC.Controllers.Home
             {
                 try
                 {
-                    string cookiesValue = Session["weixinUser"].ToString();
+        
 
-                    logger.Info("检查到有session" + cookiesValue);
-
-                    WeixinUser weixinUser = JsonConvert.DeserializeObject<WeixinUser>(cookiesValue);
-                    return View(weixinUser);
+                    return View();
 
                 }
                 catch (Exception e)
@@ -67,7 +64,7 @@ namespace HandWork.Com.MVC.Controllers.Home
                 //Response.Cookies["weixinUser"].Expires = DateTime.MaxValue;
 
 
-                return View(obj);
+                return View();
 
             }
             return View();
