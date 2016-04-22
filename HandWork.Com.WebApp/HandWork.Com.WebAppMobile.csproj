@@ -145,6 +145,16 @@
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\Detail.css" />
+    <Content Include="Content\css\MyZoren.css" />
+    <Content Include="Content\image\adverta.jpg" />
+    <Content Include="Content\image\advertb.jpg" />
+    <Content Include="Content\image\advertc.jpg" />
+    <Content Include="Content\image\approve.png" />
+    <Content Include="Content\image\collect.png" />
+    <Content Include="Content\image\integral.png" />
+    <Content Include="Content\image\koubeii.png" />
+    <Content Include="Content\image\message.png" />
     <Content Include="Content\image\publish.png" />
     <Content Include="Content\css\index.css" />
     <Content Include="Content\css\Personalindex.css" />
@@ -158,9 +168,13 @@
     <Content Include="Content\image\other.png" />
     <Content Include="Content\image\peoplecenter.jpg" />
     <Content Include="Content\image\publish.png" />
+    <Content Include="Content\image\publishh.png" />
     <Content Include="Content\image\shop.png" />
+    <Content Include="Content\image\star.png" />
     <Content Include="Content\image\start.png" />
+    <Content Include="Content\image\users.png" />
     <Content Include="Content\image\week.png" />
+    <Content Include="Content\image\work.png" />
     <Content Include="Content\js\bootstrap.js" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\jquery-2.2.2.min.js" />
@@ -249,6 +263,7 @@
     <Content Include="Views\User\Publish.cshtml" />
     <Content Include="Views\Detail\Index.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\User\MyZoren.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
