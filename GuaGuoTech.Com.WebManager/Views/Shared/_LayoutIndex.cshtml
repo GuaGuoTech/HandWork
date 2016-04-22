@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+
+    <link href="~/Content/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/css/index.css" />
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="~/Content/js/jquery-2.2.2.min.js"></script>
+    @*<script src="~/Content/js/jquery.mobile-1.4.5.min.js"></script>*@
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="~/Content/js/bootstrap.min.js"> </script>
+</head>
+<body>
+    @*导航条*@
+    <nav class="navbar  navbar-default">         
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Brand</a>
+                <span class="navbar-brand">打手平台后台管理系统</span>
+            </div>
+
+                <ul class="nav navbar-nav navMap">
+                    <li><a href="#">主页</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户管理 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">用户审核</a></li>
+                            <li><a href="#">用户信息</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">财务报表 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">总金额</a></li>
+                            <li><a href="#">我不知道</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">你好 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">你好</a></li>
+                            <li><a href="#">你好</a></li>
+                        </ul>
+                    </li>
+                </ul>
+        
+               
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+
+</body>
+</html>

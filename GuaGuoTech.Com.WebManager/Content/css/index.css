@@ -1,0 +1,47 @@
+﻿.leftPanel {
+    width: 20%;
+    display: table;
+    min-height: 800px;
+    border-right: 1px solid #ccc;
+    float: left;
+ 
+}
+/*颜色*/
+.leftPanel ,leftHeadPanel{
+
+}
+
+.rightPanel ,rightHeadPanel{
+
+}
+/*颜色结束*/
+.rightPanel {
+    width: 80%;
+    float: left;
+    display: table;
+    min-height: 800px;
+}
+
+.navMap {
+    margin-left: 120px;
+}
+.headPanel {
+display:table;
+width:100%;
+
+}
+.leftHeadPanel,.rightHeadPanel{
+height:50px;
+background-color:#d3cbc6;
+}
+.leftHeadPanel {
+    text-align:center;
+    width: 20%;
+    float:left;
+
+}
+.rightHeadPanel {
+        width: 80%;
+            float:left;
+
+}

@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandWork.Com.MVC", "HandWor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuaguoHtmlHelper", "GuaguoHtmlHelper\GuaguoHtmlHelper.csproj", "{7BDB0E9A-A5DF-4382-A12F-CD7C37CD2FAF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuaGuoTech.Com.WebManager", "GuaGuoTech.Com.WebManager\GuaGuoTech.Com.WebManager.csproj", "{D31D14C5-BA15-440A-9A8B-3FE0D9435F9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuaGuoTech.Com.Manager.MVC", "GuaGuoTech.Com.Manager.MVC\GuaGuoTech.Com.Manager.MVC.csproj", "{0AD87F2E-D185-4515-A1EB-96FF22514BC7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{7BDB0E9A-A5DF-4382-A12F-CD7C37CD2FAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BDB0E9A-A5DF-4382-A12F-CD7C37CD2FAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BDB0E9A-A5DF-4382-A12F-CD7C37CD2FAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D31D14C5-BA15-440A-9A8B-3FE0D9435F9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D31D14C5-BA15-440A-9A8B-3FE0D9435F9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D31D14C5-BA15-440A-9A8B-3FE0D9435F9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D31D14C5-BA15-440A-9A8B-3FE0D9435F9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AD87F2E-D185-4515-A1EB-96FF22514BC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AD87F2E-D185-4515-A1EB-96FF22514BC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AD87F2E-D185-4515-A1EB-96FF22514BC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AD87F2E-D185-4515-A1EB-96FF22514BC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
