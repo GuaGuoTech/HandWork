@@ -152,6 +152,11 @@ h5 {
     width:100%;
     height:40px;
 }
+<<<<<<< HEAD
+.weixinPanel {
+
+padding:5px 15px;
+=======
 .companya {
     border-top:1px solid #cccccc;
     border-right:1px solid #cccccc;
@@ -179,10 +184,7 @@ h5 {
 }
 .label {
     font-size:5%;
-    font-weight:lighter!important;
-    padding:1px!important;
-    border-radius:0px!important;
-    font-size:12px;
+    font-weight:300;
 }
 .label-info {
     background:#DE905B;
@@ -190,13 +192,9 @@ h5 {
 .labela {
     position:relative;
     bottom:-11px;
-    
 }
 .labelb {
     position:relative;
     bottom:-14px;
-}
-.weixinPanel {
-
-padding:5px 15px;
+>>>>>>> 84c7d8dd2c30a1b2eb40024832fae11ed01fff10
 }
