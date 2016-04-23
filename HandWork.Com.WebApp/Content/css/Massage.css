@@ -1,10 +1,35 @@
 ﻿body {
 }
+.weixinPanel {
+    padding: 5px 0px;
+}
 .tableHead {
 padding:5px 0;
+border-top:1px solid #d7d7d7;
+border-bottom:1px solid #d7d7d7;
+}
+.divHeight {
+    height:20px;
+}
+.table {
+    margin-bottom:0px;
 }
 .recuitTitle, .userName {
 font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 
 }
 /*弹出的信息框*/
+.buttonradio {
+    border-radius:20px;
+    height:23px;
+}
+.btn-sm {
+    padding:0px 15px;
+}
+.UserName {
+    font-size:10px;
+}
+.backgroundBottom {
+  height:1px;
+    background:#c2c2c2;
+}
