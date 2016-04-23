@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Massage";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<link href="~/Content/css/Massage.css" rel="stylesheet" />
+<div class="weixinPanel">
+    <div class="tableHead">
+        <button type="button" class="btn btn-default btn-sm">全选</button>
+
+        <button type="button" class="btn btn-default btn-sm">接受</button>
+        <button type="button" class="btn btn-default btn-sm">拒绝</button>
+
+    </div>
+    <table class="table table-hover">
+        <tr>
+            <td><input type="checkbox" /></td>
+            <td><a class="userName">万涛涛</a>申请你发出的简历<a class="recuitTitle">我要招一万个人</a></td>
+        </tr>
+
+
+    </table>
+</div>
+
+<script>
+    $(function () {
+        $("table").on('click', ".userName", function () {
+            var alertStr = "姓名："+"万涛涛"+"<br/>"+"性别："+"男<br/>"+"年龄："+"21";
+            $GuaGuoTech_Alert(alertStr);
+        });
+    });
+
+</script>

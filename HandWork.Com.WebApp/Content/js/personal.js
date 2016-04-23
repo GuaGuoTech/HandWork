@@ -15,7 +15,7 @@ var url = "http://120.27.104.135/";
 ///带提示框的消息框
 var $GuaGuoTech_Alert = function (content) {
     var _body = $("body");
-    var _divStr = "<div class=\"modal fade GuaGuoAlert\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"mySmallModalLabel\"><div class=\"modal-dialog modal-sm\"><div class=\"modal-content\"><div class=\"modal-header\"><button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><h4 class=\"modal-title\" id=\"myModalLabel\">提示</h4></div><div class=\"modal-body\">" + content + "</div><div class=\"modal-footer\"><a  class=\"btn btn-default\" data-dismiss=\"modal\">关闭</a></div></div></div></div>";
+    var _divStr = "<div class=\"modal fade GuaGuoAlert\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"mySmallModalLabel\"><div class=\"modal-dialog modal-sm\"><div class=\"modal-content\"><div class=\"modal-header\"><button type=\"button\" class=\"close closeThis\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><h4 class=\"modal-title\" id=\"myModalLabel\">提示</h4></div><div class=\"modal-body\">" + content + "</div><div class=\"modal-footer\"><a  class=\"btn btn-default closeThis \" data-dismiss=\"modal\">关闭</a></div></div></div></div>";
     $(_divStr).appendTo(_body);
     $(".GuaGuoAlert").modal("show");
 };
@@ -23,10 +23,12 @@ var $GuaGuoTech_Alert = function (content) {
 ///带跳转地址的信息框
 var $GuaGuoTech_Alert_Url = function (content,_url) {
     var _body = $("body");
-    var _divStr = "<div class=\"modal fade GuaGuoAlert\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"mySmallModalLabel\"><div class=\"modal-dialog modal-sm\"><div class=\"modal-content\"><div class=\"modal-header\"><button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><h4 class=\"modal-title\" id=\"myModalLabel\">提示</h4></div><div class=\"modal-body\">" + content + "</div><div class=\"modal-footer\"><a  class=\"btn btn-default\" data-dismiss=\"modal\">关闭</a><a href=" + _url+url + " class=\"btn btn-primary\">" + "GO" + "</a></div></div></div></div>";
+    var _divStr = "<div class=\"modal fade GuaGuoAlert\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"mySmallModalLabel\"><div class=\"modal-dialog modal-sm\"><div class=\"modal-content\"><div class=\"modal-header\"><button type=\"button\" class=\"close closeThis\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><h4 class=\"modal-title\" id=\"myModalLabel\">提示</h4></div><div class=\"modal-body\">" + content + "</div><div class=\"modal-footer\"><a  class=\"btn btn-default closeThis\" data-dismiss=\"modal\">关闭</a><a href=" + _url + url + " class=\"btn btn-primary\">" + "GO" + "</a></div></div></div></div>";
     $(_divStr).appendTo(_body);
     $(".GuaGuoAlert").modal("show");
 };
+
+
 
 ///提交验证码的点击事件
 $(function () {
@@ -42,6 +44,19 @@ $(function () {
     $(_formSubmit).click(function () {
         formCheckData();
     });
+
+
+    $("body").on('click', '.closeThis', function () {
+
+        var _model = $(this).parents(".modal");
+        var fadeIn = $(".fade");
+        $(_model).remove();
+        $(fadeIn).remove();
+    })
+    
+
+  
+
 })
 ///清空消息提示以及重置按钮
 function clear() {

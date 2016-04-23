@@ -43,7 +43,15 @@ namespace HandWork.Com.MVC.Controllers.Users
         }
 
 
-        public ActionResult MyZoren() { return View(); }
+        public ActionResult MyZoren() 
+        { 
+            return View(); 
+        }
+        public ActionResult Massage()
+        {
+
+            return View();
+        }
         public ActionResult AddUser(Model.Users.User user)
         {
             if (Session["weixinuser"]!=null)

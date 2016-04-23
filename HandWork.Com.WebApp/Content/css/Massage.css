@@ -1,0 +1,10 @@
+﻿body {
+}
+.tableHead {
+padding:5px 0;
+}
+.recuitTitle, .userName {
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
+/*弹出的信息框*/

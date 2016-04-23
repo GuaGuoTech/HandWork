@@ -831,3 +831,38 @@ INFO  2016-04-20 14:52:26,104  6438ms UserController         Index              
 INFO  2016-04-20 14:53:01,317   913ms UserController         Index              - oL62cwXqco5NPxguPwBiOfT4h6Ww
 INFO  2016-04-20 14:53:42,246  7038ms UserController         Index              - oL62cwXqco5NPxguPwBiOfT4h6Ww
 INFO  2016-04-20 14:55:36,994 11442ms UserController         Index              - oL62cwXqco5NPxguPwBiOfT4h6Ww
+INFO  2016-04-22 21:38:24,046 647869ms HomeController         Index              - {"errcode":40029,"errmsg":"invalid code, hints: [ req_id: BY36qa0304ns54 ]"}
+INFO  2016-04-22 21:38:24,678 648501ms WeixinService          GetWeixinUser      - {"errcode":41001,"errmsg":"access_token missing, hints: [ req_id: mGVpLA0304ns90 ]"}
+INFO  2016-04-22 21:38:25,199 649022ms WeixinService          InsertWeixinUser   - 线程开始工作
+INFO  2016-04-22 21:38:37,477 661299ms UserController         Index              - 
+ERROR 2016-04-22 21:38:44,375 668197ms WeixinService          InsertWeixinUser   - System.Data.Entity.Core.ProviderIncompatibleException: 提供程序未返回 ProviderManifestToken 字符串。 ---> System.TimeoutException: Timeout in IO operation
+   在 MySql.Data.MySqlClient.TimedStream.StopTimer()
+   在 MySql.Data.MySqlClient.TimedStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   在 System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   在 MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   在 MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   在 MySql.Data.MySqlClient.Driver.Open()
+   在 MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   在 MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   在 MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   在 MySql.Data.MySqlClient.MySqlConnection.Open()
+   在 MySql.Data.MySqlClient.MySqlProviderServices.GetDbProviderManifestToken(DbConnection connection)
+   在 System.Data.Entity.Core.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Core.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   在 MySql.Data.Entity.MySqlManifestTokenResolver.ResolveManifestToken(DbConnection connection)
+   在 System.Data.Entity.Utilities.DbConnectionExtensions.GetProviderInfo(DbConnection connection, DbProviderManifest& providerManifest)
+   在 System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 HandWork.Com.Provider.Repositorys.Repository`1.SearchFor(Expression`1 lambdaPress) 位置 d:\GitSource\HandWorkMobile\HandWork.Com.Provider\Repositorys\Repository.cs:行号 47
+   在 HandWork.Com.Service.Weixins.WeixinService.InsertWeixinUser(Object obj) 位置 d:\GitSource\HandWorkMobile\HandWork.Com.Service\Weixins\WeixinService.cs:行号 132

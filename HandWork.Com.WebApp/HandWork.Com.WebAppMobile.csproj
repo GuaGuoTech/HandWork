@@ -146,6 +146,7 @@
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\Detail.css" />
+    <Content Include="Content\css\Massage.css" />
     <Content Include="Content\css\MyZoren.css" />
     <Content Include="Content\image\adverta.jpg" />
     <Content Include="Content\image\advertb.jpg" />
@@ -252,7 +253,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LayoutIndex.cshtml" />
@@ -264,6 +267,7 @@
     <Content Include="Views\Detail\Index.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
     <Content Include="Views\User\MyZoren.cshtml" />
+    <Content Include="Views\User\Massage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
