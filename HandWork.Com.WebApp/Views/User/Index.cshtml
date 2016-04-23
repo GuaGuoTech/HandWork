@@ -1,13 +1,20 @@
 ﻿@{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutUserInfo.cshtml";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
 }
+
+<div>
+    <div class="alert alert-info">
+       
+        <div class="fontpaddinga">消息提醒：(づ￣3￣)づ完善信息</div>
+    </div>
+</div>
 @model  HandWork.Com.Model.Users.User
 
 
 @if (Model != null)
 {
-     @Html.BeginForm("sadf","User",FormMethod.Post)
+     using(@Html.BeginForm("sadf","User",FormMethod.Post))
     {
         <div class="submitlaeveanote">
 
@@ -46,7 +53,7 @@
 @*如果为空*@
 else
 {
-    @Html.BeginForm("AddUser","User",FormMethod.Post)
+    using(@Html.BeginForm("AddUser","User",FormMethod.Post))
     {
         <div class="submitlaeveanote">
 
