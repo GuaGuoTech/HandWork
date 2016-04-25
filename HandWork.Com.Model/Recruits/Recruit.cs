@@ -76,6 +76,13 @@ namespace HandWork.Com.Model.Recruits
         [Column("note", TypeName = "NVARCHAR")]
         public string Note { get; set; }
 
+
+        /// <summary>
+        /// 当前招工的详情介绍
+        /// </summary>
+        [Column("title", TypeName = "NVARCHAR")]
+        public string Title { get; set; }
+
         /// <summary>
         /// 当前招工的详情介绍
         /// </summary>
@@ -91,8 +98,8 @@ namespace HandWork.Com.Model.Recruits
         /// <summary>
         /// 设置结算方式 0日结 1周结 2月结 3其他 
         /// </summary>
-        [Column("way", TypeName = "INT")]
-        public int Way { get; set; }
+        [Column("pay_type", TypeName = "INT")]
+        public int PayWay { get; set; }
 
         /// <summary>
         /// 设置当前薪金
