@@ -67,7 +67,7 @@ namespace HandWork.Com.MVC.Controllers.Users
             return Json("");
         }
       
-        public ActionResult Recruit() 
+        public ActionResult Publish() 
         {
             return View();
             //return RedirectToAction("","");

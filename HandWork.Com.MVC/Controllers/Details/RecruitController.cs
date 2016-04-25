@@ -13,6 +13,12 @@ namespace HandWork.Com.MVC.Controllers.Recruits
     public class RecruitController:Controller
     {
         Repository<Recruit> repo = new Repository<Recruit>(new EntityContext());
+        public ActionResult AddPublish(Recruit recruit)
+        {
+            return Json(true);
+
+        }
+        
         public ActionResult AddRecruit()
         {
             //if (RecruitService.CheckConfirm(id) == 0)
@@ -23,15 +29,23 @@ namespace HandWork.Com.MVC.Controllers.Recruits
 
 
             Recruit recruit = new Recruit();
-            recruit.Id = 0;
-            recruit.Location = "GuaGuoTech";
-            recruit.Money = 100;
-            recruit.Note = "天天情人节之出租男朋友 陪吃陪逛陪玩";
-            recruit.Percent = 1.00;
-            recruit.PhoneNum = "110";
-            recruit.Sex = 0;
-            recruit.SfzAccount = "3535353535";
-            recruit.WeixinNum = "520582";
+            recruit.Location=Request.Form["Location"];
+            recruit.Classify=Request.Form["小时工"];
+            //recruit.FinalMoney=Request.Form["Momey".ToString()];
+
+            //recruit.Id = 0;
+            //recruit.Location = "GuaGuoTech";
+            ////recruit.Location=@Form["Location"];
+            ////Response.Write(form["WorkHour"]);
+            //recruit.Money = 100;
+            //recruit.Note = "天天情人节之出租男朋友 陪吃陪逛陪玩";
+            //recruit.Percent = 1.00;
+            //recruit.PhoneNum = "110";
+            //recruit.Sex = 0;
+            //recruit.SfzAccount = "3535353535";
+            //recruit.WeixinNum = "520582";
+            
+
             RecruitService.Insert(recruit);
             //return View();
             return RedirectToAction("Index","Detail");
@@ -43,6 +57,5 @@ namespace HandWork.Com.MVC.Controllers.Recruits
             return View();
         }
 
-        public long id { get; set; }
     }
 }
