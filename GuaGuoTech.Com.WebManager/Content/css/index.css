@@ -6,6 +6,25 @@
     float: left;
  
 }
+/*模板页样式*/
+.NavBackground {
+    background:#336699;
+
+}
+.navbar-default .navbar-nav > li > a {
+    color:#ffffff;
+}
+.navbar-default .navbar-brand {
+    color:#ffffff;
+}
+.navbar-default .navbar-nav > .open > a {
+    /*background-image: linear-gradient(to bottom,#cccccc 0,#ccccccc 100%);*/
+    color:white;
+}
+.dropdown-menu {
+    background:#e7e7e7;
+
+}
 /*颜色*/
 .leftPanel ,leftHeadPanel{
 
@@ -31,7 +50,7 @@ width:100%;
 
 }
 .leftHeadPanel,.rightHeadPanel{
-height:50px;
+height:30px;
 }
 .leftHeadPanel {
     text-align:center;
@@ -42,5 +61,21 @@ height:50px;
 .rightHeadPanel {
         width: 80%;
             float:left;
+
+}
+/*button 样式*/
+.ButtonRadio {
+    border-radius:20px;
+    height:23px;
+}
+.btn {
+    padding:0px 12px;
+}
+/*table 样式*/
+.table-striped>tbody>tr:nth-of-type(odd) { 
+    background:#2baecc;
+    font-size:16px;
+  
+    color:#ffffff;
 
 }
