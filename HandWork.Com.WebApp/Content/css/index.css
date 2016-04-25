@@ -142,7 +142,7 @@ background-image:linear-gradient(to bottom,#920078 0,rgba(177, 120, 86, 0.98) 10
 h5 {
   text-align:left ;
   font-weight:300;
-
+  color:black;
   margin-bottom:0px;
      margin-top:4px!important;
 }
@@ -199,4 +199,10 @@ h5 {
 .weixinPanel {
 
 padding:5px 15px;
+}
+.clickMore {
+    padding:5px 0;
+    text-align:center;
+    background-color:#ccc;
+
 }

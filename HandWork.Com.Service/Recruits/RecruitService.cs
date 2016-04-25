@@ -1,6 +1,7 @@
 ﻿using HandWork.Com.Model.Recruits;
 using HandWork.Com.Model.Users;
 using HandWork.Com.Provider.Contexts;
+using HandWork.Com.Provider.Recruits;
 using HandWork.Com.Provider.Repositorys;
 using System;
 using System.Collections.Generic;
@@ -43,10 +44,10 @@ namespace HandWork.Com.Service.Recruits
             repository.Insert(recruit);
         }
       
-        public static void GetEntity(long id)
+        public static Recruit GetEntity(long id)
         {
             Repository<Recruit> repository = new Repository<Recruit>(new EntityContext());
-            repository.GetEntity(id);
+           return      repository.GetEntity(id);
 
         }
 
@@ -69,6 +70,18 @@ namespace HandWork.Com.Service.Recruits
             repository.Delete(recruit);
 
 
+        }
+
+        public static List<Model.ViewModels.JobLists.JobList> GetJobList(int pageNum, int maxList, int type)
+        {
+
+
+
+        return     RecruitProvider.GetAllRecruitByType(pageNum, maxList, type);
+
+
+        
+            
         }
     }
 }

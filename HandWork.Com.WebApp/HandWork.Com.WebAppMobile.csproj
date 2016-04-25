@@ -186,6 +186,9 @@
     <Content Include="Content\image\ww.png" />
     <Content Include="Content\js\bootstrap.js" />
     <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\css\dropload.css" />
+    <Content Include="Content\js\dropload.min.js" />
+    <Content Include="Content\js\jobList.js" />
     <Content Include="Content\js\jquery-2.2.2.min.js" />
     <Content Include="Content\js\jquery.mobile-1.4.5.min.js" />
     <Content Include="Content\js\npm.js" />

@@ -9,8 +9,8 @@ var _phoneNum = $(".phoneNum");
 //表单提交按钮
 var _formSubmit = $("#form_submit");
 
-/// baseUrl
-var url = "http://120.27.104.135/";
+/// baseUrl  All the  url  in  webSite
+var url = "http://localhost:23440/";
 
 ///带提示框的消息框
 var $GuaGuoTech_Alert = function (content) {

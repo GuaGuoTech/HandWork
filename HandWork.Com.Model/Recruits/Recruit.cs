@@ -10,9 +10,9 @@ namespace HandWork.Com.Model.Recruits
     /// <summary>
     /// 招聘信息表
     /// </summary>
-        [Table("recruit_info")]
+    [Table("recruit_info")]
     public class Recruit
-    {   
+    {
         /// <summary>
         /// 设置主键ID
         /// </summary>
@@ -20,12 +20,18 @@ namespace HandWork.Com.Model.Recruits
         [Column("id", TypeName = "BIGINT")]
         public long Id { get; set; }
 
+
+        /// <summary>
+        /// 微信用户的id
+        /// /// </summary>
+        public long WeixinUserId { get; set; }
+
         /// <summary>
         /// 当前招工的发布者
         /// </summary>
         [Column("man", TypeName = "NVARCHAR")]
         public string Man { get; set; }
-        
+
 
         /// <summary>
         /// 设置对象的地址
@@ -56,7 +62,6 @@ namespace HandWork.Com.Model.Recruits
         /// 当前对象联系微信
         /// </summary>
         [Column("weixin_num", TypeName = "VARCHAR")]
-        [Required]
         public string WeixinNum { get; set; }
 
         /// <summary>
@@ -88,7 +93,7 @@ namespace HandWork.Com.Model.Recruits
         /// </summary>
         [Column("requirement", TypeName = "NVARCHAR")]
         public string Requirement { get; set; }
-        
+
         /// <summary>
         /// 当前对象性别 0女1男2不限
         /// </summary>
@@ -99,20 +104,25 @@ namespace HandWork.Com.Model.Recruits
         /// 设置结算方式 0日结 1周结 2月结 3其他 
         /// </summary>
         [Column("pay_type", TypeName = "INT")]
-        public int PayWay { get; set; }
+        public int PayType { get; set; }
 
         /// <summary>
         /// 设置当前薪金
         /// </summary>
         [Column("money", TypeName = "DOUBLE")]
-        [Required]
-        public double  Money { get; set; }
+        public double Money { get; set; }
+
+
+        /// <summary>
+        /// 人数
+        /// </summary>
+        [Column("max_num", TypeName = "INT")]
+        public int MaxNum { get; set; }
 
         /// <summary>
         /// 设置当前薪金
         /// </summary>
         [Column("final_money", TypeName = "DOUBLE")]
-        [Required]
         public double FinalMoney { get; set; }
 
         /// <summary>

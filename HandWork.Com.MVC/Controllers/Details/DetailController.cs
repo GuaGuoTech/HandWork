@@ -13,14 +13,26 @@ namespace HandWork.Com.MVC.Controllers.Recruits
     public class DetailController : Controller
     {
         Repository<Recruit> repo = new Repository<Recruit>(new EntityContext());
-        public ActionResult Index()
+        public ActionResult Index(long  id)
         {
             //if (RecruitService.CheckConfirm(id) == 0)
             //{
             //    //Response.("");
             //    Redirect("~/Users/User/Index.cshtml");
             //}
-            return View();
+
+            if (id!=null)
+            {
+              Recruit  recruit =   RecruitService.GetEntity(id);
+              if (recruit!=null)
+              {
+                  return View(recruit);
+              }
+
+            }
+           
+                return View();
+            
 
         }
 

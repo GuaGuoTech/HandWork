@@ -2,10 +2,11 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutIndex.cshtml";
 }
+@model  HandWork.Com.Model.Recruits.Recruit
 <link href="~/Content/css/Detail.css" rel="stylesheet" />
 <div class="jobInfo">
-    <div class="title">急招传单派送员</div>
-    <ul class="inportantInfo"><li>工资：80/天</li> <li>地点：南亚风情第一城</li></ul>
+    <div class="title">@Model.Title</div>
+    <ul class="inportantInfo"><li>工资：@Model.Money</li> <li>地点：@Model.Location</li></ul>
     <div class="infoFoott"><span></span></div>
 </div>
 <div class="publishborder">
@@ -27,21 +28,35 @@
 
     <ul class="list-unstyled col-xs-8">
         <li>
-            发布者：万涛涛
+            发布者：@Model.Man
         </li>
         <li>
-            结算方式：日结
+            结算方式：@if (Model.PayType==0)
+                 {
+                @: 日结;
+                 }
+                 else if (Model.PayType==1)
+                 {
+                    @:周结
+                 }
+                     else if (Model.PayType == 2) {
+                        @: 月结;
+                 }
+                 else
+                 {
+                        @:其他
+                 }
         </li>
         <li>
             兼职内容：发传单
         </li>
-        <li>需要人数：5人</li>
+        <li>需要人数：@Model.MaxNum 人</li>
         <li>发布日期：2014-12-05</li>
 
     </ul>
     <ul class="col-xs-4 getJobRight">
 
-       <li><button class="btn btn-primary checkThisBtn">立即<br />申请</button></li> 
+        <li><button class="btn btn-primary checkThisBtn">立即<br />申请</button></li>
     </ul>
 </div>
 <div class="jobDetail">
@@ -51,18 +66,11 @@
         </div>
         <div>
             <label for="work" class="fontblack">
-                在学校附近就近安排，需要穿着工作服，由公司提供，同时有督导员进行指导，在指定地点分发传单
-                按时上班，传单传发结束就可以结束一天工作，由督导员发工资         在学校附近就近安排，需要穿着工作服，由公司提供，同时有督导员进行指导，在指定地点分发传单
-                按时上班，传单传发结束就可以结束一天工作，由督导员发工资         在学校附近就近安排，需要穿着工作服，由公司提供，同时有督导员进行指导，在指定地点分发传单
-                按时上班，传单传发结束就可以结束一天工作，由督导员发工资         在学校附近就近安排，需要穿着工作服，由公司提供，同时有督导员进行指导，在指定地点分发传单
-                按时上班，传单传发结束就可以结束一天工作，由督导员发工资         在学校附近就近安排，需要穿着工作服，由公司提供，同时有督导员进行指导，在指定地点分发传单
-                按时上班，传单传发结束就可以结束一天工作，由督导员发工资         在学校附近就近安排，需要穿着工作服，由公司提供，同时有督导员进行指导，在指定地点分发传单
-                按时上班，传单传发结束就可以结束一天工作，由督导员发工资         在学校附近就近安排，需要穿着工作服，由公司提供，同时有督导员进行指导，在指定地点分发传单
-                按时上班，传单传发结束就可以结束一天工作，由督导员发工资
+                @Model.Note
 
             </label>
         </div>
-      
+
 
     </div>
     <div class="otherInfo">
@@ -71,7 +79,7 @@
         </div>
         <div>
             <label for="work" class="fontblack">
-               周末
+                @Model.WorkDate
 
             </label>
         </div>
@@ -82,7 +90,7 @@
         </div>
         <div>
             <label for="work" class="fontblack">
-                9:00-18:00
+                @Model.WorkTime
             </label>
         </div>
 
@@ -93,7 +101,18 @@
         </div>
         <div>
             <label for="work" class="fontblack">
-                男女不限，能吃苦耐劳，能只干活不要工资
+                @if (Model.Sex==0)
+	                {
+                        @:女生
+	                }
+                 else if (Model.Sex==1)
+	                {
+                    @:男生
+	                }
+                else 
+	                {
+                    @:男女不限
+	                }
 
             </label>
         </div>

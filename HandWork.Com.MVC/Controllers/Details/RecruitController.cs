@@ -28,25 +28,39 @@ namespace HandWork.Com.MVC.Controllers.Recruits
             //}
 
 
-            Recruit recruit = new Recruit();
-            recruit.Location=Request.Form["Location"];
-            recruit.Classify=Request.Form["小时工"];
+            //recruit.Location=Request.Form["Location"];
+            //recruit.Classify=Request.Form["小时工"];
             //recruit.FinalMoney=Request.Form["Momey".ToString()];
+            var  a = 0;
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    Recruit recruit = new Recruit();
+                    recruit.Location = "GuaGuoTech";
+                    //recruit.Location=@Form["Location"];
+                    //Response.Write(form["WorkHour"]);
+                    recruit.Money = 100;
+                    recruit.PayType = i;
+                    recruit.WeixinUserId = i+1;
+                    recruit.Note = "天天情人节之出租男朋友 陪吃陪逛陪玩";
+                    recruit.Percent = 1.00;
+                    recruit.PhoneNum = "110";
+                    recruit.Sex = 0;
+                    recruit.Title = "我要招"+a+"万个";
+                    a++;
+                    recruit.Words = "打架";
 
-            //recruit.Id = 0;
-            //recruit.Location = "GuaGuoTech";
-            ////recruit.Location=@Form["Location"];
-            ////Response.Write(form["WorkHour"]);
-            //recruit.Money = 100;
-            //recruit.Note = "天天情人节之出租男朋友 陪吃陪逛陪玩";
-            //recruit.Percent = 1.00;
-            //recruit.PhoneNum = "110";
-            //recruit.Sex = 0;
-            //recruit.SfzAccount = "3535353535";
-            //recruit.WeixinNum = "520582";
+                    recruit.SfzAccount = "3535353535";
+                    recruit.WeixinNum = "520582";
+                    RecruitService.Insert(recruit);
+
+                }
+
+            }
+          
             
 
-            RecruitService.Insert(recruit);
             //return View();
             return RedirectToAction("Index","Detail");
 

@@ -23,6 +23,13 @@ namespace HandWork.Com.Provider.Repositorys
 
 
         /// <summary>
+        /// 拿到所有的实体和分页
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<TEntity> GetAllEntity(int pageNum,int maxList);
+
+
+        /// <summary>
         /// 根据条件返回一个list
         /// </summary>
         /// <param name="lambdaPress"></param>

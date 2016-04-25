@@ -70,6 +70,7 @@
     <Compile Include="Recruits\Recruit.cs" />
     <Compile Include="Relations\Relation.cs" />
     <Compile Include="Users\User.cs" />
+    <Compile Include="ViewModels\JobLists\JobList.cs" />
     <Compile Include="WantedJobs\WantedJob.cs" />
     <Compile Include="Weixins\WeixinCodeToken.cs" />
     <Compile Include="Weixins\WeixinMenus.cs" />

@@ -1,6 +1,8 @@
-﻿using HandWork.Com.Model.Weixins;
+﻿using HandWork.Com.Model.ViewModels.JobLists;
+using HandWork.Com.Model.Weixins;
 using HandWork.Com.MVC.Controllers.BaseControllers;
 using HandWork.Com.Service.PhoneChecks;
+using HandWork.Com.Service.Recruits;
 using HandWork.Com.Service.Weixins;
 using Newtonsoft.Json;
 using System;
@@ -69,6 +71,23 @@ namespace HandWork.Com.MVC.Controllers.Home
             }
             return View();
         }
+
+
+        [HttpPost]
+        public ActionResult GetJobList() 
+        {
+            //pageNum
+            int  pageNum  = Convert.ToInt32(Request.Params["pageNum"]);
+            //Max list value  in  a page
+            int maxNum = 3;
+
+            int type = Convert.ToInt32(Request.Params["type"]);
+
+            List<JobList> jobList = RecruitService.GetJobList(pageNum,maxNum,type);
+
+            return Json(jobList);
+        }
+
 
     }
 }
