@@ -21,38 +21,36 @@ namespace HandWork.Com.Model.Relation
         public long Id { get; set; }
 
         /// <summary>
-        /// 设置User
+        /// weixinUserId
         /// </summary>
-        [Column("User", TypeName = "VARCHAR")]
-        [Required]
-        public string User { get; set; }
+        [Column("weixin_user_id", TypeName = "BIGINT")]
+        public long WeixinUserId { get; set; }
+
+
+        /// <summary>
+        /// recruitId
+        /// </summary>
+      [Column("recruitId", TypeName = "BIGINT")]
+        public long RecuitId { get; set; }
 
         /// <summary>
         /// 设置生成时间
         /// </summary>
         [Column("first_time", TypeName = "DATETIME")]
-        [Required]
         public DateTime FirstTime { get; set; }
 
         /// <summary>
         /// 设置完成时间
         /// </summary>
         [Column("second_time", TypeName = "DATETIME")]
-        [Required]
         public DateTime SecondTime { get; set; }
 
-        /// <summary>
-        /// 设置User
-        /// </summary>
-        [Column("worker", TypeName = "VARCHAR")]
-        [Required]
-        public string Worker { get; set; }
+  
         
         /// <summary>
         /// 当前工作是否完成 0否1是
         /// </summary>
         [Column("finish", TypeName = "INT")]
-        [Required]
         public int  Finish { get; set; }
                 
     }

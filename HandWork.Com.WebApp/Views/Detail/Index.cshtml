@@ -3,6 +3,9 @@
     Layout = "~/Views/Shared/_LayoutIndex.cshtml";
 }
 @model  HandWork.Com.Model.Recruits.Recruit
+ @using Newtonsoft.Json
+@using HandWork.Com.Model.Weixins
+@using HandWork.Com.Service.Relations
 <link href="~/Content/css/Detail.css" rel="stylesheet" />
 <div class="jobInfo">
     <div class="title">@Model.Title</div>
@@ -55,8 +58,36 @@
 
     </ul>
     <ul class="col-xs-4 getJobRight">
+        @{
 
-        <li><button class="btn btn-primary checkThisBtn">立即<br />申请</button></li>
+            if (Session["weixinUser"] != null)
+            {
+                WeixinUser weixinUser = JsonConvert.DeserializeObject<WeixinUser>(Session["weixinUser"].ToString());
+                if (weixinUser.id == Model.WeixinUserId)
+                {
+                    <li><button disabled="disabled" class="btn btn-primary checkThisBtn">自己<br />发的</button></li>
+
+                }
+
+                if (RelationService.IsAskFor(weixinUser.id, Model.Id))
+                {
+                    <li><button  disabled="disabled" class="btn btn-primary checkThisBtn">已经<br />申请</button></li>
+
+                }
+
+                else
+                {
+                    <li><button class="btn btn-primary checkThisBtn" id="askForThisJob">立即<br />申请</button></li>
+                }
+            }
+            //下面一个有可能不要用
+            @*else
+            {
+                <li><button disabled="disabled" class="btn btn-primary checkThisBtn">请先<br />登录</button></li>
+
+            }*@
+        }
+    
     </ul>
 </div>
 <div class="jobDetail">
