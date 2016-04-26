@@ -42,8 +42,8 @@ namespace HandWork.Com.Model.Relation
         /// <summary>
         /// 设置完成时间
         /// </summary>
-        [Column("second_time", TypeName = "DATETIME")]
-        public DateTime SecondTime { get; set; }
+        [Column("finish_time", TypeName = "DATETIME")]
+        public DateTime FinishTime { get; set; }
 
   
         

@@ -21,7 +21,7 @@ namespace HandWork.Com.Model.WantedJobs
         public long Id { get; set; }
 
         /// <summary>
-        /// 设置对象的地址
+        /// 当前对象的联系地址 或者住所
         /// </summary>
         [Column("location", TypeName = "NVARCHAR")]
         public string Location { get; set; }
@@ -39,8 +39,8 @@ namespace HandWork.Com.Model.WantedJobs
         [Column("finish_time", TypeName = "DATETIME")]
         public DateTime FinishTime { get; set; }
 
-         /// <summary>
-        /// 设置登录密码
+        /// <summary>
+        /// 设置当前对象的姓名
         /// </summary>
         [Column("name", TypeName = "VARCHAR")]
         public string Name { get; set; }   
@@ -70,7 +70,7 @@ namespace HandWork.Com.Model.WantedJobs
         public string SfzAccount { get; set; }
 
         /// <summary>
-        /// 当前招工的简介
+        /// 当前求职的详细介绍
         /// </summary>
         [Column("note", TypeName = "NVARCHAR")]
         public string Note { get; set; }
@@ -82,7 +82,7 @@ namespace HandWork.Com.Model.WantedJobs
         public int Sex { get; set; }
 
         /// <summary>
-        /// 设置当前薪金
+        /// 设置预期工资
         /// </summary>
         [Column("money", TypeName = "VARCHAR")]
         public string money { get; set; }

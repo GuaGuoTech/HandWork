@@ -65,7 +65,7 @@ namespace HandWork.Com.Model.Users
         public string Comment { get; set; }
 
         /// <summary>
-        /// 地址
+        /// 当前对象的联系地址
         /// </summary>
         [Column("adress", TypeName = "VARCHAR")]
         public string Adress { get; set; }

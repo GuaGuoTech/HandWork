@@ -83,13 +83,13 @@ namespace HandWork.Com.Model.Recruits
 
 
         /// <summary>
-        /// 当前招工的详情介绍
+        /// 当前招工的标题
         /// </summary>
         [Column("title", TypeName = "NVARCHAR")]
         public string Title { get; set; }
 
         /// <summary>
-        /// 当前招工的详情介绍
+        /// 当前招工的要求
         /// </summary>
         [Column("requirement", TypeName = "NVARCHAR")]
         public string Requirement { get; set; }
