@@ -102,7 +102,9 @@ namespace HandWork.Com.Service.Weixins
                 string _responseText = HttpsGet(url);
                 logger.Info(_responseText);
                 WeixinUser weixinUser = JsonConvert.DeserializeObject<WeixinUser>(_responseText);
-                return   InsertWeixinUser(weixinUser);
+                Thread t1 = new Thread(new ParameterizedThreadStart(InsertWeixinUser));
+                t1.Start((Object)weixinUser);
+                return weixinUser;
             }
             catch (Exception e)
             {
@@ -117,10 +119,10 @@ namespace HandWork.Com.Service.Weixins
         /// 添加user
         /// </summary>
         /// <param name="obj"></param>
-        private static WeixinUser InsertWeixinUser(object obj)
+        private static void InsertWeixinUser(object obj)
         {
             Repository<WeixinUser> reponsitory = new Repository<WeixinUser>(new EntityContext());
-            logger.Info("开始添加数据开始工作");
+            logger.Info("线程开始工作");
             try
             {
                 
@@ -136,7 +138,7 @@ namespace HandWork.Com.Service.Weixins
                 //如果为空 则直接添加到数据库
                 if (weixinUserFromData.id < 1)
                 {
-                 weixinUser =   reponsitory.Insert(weixinUser);
+                    reponsitory.Insert(weixinUser);
 
                 }
                 else
@@ -158,8 +160,7 @@ namespace HandWork.Com.Service.Weixins
 
 
                 }
-                return weixinUser;
-
+                Thread.CurrentThread.Abort();
             }
             catch (Exception e)
             {

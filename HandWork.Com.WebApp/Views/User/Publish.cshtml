@@ -2,47 +2,42 @@
     ViewBag.Title = "Publish";
     Layout = "~/Views/Shared/_LayoutIndex.cshtml";
 }
-<link href="~/Content/css/publish.css" rel="stylesheet" />
+<script>
+    $(Recruit_Submit).on("click", function () {
+        var recruit={Name:this.Name,Classify:this.Classify,Confirm:this.Confirm,}
+
+    })
+</script>
 <div class="adjust">
-    <form action="~/Details/Recruit/AddRecruit" method="post">
-        @Html.GuaGuo_InptTextWithTitle("Title", "标题：", "", "圣上题字")
-        @Html.GuaGuo_InptTextWithTitle("Words", "兼职内容：", "", "简短的字描述，比如：发传单，销售")
-
-        <div class="form-group">
-            <label>结算方式：</label>
-            <select class="form-control" id="PayType" name="PayType">
-                <option value="0">日结</option>
-                <option value="1">周结</option>
-                <option value="2">月结</option>
-                <option value="3">其他</option>
-            </select>
-
-        </div>
-        <div class="form-group">
-            <label>性别允许：</label>
-            <select class="form-control" id="Sex" name="Sex">
-                <option value="0">女生</option>
-                <option value="1">男生</option>
-                <option value="1">其他</option>
-
-            </select>
-
-        </div>
-        @Html.GuaGuo_InptTextWithTitle("WorkTime", "工作时间：", "", "常用9:00-17:00哦")
-        @Html.GuaGuo_InptTextWithTitle("WorkDate", "工作日期：", "", "工作的日期")
+    <form typeof="submit" >
+        @Html.GuaGuo_InptTextWithTitle("Title", "标题：","", "圣上题字")
+        @Html.GuaGuo_InptTextWithTitle("WorkHour", "工作时间：", "", "常用9:00-17:00哦")
         @Html.GuaGuo_InptTextWithTitle("Money", "工作薪资：", "", "￥_￥")
-        @Html.GuaGuo_InptTextWithTitle("Location", "工作地点：", "", "南亚~爱情海~等等等")
-        @Html.GuaGuo_InptTextWithTitle("MaxNum", "所需人数：", "", "10人")
-        @Html.GuaGuo_InptTextWithTitle("Note", "工作详情：", "", "具体做什么")
+        @Html.GuaGuo_InptTextWithTitle("Location","工作地点","南亚~爱情海~等等等")
 
-        @Html.GuaGuo_InptTextWithTitle("Man", "联系人：", "", "X先生/X女士")
-        @Html.GuaGuo_PhoneNumberCheck()
-
-        <div class="form-group">
-            <label>具体要求：</label>
-            <textarea id="Requirement" name="Requirement" class="form-control"></textarea>
+        @Html.GuaGuo_InptTextWithTitle("WorkerNum", "所需人数：", "", "10人")
+        @Html.GuaGuo_InptTextWithTitle("LinkPeople", "联系人：", "", "X先生/X女士")
+        
+        @*@Html.GuaGuo_InptTextWithTitle("Note", "工作要求：", "", "准时上班，接受公司安排，有集体荣誉感~等等等~~")*@
+        @*@Html.GuaGuo_LableWithTitle("Note","工作要求")*@
+        @*@Html.RadioButtonFor(,"MaritalStatus")*@
+        @Html.GuaGuo_RadioButtonWithTitle("Sex","性别：","男","女")
+        @*<div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>男
+            </label>
         </div>
-        <input id="submit" type="button" class="btn btn-primary  remark" value="发布">
+        <div class="radio">
+
+            <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">女
+            </label>
+        </div>*@
+        @*<textarea id="Note"></textarea>*@
+        @Html.GuaGuo_PhoneNumberCheck()
+        @Html.GuaGuo_Button("Recruit_Submit", "点我发布")
+        @Html.BeginForm("AddRecruit","RecruitController",FormMethod.Post)
     </form>
-    <script src="~/Content/js/publish.js"></script>
+    
+
 </div>

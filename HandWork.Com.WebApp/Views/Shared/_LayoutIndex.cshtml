@@ -15,15 +15,11 @@
     <link rel="stylesheet" href="~/Content/css/index.css" />
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <link href="~/Content/css/GuaGuoBootstrap.css" rel="stylesheet" />
-
-
-    <link href="~/Content/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
     <script src="~/Content/js/jquery-2.2.2.min.js"></script>
     @*<script src="~/Content/js/jquery.mobile-1.4.5.min.js"></script>*@
     <script src="~/Content/js/dropload.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="~/Content/js/bootstrap.min.js"> </script>
-    <script src="~/Content/js/bootstrap-datetimepicker.min.js"></script>
     <style>
     </style>
 </head>
@@ -45,11 +41,9 @@
                     @*<a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i>用户 </a>
                         <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>*@
                     <ul class="dropdown-menu">
-                        <li><a href="~/Users/user/MyZoren/@user.id"><i class="icon-pencil"></i> 个人中心</a></li>
+                        <li><a href="~/Users/user/MyZoren/@user.openid"><i class="icon-pencil"></i> 个人中心</a></li>
                         <li class="divider"></li>
-                        <li><a class="userMassage" value="@user.id" href="~/Users/User/Massage/@user.id"><i class="icon-trash"></i> 消息<span class="badge" id="massageCount"></span></a></li>
-                        <li class="divider"></li>
-                        <li><a href="~/Users/User/publish"><i class="icon-pencil"></i> 发布职位</a></li>
+                        <li><a href="#"><i class="icon-trash"></i> 消息</a></li>
                     </ul>
                 </div>
 

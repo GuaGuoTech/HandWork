@@ -38,10 +38,10 @@ namespace HandWork.Com.Service.Recruits
             repository.Update(recruit);
 
         }
-        public static Recruit Insert(Recruit recruit)
+        public static void Insert(Recruit recruit)
         {
             Repository<Recruit> repository = new Repository<Recruit>(new EntityContext());
-            return       repository.Insert(recruit);
+            repository.Insert(recruit);
         }
       
         public static Recruit GetEntity(long id)

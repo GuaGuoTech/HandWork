@@ -47,7 +47,7 @@ namespace HandWork.Com.Provider.Repositorys
         /// 添加一个实体
         /// </summary>
         /// <param name="entity"></param>
-        TEntity Insert(TEntity  entity);
+        void Insert(TEntity  entity);
 
         /// <summary>
         /// 删除一个实体

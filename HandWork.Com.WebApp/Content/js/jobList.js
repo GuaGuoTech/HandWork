@@ -108,6 +108,7 @@ var _jobList = $(".jobList");
 //类型
 var _type = 4;
 
+var  _baseUrl="http://localhost:23440/";
 function getAllEntity(type) {
     var _data = {
         type: type,
@@ -121,7 +122,7 @@ function getAllEntity(type) {
 
 
     $.ajax({
-        url: url + "/Homs/Home/GetJobList",
+        url: _baseUrl + "/Homs/Home/GetJobList",
         type: "POST",
         data: _data,
         dataType:"JSON",
@@ -159,8 +160,6 @@ $(function () {
  
     getAllEntity(4);
 
-    setMassageCount();
-
     $(".classify li").click(function () {
         bindClickMoreEvent();
         $(_jobList).empty();
@@ -171,39 +170,11 @@ $(function () {
     });
 
     ///点击加载更多的事件
+
+
     bindClickMoreEvent();
 
-  
-    
-
 });
-
-
-//设置消息条数
-function setMassageCount() {
-    var id = $(".userMassage").attr("value");
-    var massage = $("#massageCount");
-    $.ajax({
-        url: url + "/Relations/Relation/GetRelationCout/",
-        type: "POST",
-        data: {ids:id},
-        dataType: "JSON",
-        cache: false,
-        success: function (data) {
-           
-            if (data>0) {
-                massage.text(data);
-            }
-        },
-        error: function (XMLHttpRequest, textStatus, errorThrown) {
-
-            $(_info).text(XMLHttpRequest.status + "错误信息" + XMLHttpRequest.readyState + ".," + textStatus + "," + errorThrown);
-
-        }
-
-    });
-}
-
 
 //绑定事件
 function bindClickMoreEvent()

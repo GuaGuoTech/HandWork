@@ -126,7 +126,6 @@
     <Compile Include="Controllers\Homes\HomeController.cs" />
     <Compile Include="Controllers\Details\DetailController.cs" />
     <Compile Include="Controllers\Details\RecruitController.cs" />
-    <Compile Include="Controllers\Relations\RelationController.cs" />
     <Compile Include="Controllers\Users\UserController.cs" />
     <Compile Include="Controllers\WantedJobs\WantedJobController.cs" />
     <Compile Include="Controllers\Weixins\WeixinController.cs" />

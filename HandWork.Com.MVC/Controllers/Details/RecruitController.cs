@@ -1,9 +1,7 @@
 ﻿using HandWork.Com.Model.Recruits;
-using HandWork.Com.Model.Weixins;
 using HandWork.Com.Provider.Contexts;
 using HandWork.Com.Provider.Repositorys;
 using HandWork.Com.Service.Recruits;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,28 +19,52 @@ namespace HandWork.Com.MVC.Controllers.Recruits
 
         }
         
-        [HttpPost]
-        public ActionResult AddRecruit(Recruit recruit)
+        public ActionResult AddRecruit()
         {
+            //if (RecruitService.CheckConfirm(id) == 0)
+            //{
+            //    //Response.("");
+            //    RedirectToAction("Index", "Detail");
+            //}
 
-            if (Session["weixinUser"]!=null)
+
+            //recruit.Location=Request.Form["Location"];
+            //recruit.Classify=Request.Form["小时工"];
+            //recruit.FinalMoney=Request.Form["Momey".ToString()];
+            var  a = 0;
+            for (int i = 0; i < 2; i++)
             {
+                for (int j = 0; j < 10; j++)
+                {
+                    Recruit recruit = new Recruit();
+                    recruit.Location = "GuaGuoTech";
+                    //recruit.Location=@Form["Location"];
+                    //Response.Write(form["WorkHour"]);
+                    recruit.Money = 100;
+                    recruit.PayType = i;
+                    recruit.WeixinUserId = i+1;
+                    recruit.Note = "天天情人节之出租男朋友 陪吃陪逛陪玩";
+                    recruit.Percent = 1.00;
+                    recruit.PhoneNum = "110";
+                    recruit.Sex = 0;
+                    recruit.Title = "我要招"+a+"万个";
+                    a++;
+                    recruit.Words = "打架";
 
-                WeixinUser weixinUser = new WeixinUser();
-                weixinUser = JsonConvert.DeserializeObject<WeixinUser>(Session["weixinUser"].ToString());
-                recruit.WeixinUserId = weixinUser.id;
-                Recruit addRecruit = RecruitService.Insert(recruit);
-                return Json(addRecruit);
+                    recruit.SfzAccount = "3535353535";
+                    recruit.WeixinNum = "520582";
+                    RecruitService.Insert(recruit);
+
+                }
 
             }
+          
+            
 
-            return Json("");
+            //return View();
+            return RedirectToAction("Index","Detail");
 
         }
-        /// <summary>
-        /// 这里缺逻辑判断
-        /// </summary>
-        /// <returns></returns>
         public ActionResult Index()
         {
 
