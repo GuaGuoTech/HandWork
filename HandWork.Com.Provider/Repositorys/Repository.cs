@@ -87,7 +87,7 @@ namespace HandWork.Com.Provider.Repositorys
             return Dbset.ToList().Skip(num).Take(maxList);
         }
 
-        public void Insert(TEntity entity)
+        public TEntity Insert(TEntity entity)
         {
 
             try
@@ -96,6 +96,7 @@ namespace HandWork.Com.Provider.Repositorys
                 string aa = JsonConvert.SerializeObject(entity);
                 logger.Info(aa);
                 _dbContext.SaveChanges();
+                return entity;
             }
             catch (DbEntityValidationException ex)
             {
@@ -113,6 +114,7 @@ namespace HandWork.Com.Provider.Repositorys
                 {
                     logger.Info(item);
                 }
+                throw ex;
             }
 
 

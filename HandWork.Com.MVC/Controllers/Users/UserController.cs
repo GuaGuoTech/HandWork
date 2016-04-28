@@ -8,6 +8,8 @@ using System.Web.Mvc;
 using HandWork.Com.Service.Users;
 using Newtonsoft.Json;
 using HandWork.Com.Model.Weixins;
+using HandWork.Com.Service.Relations;
+using HandWork.Com.Model.JsonModels.Relations;
 
 namespace HandWork.Com.MVC.Controllers.Users
 {
@@ -47,10 +49,10 @@ namespace HandWork.Com.MVC.Controllers.Users
         { 
             return View(); 
         }
-        public ActionResult Massage()
+        public ActionResult Massage(long  id)
         {
-
-            return View();
+            RelationMassage list = RelationService.GetRelationWithUser(id);
+            return View(list);
         }
         public ActionResult AddUser(Model.Users.User user)
         {

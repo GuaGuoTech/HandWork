@@ -206,3 +206,32 @@ padding:5px 15px;
     background-color:#ccc;
 
 }
+
+
+/*短信验证以及submit按钮开始*/
+
+.checkPhonePanel {
+
+margin-top:10px;
+
+}
+.checkPhoneBtn {
+color:white;
+}
+#phone_info {
+
+color:red;
+}
+
+#form_submit #submit{
+
+width:100%;
+
+}
+
+.form-group textarea {
+    height:100px;
+
+
+}
+/*短信验证以及submit按钮结束*/

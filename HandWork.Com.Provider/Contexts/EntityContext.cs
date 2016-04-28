@@ -9,6 +9,7 @@ using HandWork.Com.Model.WantedJobs;
 using HandWork.Com.Model.Recruits;
 using HandWork.Com.Model.Users;
 using HandWork.Com.Model.Weixins;
+using HandWork.Com.Model.Relations;
 
 namespace HandWork.Com.Provider.Contexts
 {
@@ -21,6 +22,7 @@ namespace HandWork.Com.Provider.Contexts
         public DbSet<Recruit> Recruits { get; set; }
 
         public DbSet<WeixinUser> WeixinUsers { get; set; }
+        public DbSet<Relation> Relations { get; set; }
 
     }
 }

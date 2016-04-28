@@ -986,3 +986,34 @@ INFO  2016-04-25 20:42:35,495 59938ms Repository`1           Insert             
 INFO  2016-04-25 20:42:35,518 59961ms Repository`1           Insert             - {"Id":0,"WeixinUserId":2,"Man":null,"Location":"GuaGuoTech","Percent":1.0,"PhoneNum":"110","Classify":null,"WeixinNum":"520582","SfzAccount":"3535353535","Words":"打架","Note":"天天情人节之出租男朋友 陪吃陪逛陪玩","Title":"我要招17万个","Requirement":null,"Sex":0,"PayType":1,"Money":100.0,"MaxNum":0,"FinalMoney":0.0,"FirstTime":"0001-01-01T00:00:00","WorkDate":"0001-01-01T00:00:00","WorkTime":"0001-01-01T00:00:00","Confirm":0}
 INFO  2016-04-25 20:42:35,535 59978ms Repository`1           Insert             - {"Id":0,"WeixinUserId":2,"Man":null,"Location":"GuaGuoTech","Percent":1.0,"PhoneNum":"110","Classify":null,"WeixinNum":"520582","SfzAccount":"3535353535","Words":"打架","Note":"天天情人节之出租男朋友 陪吃陪逛陪玩","Title":"我要招18万个","Requirement":null,"Sex":0,"PayType":1,"Money":100.0,"MaxNum":0,"FinalMoney":0.0,"FirstTime":"0001-01-01T00:00:00","WorkDate":"0001-01-01T00:00:00","WorkTime":"0001-01-01T00:00:00","Confirm":0}
 INFO  2016-04-25 20:42:35,551 59995ms Repository`1           Insert             - {"Id":0,"WeixinUserId":2,"Man":null,"Location":"GuaGuoTech","Percent":1.0,"PhoneNum":"110","Classify":null,"WeixinNum":"520582","SfzAccount":"3535353535","Words":"打架","Note":"天天情人节之出租男朋友 陪吃陪逛陪玩","Title":"我要招19万个","Requirement":null,"Sex":0,"PayType":1,"Money":100.0,"MaxNum":0,"FinalMoney":0.0,"FirstTime":"0001-01-01T00:00:00","WorkDate":"0001-01-01T00:00:00","WorkTime":"0001-01-01T00:00:00","Confirm":0}
+INFO  2016-04-26 16:11:29,938 1038594ms PhoneCheckService      SendCheckCode      - {"statusMsg":"【短信】应用未上线，模板短信接收号码外呼受限","statusCode":"112310"}
+INFO  2016-04-26 16:11:41,948 1050604ms PhoneCheckService      SendCheckCode      - {"statusMsg":"【短信】应用未上线，模板短信接收号码外呼受限","statusCode":"112310"}
+INFO  2016-04-26 16:28:15,229 236834ms UserController         CheckCode          - 发送过来的code：0000---------后台来的code：
+INFO  2016-04-26 16:30:16,976 358581ms UserController         CheckCode          - 发送过来的code：0000---------后台来的code：
+INFO  2016-04-26 16:31:50,597 48759ms UserController         CheckCode          - 发送过来的code：0000---------后台来的code：
+INFO  2016-04-26 16:34:54,776 232939ms UserController         CheckCode          - 发送过来的code：0000---------后台来的code：
+INFO  2016-04-26 16:35:25,588 263750ms UserController         CheckCode          - 发送过来的code：0000---------后台来的code：
+INFO  2016-04-26 16:41:59,449 657611ms UserController         CheckCode          - 发送过来的code：0000---------后台来的code：
+INFO  2016-04-26 16:49:56,624 44204ms UserController         CheckCode          - 发送过来的code：0000---------后台来的code：
+INFO  2016-04-26 16:52:25,717 27616ms UserController         CheckCode          - 发送过来的code：0000---------后台来的code：
+INFO  2016-04-26 16:54:48,196 18758ms UserController         CheckCode          - 发送过来的code：0000---------后台来的code：
+INFO  2016-04-26 16:54:52,245 22807ms UserController         CheckCode          - 发送过来的code：0000---------后台来的code：
+INFO  2016-04-26 16:54:53,439 24001ms UserController         CheckCode          - 发送过来的code：0000---------后台来的code：
+INFO  2016-04-26 16:57:48,391 198952ms UserController         CheckCode          - 发送过来的code：0000---------后台来的code：
+INFO  2016-04-26 16:57:51,743 202305ms UserController         CheckCode          - 发送过来的code：000---------后台来的code：
+INFO  2016-04-26 17:48:16,706 74147ms UserController         CheckCode          - 发送过来的code：0000---------后台来的code：
+INFO  2016-04-26 17:48:39,691 97131ms UserController         CheckCode          - 发送过来的code：0000---------后台来的code：
+INFO  2016-04-26 17:48:40,771 98211ms UserController         CheckCode          - 发送过来的code：0000---------后台来的code：
+INFO  2016-04-26 17:48:42,502 99942ms UserController         CheckCode          - 发送过来的code：0000---------后台来的code：
+INFO  2016-04-26 17:50:50,888 228328ms PhoneCheckService      SendCheckCode      - {"statusMsg":"【短信】应用未上线，模板短信接收号码外呼受限","statusCode":"112310"}
+INFO  2016-04-26 17:51:34,917 272357ms PhoneCheckService      SendCheckCode      - {"statusMsg":"【短信】应用未上线，模板短信接收号码外呼受限","statusCode":"112310"}
+INFO  2016-04-26 17:55:59,812 126132ms PhoneCheckService      SendCheckCode      - {"statusMsg":"【短信】接收短信的手机号码超长","statusCode":"112319"}
+INFO  2016-04-26 17:56:45,565 171885ms PhoneCheckService      SendCheckCode      - {"statusMsg":"【短信】接收短信的手机号码超长","statusCode":"112319"}
+INFO  2016-04-27 21:42:12,531 1560200ms RelationController     AcceptThisChecked  - 2,
+INFO  2016-04-27 21:42:57,245 17762ms RelationController     AcceptThisChecked  - 2,
+INFO  2016-04-27 21:45:45,710 109396ms RelationController     AcceptThisChecked  - 2,
+INFO  2016-04-27 21:47:51,964 87527ms RelationController     AcceptThisChecked  - 2,
+INFO  2016-04-27 21:49:59,563 215127ms RelationController     AcceptThisChecked  - 2,
+INFO  2016-04-27 21:50:15,124 230687ms RelationController     RefuseThisChecked  - 2,
+INFO  2016-04-27 21:51:28,337 16085ms RelationController     RefuseThisChecked  - 2,
+INFO  2016-04-27 21:52:04,335 52082ms RelationController     AcceptThisChecked  - 2,
