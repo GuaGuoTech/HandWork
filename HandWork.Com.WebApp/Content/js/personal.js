@@ -42,6 +42,12 @@ $(function () {
         }
     });
     $(_formSubmit).click(function () {
+
+        var _code = $("#_phoneChek").val();
+        if (_code=="") {
+            $(_info).text("请输入验证码");
+            return false;
+        }
         formCheckData();
     });
 
@@ -143,7 +149,8 @@ function formCheckData() {
                     return false;
                 }
                 else {
-                    $(_formSubmit).parents("form").submit();
+
+                  //  $(_formSubmit).parents("form").submit();
                 }
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -162,4 +169,30 @@ function formCheckData() {
         return false;
 
     }
+}
+
+var GuaGuoTechData = function () {
+
+    this.data = _data;
+
+}
+
+function dataSubmit(_data,_postUrl) {
+    $.ajax({
+        url: url + _postUrl,
+        type: "POST",
+        data: _data,
+        cache: false,
+        dataType:"JSON",
+        success: function (data) {
+           
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+            $(_info).text(XMLHttpRequest.status + "错误信息" + XMLHttpRequest.readyState + ".," + textStatus + "," + errorThrown);
+
+        }
+
+    });
+
 }
