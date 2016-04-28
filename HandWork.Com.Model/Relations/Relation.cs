@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace HandWork.Com.Model.Relation
+namespace HandWork.Com.Model.Relations
 {   /// <summary>
     /// 雇主员工信息表
     /// </summary>
@@ -25,6 +25,10 @@ namespace HandWork.Com.Model.Relation
         /// </summary>
         [Column("weixin_user_id", TypeName = "BIGINT")]
         public long WeixinUserId { get; set; }
+
+
+        [Column("ask_weixin_user_id", TypeName = "BIGINT")]
+        public long AskWeixinUserId { get; set; }
 
 
         /// <summary>
@@ -48,7 +52,7 @@ namespace HandWork.Com.Model.Relation
   
         
         /// <summary>
-        /// 当前工作是否完成 0否1是
+        /// 当前工作是否确认 0否  1接受 2拒绝
         /// </summary>
         [Column("finish", TypeName = "INT")]
         public int  Finish { get; set; }
