@@ -3,6 +3,7 @@ using HandWork.Com.Model.Relations;
 using HandWork.Com.Model.Weixins;
 using HandWork.Com.Service.Recruits;
 using HandWork.Com.Service.Relations;
+using HandWork.Com.Service.Users;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,18 @@ namespace HandWork.Com.MVC.Controllers.Relations
             {
                 WeixinUser weixinUser = new WeixinUser();
                 weixinUser = JsonConvert.DeserializeObject<WeixinUser>(Session["weixinUser"].ToString());
+
+                Model.Users.User user = UserService.FindUser(weixinUser.openid);
+                if (user==null)
+                {
+                    return Json(false);
+                }
+
+
+
                 relation.AskWeixinUserId = weixinUser.id;
+                relation.ForRead = 0;
+                relation.ManagerForRead = 0;
                 relation.WeixinUserId = RecruitService.GetEntity(relation.RecuitId).WeixinUserId;
                 RelationService.AddRelation(relation);
 
@@ -48,6 +60,32 @@ namespace HandWork.Com.MVC.Controllers.Relations
             return Json(cout);
         }
 
+
+        public ActionResult ChangeRead(string ids)
+        {
+
+
+            if (ids != null)
+            {
+                string[] idArray = ids.Split(',');
+                for (int i = 0; i < idArray.Length; i++)
+                {
+                    if (idArray[i] != "")
+                    {
+                        long id = Convert.ToInt64(idArray[i]);
+                        RelationService.ChangeRead(id);
+                    }
+
+                }
+                return Json("");
+            }
+            else
+            {
+                return Json("shibai");
+            }
+
+        }
+    
 
         /// <summary>
         /// 返回具体的集合   其中list.relationList[0]位作为发布者的消息，[1]位申请者的消息

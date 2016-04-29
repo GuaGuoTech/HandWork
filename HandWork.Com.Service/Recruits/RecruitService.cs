@@ -41,6 +41,7 @@ namespace HandWork.Com.Service.Recruits
         public static Recruit Insert(Recruit recruit)
         {
             Repository<Recruit> repository = new Repository<Recruit>(new EntityContext());
+            recruit.PublishTime = DateTime.Now;
             return       repository.Insert(recruit);
         }
       

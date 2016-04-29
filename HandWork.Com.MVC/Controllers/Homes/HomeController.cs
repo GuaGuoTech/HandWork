@@ -79,7 +79,7 @@ namespace HandWork.Com.MVC.Controllers.Home
             //pageNum
             int  pageNum  = Convert.ToInt32(Request.Params["pageNum"]);
             //Max list value  in  a page
-            int maxNum = 3;
+            int maxNum = 10;
 
             int type = Convert.ToInt32(Request.Params["type"]);
 

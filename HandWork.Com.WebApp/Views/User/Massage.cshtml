@@ -83,8 +83,7 @@
                 {
                     foreach (var item in Model.relationAnWeixinUser)
                     {
-                        <tr>
-                            <td class="col-xs-1"><input type="checkbox" /></td>
+                        <tr class="askIdPanel" key="@item.recuit.Id">
                             <td class="col-xs-5"><a class="recuitTitle">@item.recuit.Title</a></td>
                             <td class="col-xs-5">
                                 <a class="userName UserName ">
@@ -133,7 +132,7 @@
                 $(function () {
 
                     $(".showHead").click(function () {
-
+                        
                         var content = $(this).next();
                         content.slideToggle();
 

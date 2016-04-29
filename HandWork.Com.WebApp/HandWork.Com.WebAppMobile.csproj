@@ -151,6 +151,7 @@
     <Content Include="Content\css\GuaGuoBootstrap.css" />
     <Content Include="Content\css\Massage.css" />
     <Content Include="Content\css\MyZoren.css" />
+    <Content Include="Content\css\weui.min.css" />
     <Content Include="Content\image\adverta.jpg" />
     <Content Include="Content\image\advertb.jpg" />
     <Content Include="Content\image\advertc.jpg" />
@@ -332,6 +333,7 @@
     <Content Include="Views\Detail\Index.cshtml" />
     <Content Include="Views\User\MyZoren.cshtml" />
     <Content Include="Views\User\Massage.cshtml" />
+    <Content Include="Views\User\WeiXinMSG.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

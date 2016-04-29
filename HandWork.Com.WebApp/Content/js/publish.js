@@ -12,7 +12,7 @@
             Title: $("#Title").val(),
             Words: $("#Words").val(),
             WorkTime: $("#WorkTime").val(),
-            WorkDate: $("#WorkDate").val(),
+            WorkDate: $("#WorkDate").val() + "至" + $("#WorkEndDate").val(),
             Money: $("#Money").val(),
             Location: $("#Location").val(),
             MaxNum: $("#MaxNum").val(),
@@ -49,6 +49,23 @@
 
 
         //时间
-        $("")
 
-    })});
+
+    })
+});
+
+
+///日期选择 
+$("#WorkDate").datetimepicker({
+    format: 'yyyy-mm-dd',
+    language: 'zh-CN',
+    minView: 'month',
+    autoclose:true,
+});
+$("#WorkEndDate").datetimepicker({
+    format: 'yyyy-mm-dd',
+    language: 'zh-CN',
+    minView: 'month',
+    autoclose: true,
+
+});

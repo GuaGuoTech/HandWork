@@ -28,8 +28,10 @@
             </select>
 
         </div>
-        @Html.GuaGuo_InptTextWithTitle("WorkTime", "工作时间：", "", "常用9:00-17:00哦")
-        @Html.GuaGuo_InptTextWithTitle("WorkDate", "工作日期：", "", "工作的日期")
+
+        @Html.GuaGuo_InptTextWithTitle("WorkDate", "工作开始日期：", "", "点击选择开始日期", attributes: new { @readonly = "readonly" })     
+        @Html.GuaGuo_InptTextWithTitle("WorkEndDate", "工作结束日期：", "", "点击选择结束日期", attributes: new { @readonly = "readonly" })
+        @Html.GuaGuo_InptTextWithTitle("WorkTime", "工作时间：", "", "列如：朝九晚六")
         @Html.GuaGuo_InptTextWithTitle("Money", "工作薪资：", "", "￥_￥")
         @Html.GuaGuo_InptTextWithTitle("Location", "工作地点：", "", "南亚~爱情海~等等等")
         @Html.GuaGuo_InptTextWithTitle("MaxNum", "所需人数：", "", "10人")
@@ -45,4 +47,5 @@
         <input id="submit" type="button" class="btn btn-primary  remark" value="发布">
     </form>
     <script src="~/Content/js/publish.js"></script>
+    
 </div>

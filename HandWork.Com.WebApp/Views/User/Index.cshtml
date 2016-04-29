@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_LayoutIndex.cshtml";
 }
 
-<div class="">
+<div class="panelPadding">
     @model  HandWork.Com.Model.Users.User
 
 
@@ -33,12 +33,9 @@
                 </div>
                 @if (Model.Confirm == 0)
                 {
-                    <input id="form_submit" type="submit" class="btn btn-primary  remark" value="正在审核中" />
+                    <input id="form_submit" type="submit" disabled="disabled"  class="btn btn-primary  remark" value="已经上传" />
                 }
-                else if (Model.Confirm == 1)
-                {
-                    <input id="form_submit" type="submit" class="btn btn-primary  remark" value="审核通过" />
-                }
+            
 
             </div>
         }
@@ -79,3 +76,14 @@
 
 </div>
 <script type="text/javascript" src="~/Content/js/personal.js"></script>
+<script>
+    $(function () {
+        $("#form_submit").click(function () {
+
+            $(this).parents("form").submit();
+        });
+    });
+
+
+
+</script>
