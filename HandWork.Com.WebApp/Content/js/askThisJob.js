@@ -17,7 +17,14 @@
             dataType: "JSON",
             cache: false,
             success: function (data) {
-                location.reload();
+                alert(data);
+                if (!data) {
+
+                    window.location.href = "Users/User/WeiXinMSG";
+                }
+                else {
+                    location.reload();
+                }
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
 

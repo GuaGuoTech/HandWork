@@ -48,7 +48,7 @@ namespace HandWork.Com.Service.Relations
                 ///作为发布者的所有的信息
                 Expression<Func<Relation, bool>> expression = r => r.WeixinUserId == weixinUserId && r.Finish == 0;
                 ///作为请求者所有的信息
-                Expression<Func<Relation, bool>> expressionFor = r => r.AskWeixinUserId == weixinUserId && r.Finish != 0;
+                Expression<Func<Relation, bool>> expressionFor = r => r.AskWeixinUserId == weixinUserId && r.Finish != 0&&r.ForRead==0;
 
                 RelationMassage relationMassage = new RelationMassage();
 
@@ -133,5 +133,20 @@ namespace HandWork.Com.Service.Relations
 
 
         }
+
+        public static void ChangeRead(long id)
+        {
+            Repository<Relation> repository = new Repository<Relation>(new Provider.Contexts.EntityContext());
+
+            Relation relation = repository.GetEntity(id);
+            relation.ForRead = 1;
+            repository.Update(relation);
+
+
+
+        }
+
+
+
     }
 }

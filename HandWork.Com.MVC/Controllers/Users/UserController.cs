@@ -101,5 +101,11 @@ namespace HandWork.Com.MVC.Controllers.Users
             }
         }
 
+
+        public ActionResult WeiXinMSG() {
+
+            return View();
+        }
+
     }
 }

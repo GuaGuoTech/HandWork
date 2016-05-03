@@ -84,7 +84,7 @@ var jobIndex = function (obj) {
     var _oclockfont = $("<span></span>");
     _oclockfont.addClass("oclockfont labela");
     ///时间
-    _oclockfont.text("三天前");
+    _oclockfont.text(FormatingTime(obj.recuit.PublishTime));
     _oclockfont.appendTo(_div);
 
     var _span = $("<span></span>");
@@ -213,5 +213,53 @@ function bindClickMoreEvent()
         _num++;
         getAllEntity(_type);
     });
+
+}
+
+
+////根据时间实现首页的几天了
+function FormatingTime(Dtime) {
+
+    ///获取的时间
+    var NewDtime = new Date(parseInt(Dtime.replace("/Date(", "").replace(")/", ""), 10));
+
+    var getChineseSubDate = ["就今天", "昨天", "前天", "三天前", "四天前", "五天前", "六天前", "上星期", "八天前", "九天前", "十天前"]
+
+    console.info(getChineseSubDate[0]);
+
+    var publishDyear = NewDtime.getFullYear();
+
+    var publisDmonth = NewDtime.getMonth() + 1;
+
+    var publisDdate = NewDtime.getDate();
+
+    //当前的时间
+    var localDate = new Date();
+
+    var thisYear = localDate.getFullYear();
+
+    ///月份加一
+    var thisMonth = localDate.getMonth() + 1;
+
+    var thisDate = localDate.getDate();
+
+    var yearSub = thisYear - publishDyear;
+
+    var monthSub = thisMonth - publisDmonth;
+
+    var dateSub = thisDate - publisDdate;
+
+    if (yearSub > 0 || yearSub == 0 && monthSub > 0||yearSub == 0 && monthSub==0&&dateSub>10) {
+        return "好久了";
+    }
+    else {
+        return getChineseSubDate[dateSub];
+    }
+
+
+
+
+
+
 
 }

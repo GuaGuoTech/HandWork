@@ -29,7 +29,39 @@ $(function () {
         }
     });
 
+    changeRead();
+
+
+
 })
+
+
+function changeRead() {
+
+    var _panel = $(".askIdPanel");
+    var ids = "";
+    for (var i = 0; i < _panel.length; i++) {
+        ids += $(_panel[i]).attr("key");
+    }
+    console.info(ids);
+    if (ids.length > 0) {
+
+
+        $.ajax({
+            url: url + "Relations/Relation/ChangeRead",
+            type: "POST",
+            data: { "ids": ids },
+            cache: false,
+            success: function (data) {
+
+                location.reload();
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(XMLHttpRequest.status + "错误信息" + XMLHttpRequest.readyState + ".," + textStatus + "," + errorThrown);
+            }
+        });
+    }
+}
 
 
 function dealWithThis(ids, obj) {
@@ -49,8 +81,9 @@ function dealWithThis(ids, obj) {
         data: { "ids": ids },
         cache: false,
         success: function (data) {
-          
-            location.reload();
+     
+                localtion.href = "/User/User/WeiXinMSG";
+            
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
 
@@ -59,6 +92,7 @@ function dealWithThis(ids, obj) {
         }
 
     });
+
 
 
 

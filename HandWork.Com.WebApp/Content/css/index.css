@@ -223,15 +223,21 @@ color:white;
 color:red;
 }
 
-#form_submit #submit{
+#form_submit{
 
 width:100%;
 
 }
-
+#submit {
+width:100%;
+}
 .form-group textarea {
     height:100px;
 
+
+}
+.panelPadding {
+    padding:5px 15px;
 
 }
 /*短信验证以及submit按钮结束*/

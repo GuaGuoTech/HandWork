@@ -52,10 +52,22 @@ namespace HandWork.Com.Model.Relations
   
         
         /// <summary>
-        /// 当前工作是否确认 0否  1接受 2拒绝
+        /// 当前是否接受 0否  1接受 2拒绝
         /// </summary>
         [Column("finish", TypeName = "INT")]
         public int  Finish { get; set; }
+
+        /// <summary>
+        /// 是否已经读过了 0为否
+        /// </summary>
+        [Column("for_read", TypeName = "INT")]
+        public int ForRead { get; set; }
+
+        /// <summary>
+        /// 管理员有没有处理 0为没处理
+        /// </summary>
+        [Column("manager_for_read", TypeName = "INT")]
+        public int ManagerForRead { get; set; }
                 
     }
 }

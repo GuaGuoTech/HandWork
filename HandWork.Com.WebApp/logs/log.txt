@@ -1017,3 +1017,5 @@ INFO  2016-04-27 21:49:59,563 215127ms RelationController     AcceptThisChecked 
 INFO  2016-04-27 21:50:15,124 230687ms RelationController     RefuseThisChecked  - 2,
 INFO  2016-04-27 21:51:28,337 16085ms RelationController     RefuseThisChecked  - 2,
 INFO  2016-04-27 21:52:04,335 52082ms RelationController     AcceptThisChecked  - 2,
+INFO  2016-04-28 17:20:10,778 660657ms RelationController     AcceptThisChecked  - 2,
+INFO  2016-04-28 17:21:10,995 720874ms RelationController     RefuseThisChecked  - 1,

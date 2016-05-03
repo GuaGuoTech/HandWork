@@ -134,23 +134,23 @@ namespace HandWork.Com.Model.Recruits
         /// <summary>
         /// 设置工作日期
         /// </summary>
-        [Column("work_date", TypeName = "DATETIME")]
-        public DateTime WorkDate { get; set; }
+        [Column("work_date", TypeName = "VARCHAR")]
+        public string WorkDate { get; set; }
 
         /// <summary>
         /// 设置工作时间
         /// </summary>
-        [Column("work_time", TypeName = "DATETIME")]
-        public DateTime WorkTime { get; set; }
+        [Column("work_time", TypeName = "VARCHAR")]
+        public string WorkTime { get; set; }
 
 
-
+        [Column("publish_Time", TypeName = "DATETIME")]
+        public DateTime PublishTime{ get; set; }
 
         /// <summary>
         /// 当前是否人工确认
         /// </summary>
         [Column("confirm", TypeName = "INT")]
-        [Required]
         public int Confirm { get; set; }
     }
 }

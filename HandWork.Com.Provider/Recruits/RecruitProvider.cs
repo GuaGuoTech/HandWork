@@ -20,11 +20,11 @@ namespace HandWork.Com.Provider.Recruits
                 ///如果为四则不分类
               if (type==4)
               {
-                  recruitList = entityContext.Recruits.ToList().OrderBy(r => r.Id).Skip(num).Take(maxList).ToList();
+                  recruitList = entityContext.Recruits.ToList().OrderByDescending(r => r.PublishTime).Skip(num).Take(maxList).ToList();
               }
               else
               {
-                  recruitList = entityContext.Recruits.Where(r => r.PayType == type).OrderBy(r=>r.Id).Skip(num).Take(maxList).ToList();
+                  recruitList = entityContext.Recruits.Where(r => r.PayType == type).OrderByDescending(r => r.PublishTime).Skip(num).Take(maxList).ToList();
               }
                 
                 for (int i = 0; i < recruitList.Count; i++)
