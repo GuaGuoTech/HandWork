@@ -59,9 +59,9 @@ namespace HandWork.Com.Service.Recruits
 
         public static void SendMsg(Recruit recruit)
         {
-            Repository<Recruit> repository = new Repository<Recruit>(new EntityContext());
-            recruit.FinalMoney = recruit.Money*recruit.Percent;
-            repository.Update(recruit);
+            //Repository<Recruit> repository = new Repository<Recruit>(new EntityContext());
+            //recruit.FinalMoney = recruit.Money * recruit.Percent;
+            //repository.Update(recruit);
 
 
         }

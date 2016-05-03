@@ -17,10 +17,9 @@
             dataType: "JSON",
             cache: false,
             success: function (data) {
-                alert(data);
-                if (!data) {
+                if (data==false) {
 
-                    window.location.href = "Users/User/WeiXinMSG";
+                    window.location.href = url+"Users/User/WeiXinMSG";
                 }
                 else {
                     location.reload();

@@ -19,7 +19,6 @@ namespace HandWork.Com.Service.PhoneChecks
     public static class PhoneCheckService
     {
         public static readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        static   int times = 0;
         public static string code;
         public static string SendCheckCode(string phoneNumber)
         {

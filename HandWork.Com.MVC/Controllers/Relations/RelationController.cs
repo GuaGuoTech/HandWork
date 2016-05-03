@@ -31,19 +31,27 @@ namespace HandWork.Com.MVC.Controllers.Relations
                 Model.Users.User user = UserService.FindUser(weixinUser.openid);
                 if (user==null)
                 {
-                    return Json(false);
+                    return Json(false, JsonRequestBehavior.AllowGet);
                 }
 
 
+                else
+                {
+                    relation.AskWeixinUserId = weixinUser.id;
+                    relation.ForRead = 0;
+                    relation.ManagerForRead = 0;
+                    relation.WeixinUserId = RecruitService.GetEntity(relation.RecuitId).WeixinUserId;
+                    RelationService.AddRelation(relation);
+                    return Json(true, JsonRequestBehavior.AllowGet);
 
-                relation.AskWeixinUserId = weixinUser.id;
-                relation.ForRead = 0;
-                relation.ManagerForRead = 0;
-                relation.WeixinUserId = RecruitService.GetEntity(relation.RecuitId).WeixinUserId;
-                RelationService.AddRelation(relation);
+                }
+      
 
             }
-            return Json("");
+            else
+            {
+                return Json("erro",JsonRequestBehavior.AllowGet);
+            }
         }
 
 

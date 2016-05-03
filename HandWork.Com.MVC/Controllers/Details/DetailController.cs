@@ -21,7 +21,7 @@ namespace HandWork.Com.MVC.Controllers.Recruits
             //    Redirect("~/Users/User/Index.cshtml");
             //}
 
-            if (id!=null)
+            if (id!=0)
             {
               Recruit  recruit =   RecruitService.GetEntity(id);
               if (recruit!=null)

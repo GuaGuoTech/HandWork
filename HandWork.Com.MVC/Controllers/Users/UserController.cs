@@ -64,9 +64,9 @@ namespace HandWork.Com.MVC.Controllers.Users
             //user.WeixinNum = "oL62cwXqco5NPxguPwBiOfT4h6Ww";
                 logger.Info(user.WeixinNum);
                 UserService.Insert(user);
-            }        
+            }
 
-            return Json("");
+            return RedirectToAction("Index");
         }
       
         public ActionResult Publish() 
@@ -93,11 +93,11 @@ namespace HandWork.Com.MVC.Controllers.Users
             logger.Info("发送过来的code："+_code+"---------后台来的code："+code);
             if (code==_code||_code=="0000")
             {
-                return Json(true);
+                return Json(true, JsonRequestBehavior.AllowGet);
             }
             else
             {
-                return Json(false);
+                return Json(false, JsonRequestBehavior.AllowGet);
             }
         }
 

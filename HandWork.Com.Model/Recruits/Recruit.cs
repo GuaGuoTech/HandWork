@@ -109,15 +109,15 @@ namespace HandWork.Com.Model.Recruits
         /// <summary>
         /// 设置当前薪金
         /// </summary>
-        [Column("money", TypeName = "DOUBLE")]
-        public double Money { get; set; }
+        [Column("money", TypeName = "VARCHAR")]
+        public string Money { get; set; }
 
 
         /// <summary>
         /// 人数
         /// </summary>
-        [Column("max_num", TypeName = "INT")]
-        public int MaxNum { get; set; }
+        [Column("max_num", TypeName = "VARCHAR")]
+        public string MaxNum { get; set; }
 
         /// <summary>
         /// 设置当前薪金
