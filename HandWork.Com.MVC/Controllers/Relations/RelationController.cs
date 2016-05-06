@@ -43,15 +43,13 @@ namespace HandWork.Com.MVC.Controllers.Relations
                     relation.WeixinUserId = RecruitService.GetEntity(relation.RecuitId).WeixinUserId;
                     RelationService.AddRelation(relation);
                     return Json(true, JsonRequestBehavior.AllowGet);
-
                 }
-      
-
             }
             else
             {
                 return Json("erro",JsonRequestBehavior.AllowGet);
             }
+
         }
 
 
@@ -160,6 +158,8 @@ namespace HandWork.Com.MVC.Controllers.Relations
                 return Json("shibai");
             }
         }
+
+
 
     }
 }

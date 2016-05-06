@@ -20,11 +20,11 @@ namespace HandWork.Com.Model.Users
         [Column("id", TypeName = "BIGINT")]
         public long Id { get; set; }
 
-        ///// <summary>
-        ///// 设置Id的级别
-        ///// </summary>
-        //[Column("id_class", TypeName = "INT")]
-        //public int IdClass { get; set; }
+        /// <summary>
+        /// 当前对象联系微信
+        /// </summary>
+        [Column("weixin_user_Id", TypeName = "BIGINT")]
+        public long WeixinUserId { get; set; }
 
         /// <summary>
         /// 姓名
@@ -38,12 +38,7 @@ namespace HandWork.Com.Model.Users
         [Column("phone_num", TypeName = "VARCHAR")]
         public string PhoneNum { get; set; }
 
-        /// <summary>
-        /// 当前对象联系微信
-        /// </summary>
-        [Column("weixin_num", TypeName = "VARCHAR")]
-        [StringLength(30)]
-        public string WeixinNum { get; set; }
+
 
         /// <summary>
         /// 当前对象身份证号码
