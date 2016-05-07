@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@model List<HandWork.Com.Model.JsonModels.Relations.RelationAndUser>
+<div class="headPanel">
+    <div class="leftHeadPanel">
+        <button type="button" class="btn btn-primary ButtonRadio">全选</button>
+        <button type="submit" class="btn btn-primary ButtonRadio">接受</button>
+        <button type="submit" class="btn btn-primary ButtonRadio">拒绝</button>
+
+    </div>
+</div>
+<table class="table table-striped">
+    <tr class="TdBackground">
+        <td>选取</td>
+        <td>序号</td>
+        <td>招聘标题</td>
+        <td>发布者电话号码</td>
+        <td>申请者电话号码</td>
+        <td>招聘地址</td>
+        <td>审核状态</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr class="TdBackground">
+        <td>选取</td>
+        <td>序号</td>
+        <td>@item.recruit.Title</td>
+        <td class="info">@item.recruitUser.PhoneNum</td>
+        <td class="success">@item.recruit.PhoneNum</td>
+        <td>@item.recruit.Location</td>
+        <td>未处理</td>
+    </tr>
+    }
+  
+
+
+</table>
+
+<div class="headPanel">
+    <div class="leftHeadPanel">
+        <button type="button" class="btn btn-primary ButtonRadio">全选</button>
+        <button type="submit" class="btn btn-primary ButtonRadio">接受</button>
+        <button type="submit" class="btn btn-primary ButtonRadio">拒绝</button>
+
+    </div>
+</div>

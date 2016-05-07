@@ -1,4 +1,5 @@
 ﻿using HandWork.Com.Model.JsonModels.Relations;
+using HandWork.Com.Service.Relations;
 using HandWork.Com.Service.Weixins;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,10 @@ namespace GuaGuoTech.Com.Manager.MVC.Controllers.RelationShips
 
         public ActionResult Index()
         {
-            return View();
+            List<RelationAndUser> relationAndUser = RelationService.GetRelationShipWithUser();
+
+
+            return View(relationAndUser);
         }
 
 
@@ -23,10 +27,10 @@ namespace GuaGuoTech.Com.Manager.MVC.Controllers.RelationShips
         {
 
 
-            List<RelationAndUser> relationAndUser = WeixinService.GetRelationShipWithUser();
+            List<RelationAndUser> relationAndUser = RelationService.GetRelationShipWithUser();
 
 
-            return null;
+            return View(relationAndUser);
         }
 
     }

@@ -28,7 +28,7 @@ namespace HandWork.Com.MVC.Controllers.Relations
                 WeixinUser weixinUser = new WeixinUser();
                 weixinUser = JsonConvert.DeserializeObject<WeixinUser>(Session["weixinUser"].ToString());
 
-                Model.Users.User user = UserService.FindUser(weixinUser.openid);
+                Model.Users.User user = UserService.FindUser(weixinUser.id);
                 if (user==null)
                 {
                     return Json(false, JsonRequestBehavior.AllowGet);

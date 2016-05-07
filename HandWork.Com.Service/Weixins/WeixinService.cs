@@ -322,17 +322,7 @@ namespace HandWork.Com.Service.Weixins
         }
 
 
-        /// <summary>
-        /// 管理端用的得到
-        /// </summary>
-        /// <returns></returns>
-        public static List<Model.JsonModels.Relations.RelationAndUser> GetRelationShipWithUser()
-        {
-           
-            RelationReponsitory
 
-
-
-        }
+      
     }
 }

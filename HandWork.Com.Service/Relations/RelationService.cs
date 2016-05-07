@@ -4,6 +4,7 @@ using HandWork.Com.Model.Relations;
 using HandWork.Com.Model.Users;
 using HandWork.Com.Model.Weixins;
 using HandWork.Com.Provider.Contexts;
+using HandWork.Com.Provider.Relations;
 using HandWork.Com.Provider.Repositorys;
 using System;
 using System.Collections.Generic;
@@ -145,7 +146,16 @@ namespace HandWork.Com.Service.Relations
 
 
         }
+        
 
+
+        public  static  List<RelationAndUser>  GetRelationShipWithUser()
+        {
+
+
+         List<RelationAndUser>  list =   RelationProvider.GetRelationShipWithUser();
+         return list;
+        }
 
 
     }

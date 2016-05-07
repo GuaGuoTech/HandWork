@@ -19,9 +19,9 @@ namespace HandWork.Com.Service.Users
         /// 
         private static Repository<User> repository = new Repository<User>(new EntityContext());
 
-        public static User FindUser(string openId)
+        public static User FindUser(long id)
         {
-            Expression<Func<User, bool>> expression = u => u.WeixinNum == openId;
+            Expression<Func<User, bool>> expression = u => u.WeixinUserId == id;
             List<User> user = repository.SearchFor(expression).ToList();
             if (user.Count>0)
             {
