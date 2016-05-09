@@ -11,25 +11,18 @@ var _type = 4;
 
 $(function () {
 
-    guaGuofinalUrl = "/Homs/Home/GetJobList";
+    guaGuofinalUrl = "/Users/User/MyPublishRecruit";
     getAllEntity(4, guaGuofinalUrl);
 
     setMassageCount();
 
-    $(".classify li").click(function () {
-        bindClickMoreEvent();
-        $(_jobList).empty();
-        _num = 1;
-         _type = $(this).attr("value");
-         getAllEntity(_type, guaGuofinalUrl);
 
-    });
 
     ///点击加载更多的事件
     bindClickMoreEvent();
 
-  
-    
+
+
 
 });
 

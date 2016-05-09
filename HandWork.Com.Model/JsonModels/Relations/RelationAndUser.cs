@@ -1,4 +1,5 @@
 ﻿using HandWork.Com.Model.Recruits;
+using HandWork.Com.Model.Relations;
 using HandWork.Com.Model.Users;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace HandWork.Com.Model.JsonModels.Relations
     public class RelationAndUser
     {
 
-
+        public Relation relation { get; set; }
         public User recruitUser { get; set; }
 
         public User askUser { get; set; }

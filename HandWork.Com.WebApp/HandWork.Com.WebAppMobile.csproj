@@ -196,6 +196,7 @@
     <Content Include="Content\css\dropload.css" />
     <Content Include="Content\js\dropload.min.js" />
     <Content Include="Content\js\jobList.js" />
+    <Content Include="Content\js\jobListIndex.js" />
     <Content Include="Content\js\jquery-2.2.2.min.js" />
     <Content Include="Content\js\jquery.mobile-1.4.5.min.js" />
     <Content Include="Content\js\locales\bootstrap-datetimepicker.ar.js" />
@@ -244,6 +245,8 @@
     <Content Include="Content\js\locales\bootstrap-datetimepicker.uk.js" />
     <Content Include="Content\js\locales\bootstrap-datetimepicker.zh-CN.js" />
     <Content Include="Content\js\locales\bootstrap-datetimepicker.zh-TW.js" />
+    <Content Include="Content\js\myask.js" />
+    <Content Include="Content\js\mypublish.js" />
     <Content Include="Content\js\npm.js" />
     <Content Include="Content\js\personal.js" />
     <Content Include="Content\js\publish.js" />
@@ -334,6 +337,8 @@
     <Content Include="Views\User\MyZoren.cshtml" />
     <Content Include="Views\User\Massage.cshtml" />
     <Content Include="Views\User\WeiXinMSG.cshtml" />
+    <Content Include="Views\User\MyPublish.cshtml" />
+    <Content Include="Views\User\MyAsk.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

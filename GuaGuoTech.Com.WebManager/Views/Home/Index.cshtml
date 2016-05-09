@@ -2,6 +2,8 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutIndex.cshtml";
 }
+@using HandWork.Com.Model.Users
+@model List<HandWork.Com.Model.Users.User>
 <div class="headPanel">
     <div class="leftHeadPanel">
         <button type="button" class="btn btn-primary" >返回</button>
@@ -10,5 +12,15 @@
         
     </div>
 </div>
+
+@*@(Html.GuaGuo_MvcTable<User>(Model, columListAndName:new { 
+Id="什么",
+Adress ="地址",
+
+}))*@
+
+
+@*@Html.GuaGuo_MvcTable<User>*@
+
 <div class="leftPanel"></div>
 <div class="rightPanel"></div>

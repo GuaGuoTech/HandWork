@@ -63,7 +63,7 @@ namespace HandWork.Com.MVC.Controllers.Relations
             logger.Info(ids);
           RelationMassage list =  RelationService.GetRelationWithUser(ids);
           int cout = list.relationAnWeixinUser.Count + list.recruitAndRelationAndWeixinUser.Count;
-            return Json(cout);
+          return Json(cout, JsonRequestBehavior.AllowGet);
         }
 
 
@@ -83,11 +83,11 @@ namespace HandWork.Com.MVC.Controllers.Relations
                     }
 
                 }
-                return Json("");
+                return Json("233", JsonRequestBehavior.AllowGet);
             }
             else
             {
-                return Json("shibai");
+                return Json("shibai", JsonRequestBehavior.AllowGet);
             }
 
         }
@@ -104,7 +104,7 @@ namespace HandWork.Com.MVC.Controllers.Relations
             RelationMassage list = RelationService.GetRelationWithUser(id);
 
 
-            return Json(list);
+            return Json(list, JsonRequestBehavior.AllowGet);
 
         }
 
@@ -125,11 +125,11 @@ namespace HandWork.Com.MVC.Controllers.Relations
                     }
            
                 }
-                return Json("");
+                return Json("23", JsonRequestBehavior.AllowGet);
             }
             else
             {
-                return Json("shibai");
+                return Json("shibai", JsonRequestBehavior.AllowGet);
             }
      
         }
@@ -151,11 +151,11 @@ namespace HandWork.Com.MVC.Controllers.Relations
                         RelationService.RefuseThisChecked(id);
                     }
                 }
-                return Json("");
+                return Json("32",JsonRequestBehavior.AllowGet);
             }
             else
             {
-                return Json("shibai");
+                return Json("shibai", JsonRequestBehavior.AllowGet);
             }
         }
 

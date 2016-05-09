@@ -158,5 +158,16 @@ namespace HandWork.Com.Service.Relations
         }
 
 
+
+
+
+
+        public static List<Relation> SearchRelation(Expression<Func<Relation,bool>> ex)
+        {
+            Repository<Relation> repository = new Repository<Relation>(new Provider.Contexts.EntityContext());
+
+         return       repository.SearchFor(ex).ToList();
+
+        }
     }
 }

@@ -82,7 +82,7 @@ function dealWithThis(ids, obj) {
         cache: false,
         success: function (data) {
      
-                localtion.href = "/User/User/WeiXinMSG";
+                localtion.href.reload();
             
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {

@@ -10,6 +10,11 @@ using Newtonsoft.Json;
 using HandWork.Com.Model.Weixins;
 using HandWork.Com.Service.Relations;
 using HandWork.Com.Model.JsonModels.Relations;
+using HandWork.Com.Service.Recruits;
+using HandWork.Com.Model.Recruits;
+using System.Linq.Expressions;
+using HandWork.Com.Model.ViewModels.JobLists;
+using HandWork.Com.Model.Relations;
 
 namespace HandWork.Com.MVC.Controllers.Users
 {
@@ -44,6 +49,78 @@ namespace HandWork.Com.MVC.Controllers.Users
 
         }
 
+        public ActionResult MyAsk()
+        {
+            return View();
+        }
+        public ActionResult MyPublish()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult MyPublishRecruit()
+        {
+            if (Session["weixinuser"] != null)
+            {
+                string weixinCode = Session["weixinuser"].ToString();
+                WeixinUser weixinUser = JsonConvert.DeserializeObject<WeixinUser>(weixinCode);
+                string openId = weixinUser.openid;
+                //string openId = "oL62cwXqco5NPxguPwBiOfT4h6Ww";
+                logger.Info(openId);
+                int pageNum = 0;
+                int maxNum = 0;
+                int type = 0;
+
+                Expression<Func<Recruit, bool>> ex = r=>r.WeixinUserId==weixinUser.id;
+
+                List<JobList> jobList = RecruitService.GetJobList(pageNum, maxNum, type, ex);
+                return Json(jobList);
+            }
+            else
+            {
+
+                return Json("22");
+
+            }
+        }
+       [HttpPost]
+        public ActionResult MyAskRecruit()
+        {
+
+            if (Session["weixinuser"] != null)
+            {
+                string weixinCode = Session["weixinuser"].ToString();
+                WeixinUser weixinUser = JsonConvert.DeserializeObject<WeixinUser>(weixinCode);
+                string openId = weixinUser.openid;
+                //string openId = "oL62cwXqco5NPxguPwBiOfT4h6Ww";
+                logger.Info(openId);
+                int pageNum = 0;
+                int maxNum = 0;
+                int type = 0;
+
+                Expression<Func<Relation, bool>> ex1 = r=>r.AskWeixinUserId==weixinUser.id;
+
+              List  <Relation> relation = RelationService.SearchRelation(ex1);
+
+              List<JobList> jobList = new List<JobList>();
+              for (int i = 0; i < relation.Count; i++)
+              {
+                  Expression<Func<Recruit, bool>> ex2 = r=>r.WeixinUserId==relation[i].WeixinUserId;
+
+                  jobList.AddRange(RecruitService.GetJobList(pageNum, maxNum, type, ex2));
+              }
+
+              
+                return Json(jobList);
+
+            }
+            else
+            {
+
+                return Json("22");
+
+            }
+        }
 
         public ActionResult MyZoren() 
         { 
