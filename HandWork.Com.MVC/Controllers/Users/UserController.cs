@@ -105,7 +105,7 @@ namespace HandWork.Com.MVC.Controllers.Users
               List<JobList> jobList = new List<JobList>();
               for (int i = 0; i < relation.Count; i++)
               {
-                  Expression<Func<Recruit, bool>> ex2 = r=>r.WeixinUserId==relation[i].WeixinUserId;
+                  Expression<Func<Recruit, bool>> ex2 = r=>r.Id==relation[i].RecuitId;
 
                   jobList.AddRange(RecruitService.GetJobList(pageNum, maxNum, type, ex2));
               }

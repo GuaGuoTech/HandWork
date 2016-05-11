@@ -138,10 +138,8 @@ namespace HandWork.Com.MVC.Controllers.Relations
         public ActionResult RefuseThisChecked(string  ids)
         {
             logger.Info(ids);
-
             if (ids != null)
             {
-             
                 string[] idArray = ids.Split(',');
                 for (int i = 0; i < idArray.Length; i++)
                 {

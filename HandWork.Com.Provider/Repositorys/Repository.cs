@@ -44,7 +44,7 @@ namespace HandWork.Com.Provider.Repositorys
         public IEnumerable<TEntity> SearchFor(Expression<Func<TEntity, bool>> lambdaPress)
         {
 
-            return Dbset.Where(lambdaPress).AsNoTracking();
+            return Dbset.Where(lambdaPress.Compile());
 
         }
 

@@ -41,7 +41,7 @@ function changeRead() {
     var _panel = $(".askIdPanel");
     var ids = "";
     for (var i = 0; i < _panel.length; i++) {
-        ids += $(_panel[i]).attr("key");
+        ids += $(_panel[i]).attr("key")+",";
     }
     console.info(ids);
     if (ids.length > 0) {
@@ -54,7 +54,6 @@ function changeRead() {
             cache: false,
             success: function (data) {
 
-                location.reload();
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 alert(XMLHttpRequest.status + "错误信息" + XMLHttpRequest.readyState + ".," + textStatus + "," + errorThrown);

@@ -21,7 +21,7 @@ namespace HandWork.Com.Provider.Recruits
                 ///当表达为空的时候   则不分页 直接返回集合
               if (ex != null)
               {
-                  recruitList = entityContext.Recruits.Where(ex).ToList().OrderByDescending(r => r.PublishTime).ToList();
+                  recruitList = entityContext.Recruits.Where(ex.Compile()).ToList().OrderByDescending(r => r.PublishTime).ToList();
 
               }
               else
