@@ -8,3 +8,9 @@
 .adjust {
  padding:5px 15px;
 }
+.Float-Png {
+    position:fixed;
+    bottom:55px;
+    right:0px;
+    opacity:0.8;
+}

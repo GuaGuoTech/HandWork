@@ -159,6 +159,7 @@
     <Content Include="Content\image\collect.png" />
     <Content Include="Content\image\hengdaa.png" />
     <Content Include="Content\image\hengdashiwu.jpg" />
+    <Content Include="Content\image\home.png" />
     <Content Include="Content\image\hpp.png" />
     <Content Include="Content\image\integral.png" />
     <Content Include="Content\image\koubeii.png" />
