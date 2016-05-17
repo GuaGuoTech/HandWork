@@ -119,3 +119,11 @@ border-right:1px solid #CCCCCC;
 .StartHeartColorB{
     color:#cccccc;
 }
+.Float-Png {
+    height:45px;
+    width:45px;
+    position:fixed;
+    bottom:55px;
+    right:0px;
+    opacity:0.6;
+}

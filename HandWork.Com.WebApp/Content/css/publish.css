@@ -9,8 +9,10 @@
  padding:5px 15px;
 }
 .Float-Png {
+    height:45px;
+    width:45px;
     position:fixed;
     bottom:55px;
     right:0px;
-    opacity:0.8;
+    opacity:0.6;
 }
