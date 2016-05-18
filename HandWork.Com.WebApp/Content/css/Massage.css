@@ -58,6 +58,7 @@ a {
     opacity:0.6;
 }
 .Float-Png {
+    z-index:3;
     height:45px;
     width:45px;
     position:fixed;

@@ -120,6 +120,7 @@ border-right:1px solid #CCCCCC;
     color:#cccccc;
 }
 .Float-Png {
+    z-index:3;
     height:45px;
     width:45px;
     position:fixed;

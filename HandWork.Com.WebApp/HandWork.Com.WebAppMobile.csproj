@@ -340,6 +340,7 @@
     <Content Include="Views\User\WeiXinMSG.cshtml" />
     <Content Include="Views\User\MyPublish.cshtml" />
     <Content Include="Views\User\MyAsk.cshtml" />
+    <Content Include="Views\User\Mistake.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

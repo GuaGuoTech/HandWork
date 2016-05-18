@@ -207,8 +207,9 @@ padding:5px 15px;
 
 }
 .Float-Png {
-    height:45px;
-    width:45px;
+    z-index:3;
+    height:48px;
+    width:48px;
     position:fixed;
     bottom:55px;
     right:0px;
@@ -248,5 +249,9 @@ width:100%;
 .panelPadding {
     padding:5px 15px;
 
+}
+.Button-Bottom {
+    position:relative;
+    bottom:-20px;
 }
 /*短信验证以及submit按钮结束*/

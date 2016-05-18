@@ -53,6 +53,10 @@ namespace HandWork.Com.MVC.Controllers.Users
         {
             return View();
         }
+        public ActionResult Mistake() 
+        {
+            return View();
+        }
         public ActionResult MyPublish()
         {
             return View();
