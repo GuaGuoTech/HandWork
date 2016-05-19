@@ -12,7 +12,6 @@ namespace HandWork.Com.MVC.Controllers.Recruits
 {
     public class DetailController : Controller
     {
-        Repository<Recruit> repo = new Repository<Recruit>(new EntityContext());
         public ActionResult Index(long  id)
         {
             //if (RecruitService.CheckConfirm(id) == 0)
@@ -36,6 +35,35 @@ namespace HandWork.Com.MVC.Controllers.Recruits
 
         }
 
-        public long id { get; set; }
+
+        [HttpPost]
+        public ActionResult CloseThisRecruit(long  id)
+        {
+            if (id != 0)
+            {
+                Recruit recruit = RecruitService.GetEntity(id);
+                recruit.state = 0;
+                RecruitService.Update(recruit);
+       
+            }
+
+            return Json("1");
+
+        }
+
+        [HttpPost]
+        public ActionResult OpenThisRecruit(long  id)
+        {
+
+            if (id != 0)
+            {
+                Recruit recruit = RecruitService.GetEntity(id);
+                recruit.state = 1;
+                RecruitService.Update(recruit);
+
+            }
+            return Json("1");
+        }
     }
+
 }

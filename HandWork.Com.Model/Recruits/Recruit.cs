@@ -152,5 +152,11 @@ namespace HandWork.Com.Model.Recruits
         /// </summary>
         [Column("confirm", TypeName = "INT")]
         public int Confirm { get; set; }
+
+        /// <summary>
+        /// 当前的状态 0 为关闭  1为开启
+        /// </summary>
+        [Column("state",TypeName="INT")]
+        public int state { get; set; }
     }
 }

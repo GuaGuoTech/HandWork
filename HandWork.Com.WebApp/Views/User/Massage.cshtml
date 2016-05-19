@@ -31,88 +31,105 @@
         </table>
     </div>
     <div class="showContent" id="dsfasdfasdfsdafasdf">
-        <table id="allRequst" class="table table-hover">
-            @{
-                if (Model.recruitAndRelationAndWeixinUser!=null)
-                {
-                     foreach (var item in Model.recruitAndRelationAndWeixinUser)
-                {
-                    <tr>
-                        <td class="col-xs-1"><input class="checkThisAction" value="@item.relation.Id" type="checkbox" /></td>
-                        <td class="col-xs-5"><a class="recuitTitle">@item.recuit.Title</a></td>
-                        <td class="col-xs-5"><a class="userName UserName ">申请人：@item.weixinUser.nickname</a></td>
-                        <td class="col-xs-1"></td>
-                    </tr>
-                }
-                                }
-               
-            }
-        </table>
-        <div class="tableHead">
-            <button type="button" id="checkAll" class="btn btn-default btn-sm buttonradio">全选</button>
-            <button type="button" id="acceptCheck" class="postIds btn btn-default btn-sm buttonradio">接受</button>
-            <button type="button" id="refuseCheck" class="postIds btn btn-default btn-sm buttonradio">拒绝</button>
-        </div>
+        @{
+            if (Model.recruitAndRelationAndWeixinUser != null&&Model.recruitAndRelationAndWeixinUser.Count>0)
+            {
+                <table id="allRequst" class="table table-hover">
 
-    </div>
-
-
-
-
-    <div class="showHead">
-
-        <table class="table table-hover BorderBottom">
-
-            <tr>
-                <td><span class="glyphicon  glyphicon-check Fontcolor " aria-hidden="true"></span></td>
-                <td class="col-xs-5">我的申请</td>
-                <td class="col-xs-5"></td>
-                <td class="col-xs-1"><span class="glyphicon glyphicon-chevron-down Fontcolor" aria-hidden="true"></span></td>
-            </tr>
-
-
-
-        </table>
-
-
-    </div>
-    <div class="showContent">
-        <table class="table table-hover">
-            @{
-                if (Model.relationAnWeixinUser != null)
-                {
-                    foreach (var item in Model.relationAnWeixinUser)
+                    @foreach (var item in Model.recruitAndRelationAndWeixinUser)
                     {
-                        <tr class="askIdPanel" key="@item.recuit.Id">
+                        <tr>
+                            <td class="col-xs-1"><input class="checkThisAction" value="@item.relation.Id" type="checkbox" /></td>
                             <td class="col-xs-5"><a class="recuitTitle">@item.recuit.Title</a></td>
-                            <td class="col-xs-5">
-                                <a class="userName UserName ">
-                                    @if (@item.relation.Finish == 1)
-                                    {
-                                        @:申请通过
-                                }
-                                    else
-                                    {
-                                        @:申请被拒绝
-                                }
-                                </a>
-                            </td>
+                            <td class="col-xs-5"><a class="userName UserName ">申请人：@item.weixinUser.nickname</a></td>
                             <td class="col-xs-1"></td>
                         </tr>
                     }
-                }
+                    
 
-            }
-        </table>
-    </div>
-                <div class="BorderBottomb">
 
+                </table>
+        
+                <div class="tableHead">
+                    <button type="button" id="checkAll" class="btn btn-default btn-sm buttonradio">全选</button>
+                    <button type="button" id="acceptCheck" class="postIds btn btn-default btn-sm buttonradio">接受</button>
+                    <button type="button" id="refuseCheck" class="postIds btn btn-default btn-sm buttonradio">拒绝</button>
                 </div>
-            </div>
-<div>
-    <a href="~/Homes/Home/Index"><img src="~/Content/image/home.png" class="Float-Png" /></a>
+        
+        }
+            else
+            {
+             <div class="dropload-down clickMore">没有任何消息哦</div>
+            }
+            }
 </div>
-<script src="~/Content/js/userAction.js"></script>
+
+
+
+
+            <div class="showHead">
+
+                <table class="table table-hover BorderBottom">
+
+                    <tr>
+                        <td><span class="glyphicon  glyphicon-check Fontcolor " aria-hidden="true"></span></td>
+                        <td class="col-xs-5">我的申请</td>
+                        <td class="col-xs-5"></td>
+                        <td class="col-xs-1"><span class="glyphicon glyphicon-chevron-down Fontcolor" aria-hidden="true"></span></td>
+                    </tr>
+
+
+
+                </table>
+
+
+            </div>
+            <div class="showContent">
+@{
+                        if (Model.relationAnWeixinUser != null)
+                        {
+                <table class="table table-hover">
+          
+                            @foreach (var item in Model.relationAnWeixinUser)
+                            {
+                                <tr class="askIdPanel" key="@item.relation.Id">
+                                    <td class="col-xs-5"><a class="recuitTitle">@item.recuit.Title</a></td>
+                                    <td class="col-xs-5">
+                                        <a class="userName UserName ">
+                                            @if (@item.relation.Finish == 1)
+                                            {
+                                                @:申请通过
+                                }
+                                            else
+                                            {
+                                                @:申请被拒绝
+                                }
+                                        </a>
+                                    </td>
+                                    <td class="col-xs-1"></td>
+                                </tr>
+                            }
+                        
+
+
+                    
+                </table>
+                        }
+                             else
+                {
+                <div class="dropload-down clickMore">没有任何消息哦</div>
+                }
+                        }
+           
+            </div>
+            <div class="BorderBottomb">
+
+            </div>
+        </div>
+        <div>
+            <a href="~/Homes/Home/Index"><img src="~/Content/image/home.png" class="Float-Png" /></a>
+        </div>
+        <script src="~/Content/js/userAction.js"></script>
             <script>
                 //$(function () {
                 //    $("table").on('click', ".userName", function () {
@@ -134,7 +151,7 @@
                 $(function () {
 
                     $(".showHead").click(function () {
-                        
+
                         var content = $(this).next();
                         content.slideToggle();
 

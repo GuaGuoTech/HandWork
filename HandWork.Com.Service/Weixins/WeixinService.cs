@@ -15,6 +15,7 @@ using System.Threading;
 using System.Web;
 using System.Web.Script.Serialization;
 using System.Linq.Expressions;
+using System.Text.RegularExpressions;
 
 
 namespace HandWork.Com.Service.Weixins
@@ -78,7 +79,7 @@ namespace HandWork.Com.Service.Weixins
 
             using (Stream resStream = response.GetResponseStream())
             {
-                StreamReader reader = new StreamReader(resStream, Encoding.UTF8);
+                StreamReader reader = new StreamReader(resStream,Encoding.UTF8);
                 respText = reader.ReadToEnd();
                 resStream.Close();
             }
@@ -100,6 +101,15 @@ namespace HandWork.Com.Service.Weixins
                 string url = string.Format("https://api.weixin.qq.com/sns/userinfo?access_token={0}&openid={1}&lang=zh_CN", scopeToken.access_token, scopeToken.openid);
 
                 string _responseText = HttpsGet(url);
+
+                ///emoji正则表达式过滤
+                //string line = "[\\ud83c\\ud83c-\\udc00\\udfff]|[\\ud83d\\ud83d-\\udc00\\udfff]|[\\u2600-\\u27ff]";
+                //Regex regex = new Regex(line);
+                //_responseText = regex.Match(_responseText).ToString();
+
+
+                _responseText = Regex.Replace(_responseText,@"\p{Cs}","");
+
                 logger.Info(_responseText);
                 WeixinUser weixinUser = JsonConvert.DeserializeObject<WeixinUser>(_responseText);
                 return   InsertWeixinUser(weixinUser);

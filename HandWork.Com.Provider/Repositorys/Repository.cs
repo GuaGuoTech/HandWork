@@ -14,7 +14,7 @@ namespace HandWork.Com.Provider.Repositorys
     public class Repository<TEntity> : IRespository<TEntity> where TEntity : class
     {
         readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-
+         
         protected DbSet<TEntity> Dbset;
         private readonly DbContext _dbContext;
 
@@ -44,7 +44,7 @@ namespace HandWork.Com.Provider.Repositorys
         public IEnumerable<TEntity> SearchFor(Expression<Func<TEntity, bool>> lambdaPress)
         {
 
-            return Dbset.Where(lambdaPress.Compile());
+            return Dbset.AsNoTracking().Where(lambdaPress.Compile());
 
         }
 

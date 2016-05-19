@@ -43,13 +43,15 @@ namespace HandWork.Com.Service.Recruits
         {
             Repository<Recruit> repository = new Repository<Recruit>(new EntityContext());
             recruit.PublishTime = DateTime.Now;
-            return       repository.Insert(recruit);
+            //默认开启
+            recruit.state = 1;
+            return repository.Insert(recruit);
         }
-      
+
         public static Recruit GetEntity(long id)
         {
             Repository<Recruit> repository = new Repository<Recruit>(new EntityContext());
-           return      repository.GetEntity(id);
+            return repository.GetEntity(id);
 
         }
 
@@ -74,7 +76,7 @@ namespace HandWork.Com.Service.Recruits
 
         }
 
-        public static List<Model.ViewModels.JobLists.JobList> GetJobList(int pageNum, int maxList, int type, Expression<Func<Recruit, bool>> ex )
+        public static List<Model.ViewModels.JobLists.JobList> GetJobList(int pageNum, int maxList, int type, Expression<Func<Recruit, bool>> ex)
         {
 
 
@@ -82,8 +84,8 @@ namespace HandWork.Com.Service.Recruits
             return RecruitProvider.GetAllRecruitByType(pageNum, maxList, type, ex);
 
 
-        
-            
+
+
         }
 
         public static List<Model.ViewModels.JobLists.JobList> GetJobList(int pageNum, int maxList, int type)
@@ -101,12 +103,21 @@ namespace HandWork.Com.Service.Recruits
         public static List<Recruit> SearchRecruit(System.Linq.Expressions.Expression<Func<Recruit, bool>> ex)
         {
             Repository<Recruit> repository = new Repository<Recruit>(new EntityContext());
-        return    repository.SearchFor(ex).ToList();
+            return repository.SearchFor(ex).ToList();
         }
 
         public static List<Recruit> SearchRecruitForAsk(long p)
         {
             throw new NotImplementedException();
+        }
+
+
+
+        public static void Update(Recruit recruit)
+        {
+
+            Repository<Recruit> repository = new Repository<Recruit>(new EntityContext());
+            repository.Update(recruit);
         }
     }
 }

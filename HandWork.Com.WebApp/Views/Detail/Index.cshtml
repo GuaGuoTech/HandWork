@@ -8,7 +8,16 @@
 @using HandWork.Com.Service.Relations
 <link href="~/Content/css/Detail.css" rel="stylesheet" />
 <div class="jobInfo">
-    <div class="title">@Model.Title</div>
+    @if (Model.state==0)
+    {
+            <div class="title">@Model.Title<span class="glyphicon glyphicon-remove" ></span>(已经关闭)</div>
+
+    }
+    else
+    {
+             <div class="title closeTitle">@Model.Title</div>
+
+    }
     <ul class="inportantInfo"><li>工资：@Model.Money</li> <li>地点：@Model.Location</li></ul>
     <div class="infoFoott"><span></span></div>
 </div>
@@ -23,7 +32,6 @@
                     <label class="fontcolortitle ">联系人：</label>
                     <label >陈先生</label>
                 </li>
-
 
             </ul>
 
@@ -65,7 +73,17 @@
                 WeixinUser weixinUser = JsonConvert.DeserializeObject<WeixinUser>(Session["weixinUser"].ToString());
                 if (weixinUser.id == Model.WeixinUserId)
                 {
-                    <li><button disabled="disabled" class="btn btn-primary checkThisBtn">自己<br />发的</button></li>
+                    if (Model.state==1)
+                    {
+                   @: <li><button  id="closeThisButton"  key="@Model.Id"  class="btn btn-primary changeState checkThisBtn">暂时<br />关闭</button></li>
+
+                    }
+
+                    else
+                    {
+                   @: <li><button id="openThisButton" key="@Model.Id" class="btn changeState btn-primary checkThisBtn">继续<br />招聘</button></li>
+
+                    }
 
                 }
 

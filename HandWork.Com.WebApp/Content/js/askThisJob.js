@@ -41,4 +41,39 @@
 
 
 
+    $("#closeThisButton").click(function () {
+        var finalUrl = "Detail/Detail/CloseThisRecruit";
+        var ids = $(".changeState").attr("key");
+        changThisRecruitState(finalUrl,ids);
+    });
+
+    $("#openThisButton").click(function () {
+        var finalUrl = "Detail/Detail/OpenThisRecruit";
+        var ids = $(".changeState").attr("key");
+        changThisRecruitState(finalUrl, ids);
+    });
+
 })
+
+
+function changThisRecruitState(finalUrl,ids) {
+
+
+
+    $.ajax({
+        url: url + finalUrl+"/"+ids,
+        type: "POST",
+        dataType: "JSON",
+
+        success: function (data) {
+          
+                window.location.reload;
+            }
+    
+       
+
+});
+
+
+
+}
