@@ -48,6 +48,10 @@ namespace HandWork.Com.MVC.Controllers.Users
             }
 
         }
+        public ActionResult PhoneCheck()
+        {
+            return View();
+        }
 
         public ActionResult MyAsk()
         {
