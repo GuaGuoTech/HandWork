@@ -52,7 +52,7 @@ namespace HandWork.Com.Service.Weixins
         public static void GetBaseToken()
         {
             ///请求token的地址
-            string url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxd21f90079ecb0969&secret=338345d734124088ce5579a6a4514318";
+            string url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx073e9f453cd3cd5a&secret=024ecc044e1d1ac8a35c2f194fe8d3c1";
             string  respText =    HttpsGet(url);
             JavaScriptSerializer Jss = new JavaScriptSerializer();
             Dictionary<string, object> respDic = (Dictionary<string, object>)Jss.DeserializeObject(respText);
@@ -234,13 +234,13 @@ namespace HandWork.Com.Service.Weixins
                          new SubButton()
                            {
                              name = "网页测试",
-                             url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd21f90079ecb0969&redirect_uri=http%3a%2f%2f120.27.104.135%2fHomes%2fHome%2fIndex&response_type=code&scope=snsapi_userinfo&state=guaguokeji#wechat_redirect",
+                             url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx073e9f453cd3cd5a&redirect_uri=http%3a%2f%2f120.27.104.135%2fHomes%2fHome%2fIndex&response_type=code&scope=snsapi_userinfo&state=guaguokeji#wechat_redirect",
                              type = "view"
                            },
                          new SubButton()
                            {
                              name = "授权test5",
-                             url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd21f90079ecb0969&redirect_uri=http%3a%2f%2f120.27.104.135%2fWeixins%2fweixin%2fIndex&response_type=code&scope=snsapi_userinfo&state=guaguokeji#wechat_redirect",
+                             url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx073e9f453cd3cd5a&redirect_uri=http%3a%2f%2f120.27.104.135%2fWeixins%2fweixin%2fIndex&response_type=code&scope=snsapi_userinfo&state=guaguokeji#wechat_redirect",
                              type = "view"
                            },
                  }
@@ -290,7 +290,7 @@ namespace HandWork.Com.Service.Weixins
                                     string result = sr.ReadToEnd();
                                     sr.Close();
                                     sr.Dispose();
-                                    response.Close();
+                                     response.Close();
                                     return result;
                                 }
                             }
