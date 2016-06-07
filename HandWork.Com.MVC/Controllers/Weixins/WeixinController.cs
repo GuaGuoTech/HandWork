@@ -33,7 +33,7 @@ namespace HandWork.Com.MVC.Controllers.Weixins
             string code = Request.Params["code"].ToString();
             if (code != null)
             {
-                string url = string.Format("https://api.weixin.qq.com/sns/oauth2/access_token?appid=wxd21f90079ecb0969&secret=338345d734124088ce5579a6a4514318&code={0}&grant_type=authorization_code", code);
+                string url = string.Format("https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx5816d70da3d66669&secret=e5864723af41144650a9e46062107f38&code={0}&grant_type=authorization_code", code);
 
                 string responseText = WeixinService.HttpsGet(url);
                 ///日志记录

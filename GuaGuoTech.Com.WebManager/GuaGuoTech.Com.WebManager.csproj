@@ -146,12 +146,14 @@
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\firm.css" />
     <Content Include="Content\css\index.css" />
     <Content Include="Content\css\Personalindex.css" />
     <Content Include="Content\css\publish.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\image\22-090423_51.jpg" />
     <Content Include="Content\image\day.png" />
+    <Content Include="Content\image\firm.png" />
     <Content Include="Content\image\logo.jpg" />
     <Content Include="Content\image\month.png" />
     <Content Include="Content\image\o%27clock.png" />
@@ -288,6 +290,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\web.pubxml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
