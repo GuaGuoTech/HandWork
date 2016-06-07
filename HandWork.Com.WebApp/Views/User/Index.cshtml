@@ -11,9 +11,7 @@
     {
         using (@Html.BeginForm("sadf", "User", FormMethod.Post))
         {
-            <div class="submitlaeveanote">
-
-
+            
 
                 @Html.GuaGuo_InptTextWithTitle("Name", "姓名：", text: @Model.Name, attributes: new { disabled = "disabled" })
 
@@ -23,7 +21,6 @@
                 @Html.GuaGuo_InptTextWithTitle("Adress", "联系地址：", text: @Model.Adress, attributes: new { disabled = "disabled" })
 
 
-                @Html.GuaGuo_InptTextWithTitle("PhoneNum", "联系号码：", text: @Model.PhoneNum, attributes: new { disabled = "disabled" })
 
 
                 <div class="checkbox">
@@ -31,13 +28,12 @@
                         <input type="checkbox" class="notice"> 修改须知
                     </label>
                 </div>
-                @if (Model.Confirm == 0)
+                if (Model.Confirm == 0)
                 {
                     <input id="form_submit" type="submit" disabled="disabled"  class="btn btn-primary  remark" value="已经上传" />
                 }
             
 
-            </div>
         }
 
 
@@ -47,6 +43,7 @@
     {
         using (@Html.BeginForm("AddUser", "User", FormMethod.Post))
         {
+            
             <div class="submitlaeveanote">
 
 
@@ -59,7 +56,6 @@
                 @Html.GuaGuo_InptTextWithTitle("Adress", "联系地址：", placeholder: "家庭住址或者宿舍号哦")
 
 
-                @Html.GuaGuo_PhoneNumberCheck()
 
                 <div class="checkbox">
                     <label>
@@ -69,7 +65,10 @@
                 <input id="form_submit" type="button" class="btn btn-primary  remark Button-Bottom " value="确定">
             </div>
         }
-
+        @*<div class="weui_text_area">
+        <h2 class="weui_msg_title">亲 我们只收集必要信息哦！</h2>
+        <h2 class="weui_msg_title">(づ￣3￣)づ</h2>
+        </div>*@
 
 
     }

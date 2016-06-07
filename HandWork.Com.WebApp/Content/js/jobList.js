@@ -24,8 +24,7 @@ $(function () {
          getAllEntity(_type, guaGuofinalUrl);
 
     });
-
-    ///点击加载更多的事件
+     
     bindClickMoreEvent();
 
   
