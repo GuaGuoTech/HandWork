@@ -4,6 +4,13 @@
     width:100%;
     border-color: #CCC;
     border-radius:5px;
+    
+}
+.btn-primary {
+    background:#920078;
+}
+.checkPhoneBtn:hover ,.checkPhoneBtn:focus{
+   background:#920078;
 }
 .adjust {
  padding:5px 15px;
@@ -16,4 +23,7 @@
     bottom:55px;
     right:0px;
     opacity:0.6;
+}
+.checkPhoneBtn {
+    background:#920078;
 }

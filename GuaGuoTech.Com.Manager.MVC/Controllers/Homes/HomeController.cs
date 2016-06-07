@@ -27,6 +27,9 @@ namespace GuaGuoTech.Com.Manager.MVC.Controllers.Homes
 
             return View(userList);
         }
-
+        public ActionResult Login()
+        {
+            return View();
+        }
     }
 }
