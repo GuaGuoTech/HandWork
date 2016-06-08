@@ -1,12 +1,21 @@
 ﻿@{
-    ViewBag.Title = "PhoneCheck";
+    ViewBag.Title = "电话认证";
     Layout = "~/Views/Shared/_LayoutIndex.cshtml";
 }
-
-@Html.GuaGuo_PhoneNumberCheck()
+<link href="~/Content/css/publish.css" rel="stylesheet" />
 <div>
-    <a href="~/Homes/Home/Index"><img src="~/Content/image/home.png" class="Float-Png" /></a>
+    <div class="alert alert-info">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <div class="fontpaddinga">更多认证正在建设中哦(⊙o⊙)</div>
+
     </div>
-    <div>
-            <span class="" >更多认证正在建设中哦(⊙o⊙)</span>
-        </div>
+
+</div>
+<div class="panelPadding">
+    @Html.GuaGuo_PhoneNumberCheck()
+
+    <input id="form_submit" type="button" class="btn  remark Button-Bottom " value="确定">
+    <a href="~/Homes/Home/Index"><img src="~/Content/image/home.png" class="Float-Png" /></a>
+    
+</div>
+

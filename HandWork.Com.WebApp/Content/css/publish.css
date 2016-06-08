@@ -1,14 +1,21 @@
-﻿body {
+﻿body {  
 }
 .remarke {
     width:100%;
     border-color: #CCC;
     border-radius:5px;
-    
+    background:#920078;
+    outline:none;
+    color:white;
 }
-.btn-primary {
+.btn {
+    color:white;
     background:#920078;
 }
+    .btn:active,.btn:hover,.btn:focus,.btn.active{
+        background-color :#920078;
+        color:white;
+    }
 .checkPhoneBtn:hover ,.checkPhoneBtn:focus{
    background:#920078;
 }
@@ -17,8 +24,8 @@
 }
 .Float-Png {
     z-index:3;
-    height:45px;
-    width:45px;
+    height:55px;
+    width:60px;
     position:fixed;
     bottom:55px;
     right:0px;
@@ -26,4 +33,17 @@
 }
 .checkPhoneBtn {
     background:#920078;
+}
+.alert {
+    margin:0px;
+    padding:10px;
+}
+.alert-info {
+    background-image: linear-gradient(to bottom,#Fce0a6 0,#f9cc76 100%);
+    border-color:#Fce0a6;
+    color:#ec870e;
+    font-weight:600;
+}
+.fontpaddinga {
+    padding-left:15px;
 }

@@ -49,18 +49,11 @@ a {
     height:20px;
     width:100%;
 }
-.Float-Png {
-    height:45px;
-    width:45px;
-    position:fixed;
-    bottom:55px;
-    right:0px;
-    opacity:0.6;
-}
+
 .Float-Png {
     z-index:3;
-    height:45px;
-    width:45px;
+    height:55px;
+    width:60px;
     position:fixed;
     bottom:55px;
     right:0px;
