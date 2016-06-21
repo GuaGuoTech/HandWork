@@ -10,7 +10,7 @@ var _phoneNum = $(".phoneNum");
 var _formSubmit = $("#form_submit");
 
 /// baseUrl  All the  url  in  webSite
-var url = "http://localhost:23440/";
+var url = "http://aliyun.taixi666.com/";
 
 ///带提示框的消息框
 var $GuaGuoTech_Alert = function (content) {
