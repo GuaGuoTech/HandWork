@@ -2,13 +2,15 @@
     width: 20%;
     display: table;
     min-height: 800px;
-    border-right: 1px solid #ccc;
     float: left;
  
 }
+.Panel-Left {
+    border-right:1px solid #cccccc;
+}
 /*模板页样式*/
 .NavBackground {
-    background:#336699;
+    background:#56718F;
 
 }
 .navbar-default .navbar-nav > li > a {
@@ -25,6 +27,94 @@
     background:#e7e7e7;
 
 }
+.navbar {
+    margin-bottom :0;
+}
+/*左侧菜单栏开始*/
+body {
+}
+  *{
+      margin: 0;
+      padding: 0}
+body{
+    font-size: 20px;
+    font-family: "宋体","微软雅黑";
+
+}
+ul,li{
+    list-style: none;
+
+}
+a:link,a:visited{
+    text-decoration: none;
+
+}
+.list{
+    width: 100%;
+    border-bottom:solid 1px #316a91;
+    margin:0px ;
+
+}
+.list ul li{
+    /*background-color:#467ca2;*/
+     border:solid 1px #316a91; 
+     border-bottom:0;
+
+}
+.list ul li a{
+    padding-left: 10px;
+    /*color: #fff;*/ 
+    font-size:14px; 
+    display: block; 
+    font-weight:bold; 
+    height:36px;
+    line-height: 36px;
+    position: relative;
+}
+.list ul li .inactive{ 
+    background:url(../image/on.png) no-repeat 95% center;}
+.list ul li .inactives{
+    background:url(../image/off.png) no-repeat 95% center;
+
+} 
+.list ul li ul{
+    display: none;
+
+}
+.list ul li ul li {
+     border-left:0;
+      border-right:0; 
+      /*background-color:#6196bb;*/ 
+      border-color:#467ca2;
+
+}
+.list ul li ul li ul{
+    display: none;
+
+}
+.list ul li ul li a{ 
+    padding-left:20px;
+
+}
+.list ul li ul li ul li { 
+    /*background-color:#d6e6f1;*/
+     border-color:#6196bb; 
+
+}
+.last{ 
+    /*background-color:#d6e6f1;*/
+     border-color:#6196bb; 
+
+}
+.list ul li ul li ul li a{
+     color:#316a91; 
+     padding-left:30px;
+
+}
+ol, ul {
+    margin-bottom :0;
+}
+/*左侧菜单栏结束*/
 /*颜色*/
 .leftPanel ,leftHeadPanel{
 
@@ -35,7 +125,7 @@
 }
 /*颜色结束*/
 .rightPanel {
-    width: 80%;
+    width: 80%; 
     float: left;
     display: table;
     min-height: 800px;
@@ -60,7 +150,7 @@ height:30px;
 }
 .rightHeadPanel {
         width: 80%;
-            float:left;
+        float:left;
 
 }
 /*button 样式*/
@@ -79,3 +169,9 @@ height:30px;
     color:#ffffff;
 
 }
+/*用户信息验证*/
+.Title-Border {
+    border:1px solid #cccccc;
+}
+.table-striped>tbody>tr:nth-of-type(odd){background:#80b9c9;}
+/*用户信息验证结束*/
