@@ -18,8 +18,10 @@
 
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="~/Content/js/bootstrap.min.js"> </script>
+    <script src="~/Content/js/rightmeun.js"></script>
 </head>
 <body>
+
     @*导航条*@
     <nav class="navbar  navbar-default NavBackground">         
         <div class="container-fluid">
@@ -53,11 +55,85 @@
                         </ul>
                     </li>
                 </ul>
-        
-               
+         
         </div><!-- /.container-fluid -->
     </nav>
-    <div>
+    <div class="leftPanel Panel-Left">
+        <div class="list">
+            <ul class="yiji">
+                <li><a href="#">首页</a></li>
+                <li>
+                    <a href="#" class="inactive">资金管理&nbsp; &nbsp; &nbsp; <span class="" aria-hidden="true"></span></a>
+                    <ul style="display: none">
+                        <li class="last">
+                            <a href="#" >商户保证金</a>
+                            @*<ul>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>*@
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="inactive Last-border-bottom">发布管理</a>
+                    <ul style="display: none">
+                        <li class="last">
+                            <a href="#">发布修改</a>
+                            @*<ul>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>*@
+                        </li>
+                        <li class="last">
+                            <a href="#">发布认证</a>
+                            @*<ul>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>*@
+                        </li>
+                    </ul>
+
+                </li>
+             
+                <li>
+                    <a href="#" class="inactive">用户管理&nbsp; &nbsp; &nbsp; <span class="" aria-hidden="true"></span></a>
+                    <ul style="display: none">
+                        <li class="last">
+                            <a href="#">用户信息</a>
+                        </li>
+                        <li class="last"><a href="#">用户权限</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="inactive">图标管理&nbsp; &nbsp; &nbsp; <span class="" aria-hidden="true"></span></a>
+                    <ul style="display: none">
+                        <li>
+                            <a href="#" class="inactive active">首页图标</a>
+                            <ul>
+                                <li><a href="#">首行图标</a></li>
+                                <li><a href="#">尾行图标</a></li>
+                            </ul>
+                        </li>
+                        <li class="last"><a href="#">个人中心图标</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div> 
+    </div>
+
+    <div class="rightPanel">
         @RenderBody()
     </div>
 
