@@ -342,6 +342,7 @@
     <Content Include="Views\User\MyAsk.cshtml" />
     <Content Include="Views\User\Mistake.cshtml" />
     <Content Include="Views\User\PhoneCheck.cshtml" />
+    <Content Include="Views\User\AssitantPhone.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

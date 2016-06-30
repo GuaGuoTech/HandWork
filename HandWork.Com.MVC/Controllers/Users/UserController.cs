@@ -167,6 +167,18 @@ namespace HandWork.Com.MVC.Controllers.Users
             return Json(requstStr);
         }
 
+        public ActionResult GuestServices()
+        {
+
+            return View();
+        }
+
+
+        public ActionResult AssitantPhone()
+        {
+            return View();
+
+        }
         /// <summary>
         /// 检查code
         /// </summary>
@@ -186,7 +198,7 @@ namespace HandWork.Com.MVC.Controllers.Users
             }
         }
 
-
+    
         public ActionResult WeiXinMSG() {
 
             return View();
